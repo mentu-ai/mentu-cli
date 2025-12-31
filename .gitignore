@@ -1,0 +1,71 @@
+# Node
+node_modules/
+dist/
+*.tgz
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Mentu runtime (local data)
+.mentu/
+
+# Sub-repos (published separately)
+mentu/
+mentu-plugin/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local development
+.claude/
+supabase/
+CLAUDE.md
+CHANGELOG.md
+PROTOCOL.md
+BUILD-STATUS.md
+
+# Internal docs (keep only CLI.md, API.md, Mentu-Spec-v0.md, Glossary.md)
+docs/HANDOFF-*.md
+docs/PRD-*.md
+docs/PROMPT-*.md
+docs/RESULT-*.md
+docs/CONTEXT-*.md
+docs/DELEGATION-*.md
+docs/archive/
+docs/essays/
+docs/.claude/
+docs/templates/
+docs/Agent-Protocol-v0.md
+docs/BUILD-STATUS.md
+docs/Canonical-*.md
+docs/Claude-GitHub-Integration.md
+docs/Development-Roadmap.md
+docs/Genesis-*.md
+docs/GENESIS-KEY.md
+docs/hooks-*.md
+docs/Interaction-Playbook.md
+docs/Interoperability-Test-Suite.md
+docs/Mentu-Core.md
+docs/Mentu-Features.md
+docs/mentu-mvp.md
+docs/Mentu-Protocol-Canonical-Schemas.md
+README-full.md
+
+# Research docs
+docs/research/
+docs/QUICKSTART.md
+docs/SYNC.md
+docs/Mentu-System-Flow.md
+docs/SubAgent-Validation-Architecture.md
+docs/Workflow-Architecture.md

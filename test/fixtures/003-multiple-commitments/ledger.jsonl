@@ -1,0 +1,3 @@
+{"id":"mem_001","op":"capture","ts":"2025-07-03T10:00:00Z","actor":"alice","workspace":"test","payload":{"body":"Large bug affects login and signup"}}
+{"id":"cmt_001","op":"commit","ts":"2025-07-03T10:01:00Z","actor":"alice","workspace":"test","payload":{"body":"Fix login","source":"mem_001","tags":["auth"]}}
+{"id":"cmt_002","op":"commit","ts":"2025-07-03T10:02:00Z","actor":"alice","workspace":"test","payload":{"body":"Fix signup","source":"mem_001","tags":["auth"]}}

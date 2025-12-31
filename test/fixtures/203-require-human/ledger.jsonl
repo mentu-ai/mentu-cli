@@ -1,0 +1,5 @@
+{"id":"mem_001","op":"capture","ts":"2025-07-03T10:00:00Z","actor":"alice","workspace":"test","payload":{"body":"Refund request"}}
+{"id":"cmt_001","op":"commit","ts":"2025-07-03T10:01:00Z","actor":"alice","workspace":"test","payload":{"body":"Process refund","source":"mem_001","tags":["financial"]}}
+{"id":"op_001","op":"claim","ts":"2025-07-03T10:02:00Z","actor":"agent:worker","workspace":"test","payload":{"commitment":"cmt_001"}}
+{"id":"mem_002","op":"capture","ts":"2025-07-03T10:03:00Z","actor":"agent:worker","workspace":"test","payload":{"body":"Refund processed"}}
+{"id":"op_002","op":"close","ts":"2025-07-03T10:04:00Z","actor":"agent:worker","workspace":"test","payload":{"commitment":"cmt_001","evidence":"mem_002"}}

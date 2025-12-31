@@ -1,0 +1,5 @@
+{
+  "error": "E_CONSTRAINT_VIOLATED",
+  "constraint": "require_claim",
+  "message": "Must claim commitment before closing"
+}

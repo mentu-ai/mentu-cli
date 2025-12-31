@@ -1,0 +1,59 @@
+{
+  "name": "mentu",
+  "version": "1.0.6",
+  "description": "The Commitment Ledger - Track promises with evidence",
+  "type": "module",
+  "bin": {
+    "mentu": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "commitment",
+    "ledger",
+    "accountability",
+    "cli",
+    "evidence",
+    "append-only",
+    "github"
+  ],
+  "author": "Rashid Azarang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mentu-ai/mentu-cli.git"
+  },
+  "homepage": "https://github.com/mentu-ai/mentu",
+  "bugs": {
+    "url": "https://github.com/mentu-ai/mentu-cli/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@hono/node-server": "^1.19.7",
+    "@octokit/rest": "^22.0.1",
+    "@supabase/supabase-js": "^2.89.0",
+    "commander": "^12.0.0",
+    "hono": "^4.11.3",
+    "open": "^11.0.0",
+    "ws": "^8.18.3",
+    "yaml": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "error": "E_ALREADY_CLAIMED",
+  "commitment": "cmt_001",
+  "owner": "alice"
+}

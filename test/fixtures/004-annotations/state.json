@@ -1,0 +1,19 @@
+{
+  "memories": [
+    {
+      "id": "mem_001",
+      "annotations": [
+        {"id": "op_001", "body": "This is critical", "kind": "flag", "actor": "bob"}
+      ]
+    }
+  ],
+  "commitments": [
+    {
+      "id": "cmt_001",
+      "state": "open",
+      "annotations": [
+        {"id": "op_002", "body": "Blocked on API access", "kind": "blocked", "actor": "alice"}
+      ]
+    }
+  ]
+}

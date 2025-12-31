@@ -1,0 +1,5 @@
+{
+  "error": "E_PERMISSION_DENIED",
+  "actor": "bob",
+  "operation": "commit"
+}

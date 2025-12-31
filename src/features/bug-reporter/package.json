@@ -1,0 +1,19 @@
+{
+  "name": "@warrantyos/bug-reporter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "In-app bug reporting module for WarrantyOS",
+  "main": "index.ts",
+  "types": "index.ts",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "bug-reporter",
+    "feedback",
+    "error-tracking"
+  ]
+}

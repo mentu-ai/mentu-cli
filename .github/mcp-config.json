@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "mentu": {
+      "command": "node",
+      "args": ["./dist/mcp-server.js"],
+      "env": {
+        "MENTU_WORKSPACE": ".mentu",
+        "MENTU_ACTOR": "agent:claude-github"
+      },
+      "tools": [
+        "mentu_capture",
+        "mentu_commit",
+        "mentu_claim",
+        "mentu_release",
+        "mentu_submit",
+        "mentu_status",
+        "mentu_show",
+        "mentu_annotate"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  },
+  "toolPermissions": {
+    "mentu_*": "allow",
+    "mcp__github__create_pull_request": "allow",
+    "mcp__github__add_issue_comment": "allow",
+    "mcp__github__get_issue": "allow"
+  }
+}

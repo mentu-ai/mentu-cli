@@ -1,0 +1,5 @@
+{
+  "error": "E_CONSTRAINT_VIOLATED",
+  "constraint": "require_human",
+  "message": "Financial commitments require human to close"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "universal-ticket-layer",
+  "version": "1.0.0",
+  "description": "Universal Ticket Layer - Standalone infrastructure service for unified work request management",
+  "author": "WarrantyOS Engineering",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/warrantyos/universal-ticket-layer.git"
+  },
+  "keywords": [
+    "tickets",
+    "issue-tracking",
+    "github-integration",
+    "supabase",
+    "edge-functions"
+  ],
+  "scripts": {
+    "deploy": "./scripts/deploy.sh",
+    "deploy:tickets-api": "./scripts/deploy.sh tickets-api",
+    "deploy:ingest-ticket": "./scripts/deploy.sh ingest-ticket",
+    "deploy:create-github-issue": "./scripts/deploy.sh create-github-issue",
+    "deploy:github-webhook": "./scripts/deploy.sh github-webhook",
+    "db:push": "./scripts/migrate.sh push",
+    "db:reset": "./scripts/migrate.sh reset",
+    "db:status": "./scripts/migrate.sh status",
+    "generate-key": "./scripts/generate-api-key.sh",
+    "serve": "supabase functions serve",
+    "serve:tickets-api": "supabase functions serve tickets-api",
+    "start": "supabase start",
+    "stop": "supabase stop",
+    "sdk:build": "cd sdk/typescript && npm run build",
+    "sdk:test": "cd sdk/typescript && npm test",
+    "sdk:publish": "cd sdk/typescript && npm publish"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

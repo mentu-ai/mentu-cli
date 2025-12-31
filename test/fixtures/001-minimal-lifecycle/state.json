@@ -1,0 +1,17 @@
+{
+  "memories": [
+    {"id": "mem_001", "body": "Bug reported", "kind": null, "actor": "alice"},
+    {"id": "mem_002", "body": "Fixed", "kind": "evidence", "actor": "alice"}
+  ],
+  "commitments": [
+    {
+      "id": "cmt_001",
+      "body": "Fix bug",
+      "source": "mem_001",
+      "state": "closed",
+      "owner": null,
+      "evidence": "mem_002",
+      "closed_by": "alice"
+    }
+  ]
+}

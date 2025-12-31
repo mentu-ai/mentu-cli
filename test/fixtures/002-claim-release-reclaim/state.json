@@ -1,0 +1,11 @@
+{
+  "commitments": [
+    {
+      "id": "cmt_001",
+      "state": "closed",
+      "owner": null,
+      "evidence": "mem_002",
+      "closed_by": "bob"
+    }
+  ]
+}

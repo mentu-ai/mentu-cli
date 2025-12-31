@@ -1,0 +1,7 @@
+{"id":"mem_001","op":"capture","ts":"2025-07-03T10:00:00Z","actor":"alice","workspace":"test","payload":{"body":"Task"}}
+{"id":"cmt_001","op":"commit","ts":"2025-07-03T10:01:00Z","actor":"alice","workspace":"test","payload":{"body":"Do task","source":"mem_001"}}
+{"id":"op_001","op":"claim","ts":"2025-07-03T10:02:00Z","actor":"alice","workspace":"test","payload":{"commitment":"cmt_001"}}
+{"id":"op_002","op":"release","ts":"2025-07-03T10:03:00Z","actor":"alice","workspace":"test","payload":{"commitment":"cmt_001","reason":"Reassigning"}}
+{"id":"op_003","op":"claim","ts":"2025-07-03T10:04:00Z","actor":"bob","workspace":"test","payload":{"commitment":"cmt_001"}}
+{"id":"mem_002","op":"capture","ts":"2025-07-03T10:05:00Z","actor":"bob","workspace":"test","payload":{"body":"Done","kind":"evidence"}}
+{"id":"op_004","op":"close","ts":"2025-07-03T10:06:00Z","actor":"bob","workspace":"test","payload":{"commitment":"cmt_001","evidence":"mem_002"}}

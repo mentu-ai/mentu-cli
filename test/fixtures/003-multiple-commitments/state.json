@@ -1,0 +1,6 @@
+{
+  "commitments": [
+    {"id": "cmt_001", "state": "open", "owner": null, "source": "mem_001"},
+    {"id": "cmt_002", "state": "open", "owner": null, "source": "mem_001"}
+  ]
+}

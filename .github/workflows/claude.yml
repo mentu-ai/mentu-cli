@@ -1,0 +1,221 @@
+# Claude GitHub App + Mentu Integration
+#
+# This workflow enables asynchronous Claude agents triggered by GitHub events,
+# with full accountability tracking via Mentu.
+#
+# Triggers:
+#   - @claude mention in issue/PR comments
+#   - Issues opened with @claude in body
+#   - Issues assigned with 'claude' label
+#   - PR review comments mentioning @claude
+#
+# Mentu Integration:
+#   - Every task creates a Mentu commitment
+#   - PRs captured as evidence
+#   - Full lineage: Issue -> Memory -> Commitment -> Evidence -> Closure
+
+name: Claude Code with Mentu
+
+on:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened, assigned]
+  pull_request_review_comment:
+    types: [created]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  # Main Claude execution job
+  claude:
+    name: Claude Agent
+    if: |
+      (github.event_name == 'issue_comment' &&
+       contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'issues' &&
+       (contains(github.event.issue.body, '@claude') ||
+        contains(github.event.issue.labels.*.name, 'claude'))) ||
+      (github.event_name == 'pull_request_review_comment' &&
+       contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request' &&
+       contains(github.event.pull_request.body, '@claude'))
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    env:
+      MENTU_ACTOR: "agent:claude-github"
+      MENTU_WORKSPACE: ".mentu"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Mentu CLI
+        run: npm run build
+
+      - name: Initialize Mentu workspace
+        run: |
+          if [ ! -f ".mentu/ledger.jsonl" ]; then
+            ./dist/cli.js init
+            echo "Mentu workspace initialized"
+          fi
+
+      - name: Capture issue as memory
+        if: github.event_name == 'issues' || github.event_name == 'issue_comment'
+        id: capture
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          ISSUE_NUM="${{ github.event.issue.number }}"
+
+          # Capture the issue/comment as a memory
+          RESULT=$(./dist/cli.js capture "GitHub Issue #${ISSUE_NUM}: ${ISSUE_TITLE}" \
+            --kind github_issue \
+            --actor agent:claude-github \
+            --json 2>/dev/null || echo '{"id":"capture_failed"}')
+
+          MEM_ID=$(echo "$RESULT" | jq -r '.id // "none"')
+          echo "memory_id=${MEM_ID}" >> $GITHUB_OUTPUT
+          echo "Captured as memory: ${MEM_ID}"
+
+      - name: Run Claude with Mentu
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+
+          # Tool permissions - allow Mentu commands
+          allowed_tools: |
+            Bash(npm:*)
+            Bash(npx:*)
+            Bash(./dist/cli.js:*)
+            Bash(node:*)
+            Bash(git:*)
+            Read
+            Write
+            Edit
+            Glob
+            Grep
+            mcp__github__create_pull_request
+            mcp__github__add_issue_comment
+
+          # Direct prompt including Mentu protocol
+          direct_prompt: |
+            ## Mentu Agent Protocol
+
+            You are running as a GitHub-triggered Claude agent with Mentu accountability.
+
+            ### CRITICAL: Track Your Work
+
+            **Before starting any task:**
+            ```bash
+            # 1. Capture the task (if not already captured)
+            ./dist/cli.js capture "Task: [description]" --kind task --actor agent:claude-github
+
+            # 2. Create commitment for deliverable
+            ./dist/cli.js commit "Deliver: [what you will produce]" --source [mem_id] --actor agent:claude-github
+
+            # 3. Claim the commitment
+            ./dist/cli.js claim [cmt_id] --actor agent:claude-github
+            ```
+
+            **After completing the task:**
+            ```bash
+            # 4. Submit with evidence (auto-captures changed files)
+            ./dist/cli.js submit [cmt_id] --summary "[what was done]" --include-files --actor agent:claude-github
+            ```
+
+            ### Context
+
+            - Memory ID from trigger: ${{ steps.capture.outputs.memory_id || 'none' }}
+            - Issue Number: ${{ github.event.issue.number || 'N/A' }}
+            - Event Type: ${{ github.event_name }}
+
+            ### Rules
+
+            1. ALWAYS create a commitment before starting work
+            2. ALWAYS submit with evidence when done
+            3. Reference the memory ID as source for commitments
+            4. Include meaningful summaries in submit
+            5. If creating a PR, capture the PR URL as evidence
+
+          # Use custom CLAUDE.md if present
+          use_claude_files: true
+
+      - name: Commit Mentu ledger changes
+        if: always()
+        run: |
+          git config user.name "Claude GitHub Agent"
+          git config user.email "claude-agent@mentu.dev"
+
+          if git diff --quiet .mentu/; then
+            echo "No ledger changes to commit"
+          else
+            git add .mentu/
+            git commit -m "chore(mentu): update ledger from GitHub Action
+
+            Event: ${{ github.event_name }}
+            Issue: #${{ github.event.issue.number || 'N/A' }}
+
+            🤖 Generated by Claude GitHub Agent" || true
+            git push || echo "Push failed - may need manual sync"
+          fi
+
+  # Auto-label issues for Claude
+  auto-label:
+    name: Auto-label for Claude
+    if: |
+      github.event_name == 'issues' &&
+      github.event.action == 'opened' &&
+      contains(github.event.issue.body, '@claude')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add claude label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['claude', 'autonomous']
+            });
+
+  # Sync closed issues to Mentu
+  sync-closure:
+    name: Sync Issue Closure to Mentu
+    if: |
+      github.event_name == 'issues' &&
+      github.event.action == 'closed' &&
+      contains(github.event.issue.labels.*.name, 'claude')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci && npm run build
+      - name: Capture closure
+        run: |
+          ISSUE_NUM="${{ github.event.issue.number }}"
+          ./dist/cli.js capture "GitHub Issue #${ISSUE_NUM} closed" \
+            --kind github_closure \
+            --actor github:webhook

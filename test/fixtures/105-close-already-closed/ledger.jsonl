@@ -1,0 +1,6 @@
+{"id":"mem_001","op":"capture","ts":"2025-07-03T10:00:00Z","actor":"alice","workspace":"test","payload":{"body":"Bug"}}
+{"id":"cmt_001","op":"commit","ts":"2025-07-03T10:01:00Z","actor":"alice","workspace":"test","payload":{"body":"Fix","source":"mem_001"}}
+{"id":"mem_002","op":"capture","ts":"2025-07-03T10:02:00Z","actor":"alice","workspace":"test","payload":{"body":"Done"}}
+{"id":"op_001","op":"close","ts":"2025-07-03T10:03:00Z","actor":"alice","workspace":"test","payload":{"commitment":"cmt_001","evidence":"mem_002"}}
+{"id":"mem_003","op":"capture","ts":"2025-07-03T10:04:00Z","actor":"bob","workspace":"test","payload":{"body":"Also done"}}
+{"id":"op_002","op":"close","ts":"2025-07-03T10:05:00Z","actor":"bob","workspace":"test","payload":{"commitment":"cmt_001","evidence":"mem_003"}}

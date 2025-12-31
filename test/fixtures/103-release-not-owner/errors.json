@@ -1,0 +1,6 @@
+{
+  "error": "E_NOT_OWNER",
+  "commitment": "cmt_001",
+  "owner": "alice",
+  "actor": "bob"
+}
