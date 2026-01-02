@@ -1,0 +1,5 @@
+{"id":"mem_5833f10f","op":"capture","ts":"2026-01-02T06:47:57.649Z","actor":"agent:test-a","workspace":"mentu-ai-test-a","payload":{"body":"Agent A: Starting work","kind":"task"}}
+{"id":"cmt_5b70f671","op":"commit","ts":"2026-01-02T06:48:05.178Z","actor":"agent:test-a","workspace":"mentu-ai-test-a","payload":{"body":"Agent A: Deliver test output","source":"mem_5833f10f"}}
+{"id":"op_b8c436f2","op":"claim","ts":"2026-01-02T06:48:12.038Z","actor":"agent:test-a","workspace":"mentu-ai-test-a","payload":{"commitment":"cmt_5b70f671"}}
+{"id":"mem_36e7af77","op":"capture","ts":"2026-01-02T06:48:18.610Z","actor":"agent:test-a","workspace":"mentu-ai-test-a","payload":{"body":"Agent A: Work complete","kind":"evidence"}}
+{"id":"op_2f067ed8","op":"close","ts":"2026-01-02T06:48:25.734Z","actor":"agent:test-a","workspace":"mentu-ai-test-a","payload":{"commitment":"cmt_5b70f671","evidence":"mem_36e7af77"}}
