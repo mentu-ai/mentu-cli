@@ -1,0 +1,9 @@
+# Mentu Ledger Merge Strategy
+# The ledger is append-only with unique IDs per operation.
+# On merge conflicts, combine all lines (union merge).
+.mentu/ledger.jsonl merge=union
+
+# Prevent binary files from being diffed
+*.png binary
+*.jpg binary
+*.ico binary
