@@ -57,11 +57,19 @@ jobs:
           echo "=== Mentu AI Repo ==="
           ls -la ~/Workspaces/mentu-ai/.mentu/ || echo "No .mentu in mentu-ai"
 
+      - name: Build Mentu CLI
+        run: |
+          echo "=== Building Mentu CLI ==="
+          cd ~/Workspaces/mentu-ai
+          npm install
+          npm run build
+          echo "Build complete"
+
       - name: Test Mentu CLI
         run: |
           echo "=== Mentu Status ==="
           cd ~/Workspaces/mentu-ai
-          node dist/cli.js status || npm run build && node dist/cli.js status
+          node dist/cli.js status
 
       - name: Test Claude (Optional)
         if: ${{ inputs.test_claude == 'true' }}
