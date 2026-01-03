@@ -1,0 +1,107 @@
+# VPS Self-Hosted Runner Test
+#
+# Tests the mentu-vps-01 self-hosted runner:
+# - Runner connectivity
+# - Claude CLI availability
+# - Mentu CLI functionality
+# - Workspace access
+#
+# Trigger manually or on push to test-runner branch
+
+name: VPS Runner Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_claude:
+        description: 'Run Claude test (uses API credits)'
+        required: false
+        default: 'false'
+        type: boolean
+  push:
+    branches:
+      - test-runner
+
+jobs:
+  test-runner:
+    name: Test VPS Runner
+    runs-on: [self-hosted, linux, x64, mentu-vps]
+
+    steps:
+      - name: Runner Info
+        run: |
+          echo "=== Runner Environment ==="
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
+          echo "Working Dir: $(pwd)"
+          echo "Home: $HOME"
+          echo ""
+          echo "=== System Info ==="
+          uname -a
+          echo ""
+          echo "=== Node.js ==="
+          node --version
+          npm --version
+
+      - name: Check Claude CLI
+        run: |
+          echo "=== Claude CLI ==="
+          which claude
+          claude --version
+
+      - name: Check Mentu Workspace
+        run: |
+          echo "=== Mentu Workspaces ==="
+          ls -la ~/Workspaces/
+          echo ""
+          echo "=== Mentu AI Repo ==="
+          ls -la ~/Workspaces/mentu-ai/.mentu/ || echo "No .mentu in mentu-ai"
+
+      - name: Test Mentu CLI
+        run: |
+          echo "=== Mentu Status ==="
+          cd ~/Workspaces/mentu-ai
+          node dist/cli.js status || npm run build && node dist/cli.js status
+
+      - name: Test Claude (Optional)
+        if: ${{ inputs.test_claude == 'true' }}
+        run: |
+          echo "=== Claude Test ==="
+          claude -p "Respond with exactly: VPS_RUNNER_TEST_OK"
+
+      - name: Capture Test Evidence
+        run: |
+          cd ~/Workspaces/mentu-ai
+          node dist/cli.js capture "GitHub Actions VPS runner test successful on $(hostname)" \
+            --kind evidence \
+            --actor agent:github-actions \
+            || echo "Capture failed (may need build)"
+
+  test-bridge-integration:
+    name: Test Bridge Integration
+    runs-on: [self-hosted, mentu-vps]
+    needs: test-runner
+
+    steps:
+      - name: Check Bridge Status
+        run: |
+          echo "=== mentu-bridge Service ==="
+          systemctl --user status mentu-bridge --no-pager || echo "Bridge not running as user service"
+
+      - name: Check Bridge Logs
+        run: |
+          echo "=== Recent Bridge Logs ==="
+          tail -20 ~/logs/mentu-bridge.log 2>/dev/null || echo "No bridge logs"
+
+      - name: Summary
+        run: |
+          echo ""
+          echo "================================"
+          echo "  VPS RUNNER TEST COMPLETE"
+          echo "================================"
+          echo ""
+          echo "Runner: mentu-vps-01"
+          echo "Host: $(hostname)"
+          echo "Claude: $(claude --version)"
+          echo "Bridge: $(systemctl --user is-active mentu-bridge 2>/dev/null || echo 'unknown')"
+          echo ""
