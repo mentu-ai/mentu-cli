@@ -25,7 +25,7 @@ on:
 jobs:
   test-runner:
     name: Test VPS Runner
-    runs-on: [self-hosted, linux, x64, mentu-vps]
+    runs-on: [self-hosted, Linux, X64, mentu-vps]
 
     steps:
       - name: Runner Info
