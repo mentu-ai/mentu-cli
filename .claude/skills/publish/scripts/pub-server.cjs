@@ -42,9 +42,10 @@ function resolveWorkspaceId(req) {
     return { name: subdomain };
   }
 
-  // Option 4: From path (e.g., /docs/rashid/...)
-  const pathMatch = req.url.match(/^\/p\/([^\/]+)/);
-  if (pathMatch && pathMatch[1] !== 'mentu-ai') {
+  // Option 4: From path (e.g., /{workspace}/docs/...)
+  // New structure: /{workspace}/{view}/{path}
+  const pathMatch = req.url.match(/^\/([^\/]+)\/(docs|evidence|artifacts|assets|claude|mentu)/);
+  if (pathMatch && !['api', 'health', 'static'].includes(pathMatch[1])) {
     return { name: pathMatch[1] };
   }
 
@@ -1037,7 +1038,7 @@ async function getWorkspaceSwitcher(currentWorkspaceId, currentWorkspaceName) {
 
   return `
     <div class="workspace-switcher">
-      <select onchange="window.location.href='${BASE_PATH}/p/' + this.value + '/'">
+      <select onchange="window.location.href='${BASE_PATH}/' + this.value + '/'">
         ${workspaces.map(ws => `
           <option value="${ws.name}" ${ws.id === currentWorkspaceId ? 'selected' : ''}>
             ${ws.display_name || ws.name}
@@ -1160,23 +1161,39 @@ const server = http.createServer(async (req, res) => {
   // Index Page (with search)
   // ============================================================
 
-  // Match workspace-specific paths or root
-  const indexMatch = pathname.match(/^\/(?:p\/([^\/]+)\/?)?$/);
-  if (indexMatch || pathname === '/') {
-    const workspaceName = indexMatch?.[1] || 'mentu-ai';
-    const modules = ['docs', 'evidence', 'artifacts', 'assets'];
+  // Root redirects to default workspace
+  if (pathname === '/') {
+    res.writeHead(302, { 'Location': `${BASE_PATH}/mentu-ai/` });
+    res.end();
+    return;
+  }
 
-    // Get owner info from first publication (all have same workspace)
+  // Match workspace index: /{workspace}/
+  const indexMatch = pathname.match(/^\/([^\/]+)\/?$/);
+  if (indexMatch && !['api', 'health', 'static'].includes(indexMatch[1])) {
+    const workspaceName = indexMatch[1];
+
+    // Fetch workspace by name to get publications
+    const wsData = await fetchWorkspace({ name: workspaceName });
+    if (wsData) {
+      workspaceId = wsData.id;
+      pubs = await loadPublications(workspaceId);
+      if (searchQuery) pubs = searchPublications(pubs, searchQuery);
+    }
+
+    const views = ['docs', 'evidence', 'artifacts', 'assets'];
+
+    // Get owner info from workspace or first publication
     const firstPub = Object.values(pubs)[0];
-    const ownerName = firstPub?.owner_name || 'Mentu';
-    const displayName = firstPub?.workspace_display_name || 'Publications';
+    const ownerName = firstPub?.owner_name || wsData?.genesis_key?.identity?.owner || 'Mentu';
+    const displayName = wsData?.display_name || firstPub?.workspace_display_name || workspaceName;
     const totalCount = Object.keys(pubs).length;
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(`<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>${displayName} Publications</title>
+  <title>${displayName} - Mentu Publications</title>
   ${HEAD}
 </head>
 <body>
@@ -1187,23 +1204,23 @@ const server = http.createServer(async (req, res) => {
   </div>
   <div class="container">
     <div class="search-bar">
-      <form method="get" action="${BASE_PATH}/p/${workspaceName}/">
+      <form method="get" action="${BASE_PATH}/${workspaceName}/">
         <input type="text" name="q" placeholder="Search publications..." value="${searchQuery.replace(/"/g, '&quot;')}" autocomplete="off">
       </form>
     </div>
     ${searchQuery ? `<p class="search-results-count">Found ${totalCount} result${totalCount !== 1 ? 's' : ''} for "${searchQuery}"</p>` : ''}
     <div class="modules">
-      ${modules.map(mod => {
-        const items = Object.entries(pubs).filter(([k]) => k.startsWith('/' + mod + '/'));
-        return `<div class="module-card ${mod}">
-          <h2>${mod}</h2>
+      ${views.map(view => {
+        const items = Object.entries(pubs).filter(([k]) => k.startsWith('/' + view + '/'));
+        return `<div class="module-card ${view}">
+          <h2>${view}</h2>
           ${items.length === 0
             ? '<p class="empty">No publications yet</p>'
             : `<ul>${items.map(([k, v]) => {
                 const pubStats = stats[v.id] || {};
                 const viewCount = pubStats.view_count || 0;
                 return `<li>
-                  <a href="${BASE_PATH}/p/${workspaceName}${k}">${v.path}</a>
+                  <a href="${BASE_PATH}/${workspaceName}${k}">${v.path}</a>
                   ${viewCount > 0 ? `<span class="stat-badge">${viewIcon} ${viewCount}</span>` : ''}
                 </li>`;
               }).join('')}</ul>`
@@ -1221,11 +1238,22 @@ const server = http.createServer(async (req, res) => {
   // Publication Detail Page (with version history + analytics)
   // ============================================================
 
-  const pubMatch = pathname.match(/^\/p\/([^\/]+)(\/.+)$/);
+  // Match: /{workspace}/{view}/{path}
+  const pubMatch = pathname.match(/^\/([^\/]+)\/(docs|evidence|artifacts|assets)\/(.+)$/);
   if (pubMatch) {
     const workspaceName = pubMatch[1];
-    const pubPath = pubMatch[2];
-    const pub = pubs[pubPath];
+    const viewType = pubMatch[2];
+    const pubPath = pubMatch[3];
+    const pubKey = `/${viewType}/${pubPath}`;
+
+    // Fetch workspace by name to get publications
+    const wsData = await fetchWorkspace({ name: workspaceName });
+    if (wsData) {
+      workspaceId = wsData.id;
+      pubs = await loadPublications(workspaceId);
+    }
+
+    const pub = pubs[pubKey];
 
     if (pub) {
       // Track view (async, don't wait)
@@ -1240,19 +1268,20 @@ const server = http.createServer(async (req, res) => {
 
       const pubStats = stats[pub.id] || {};
       const viewCount = pubStats.view_count || 0;
+      const displayName = wsData?.display_name || workspaceName;
 
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(`<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>${pub.path} – Mentu</title>
+  <title>${pub.path} – ${displayName}</title>
   ${HEAD}
 </head>
 <body>
   ${NAV}
   <article>
     <div class="meta">
-      <a href="${BASE_PATH}/p/${workspaceName}/">← All publications</a>
+      <a href="${BASE_PATH}/${workspaceName}/">← ${displayName}</a>
       <span class="sep">|</span>
       <span class="badge ${pub.module}">${pub.module}</span>
       <span class="path">${pub.path}</span>
