@@ -69,7 +69,7 @@ jobs:
         run: |
           echo "=== Mentu Status ==="
           cd ~/Workspaces/mentu-ai
-          node dist/cli.js status
+          node dist/index.js status
 
       - name: Test Claude (Optional)
         if: ${{ inputs.test_claude == 'true' }}
@@ -80,7 +80,7 @@ jobs:
       - name: Capture Test Evidence
         run: |
           cd ~/Workspaces/mentu-ai
-          node dist/cli.js capture "GitHub Actions VPS runner test successful on $(hostname)" \
+          node dist/index.js capture "GitHub Actions VPS runner test successful on $(hostname)" \
             --kind evidence \
             --actor agent:github-actions \
             || echo "Capture failed (may need build)"
