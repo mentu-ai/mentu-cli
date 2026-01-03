@@ -25,7 +25,7 @@ on:
 jobs:
   test-runner:
     name: Test VPS Runner
-    runs-on: [self-hosted, Linux, X64, mentu-vps]
+    runs-on: self-hosted
 
     steps:
       - name: Runner Info
@@ -79,7 +79,7 @@ jobs:
 
   test-bridge-integration:
     name: Test Bridge Integration
-    runs-on: [self-hosted, mentu-vps]
+    runs-on: self-hosted
     needs: test-runner
 
     steps:
