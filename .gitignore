@@ -27,8 +27,9 @@ mentu-plugin/
 __pycache__/
 *.pyc
 
-# Local development
-.claude/
+# Local development (hooks, settings are local; skills are tracked)
+.claude/*
+!.claude/skills/
 supabase/
 CLAUDE.md
 CHANGELOG.md

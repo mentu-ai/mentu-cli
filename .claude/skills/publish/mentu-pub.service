@@ -1,0 +1,17 @@
+[Unit]
+Description=Mentu Publication Server
+After=network.target
+
+[Service]
+Type=simple
+User=mentu
+WorkingDirectory=/home/mentu/Workspaces/mentu-ai/.claude/skills/publish
+ExecStart=/home/mentu/Workspaces/mentu-ai/.claude/skills/publish/pub-start.sh
+Restart=always
+RestartSec=5
+
+# Environment (loaded from .env via pub-start.sh)
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
