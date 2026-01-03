@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 
-export type IdPrefix = 'mem' | 'cmt' | 'op';
+export type IdPrefix = 'mem' | 'cmt' | 'op' | 'pub';
 
 /**
  * Generate a unique ID with the given prefix.
@@ -15,7 +15,7 @@ export function generateId(prefix: IdPrefix): string {
  * Extract the prefix from an ID.
  */
 export function getIdPrefix(id: string): IdPrefix | null {
-  const match = id.match(/^(mem|cmt|op)_/);
+  const match = id.match(/^(mem|cmt|op|pub)_/);
   return match ? (match[1] as IdPrefix) : null;
 }
 
@@ -23,7 +23,7 @@ export function getIdPrefix(id: string): IdPrefix | null {
  * Validate ID format.
  */
 export function isValidId(id: string): boolean {
-  return /^(mem|cmt|op)_[a-f0-9]{8}$/.test(id);
+  return /^(mem|cmt|op|pub)_[a-f0-9]{8}$/.test(id);
 }
 
 /**

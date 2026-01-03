@@ -54,7 +54,8 @@ export class MentuError extends Error {
 export type OperationType =
   | 'capture' | 'commit' | 'claim' | 'release' | 'close' | 'annotate'
   | 'link' | 'dismiss' | 'triage'
-  | 'submit' | 'approve' | 'reopen';
+  | 'submit' | 'approve' | 'reopen'
+  | 'publish';
 
 // Link relationship types (v0.8)
 export type LinkKind =
@@ -243,6 +244,22 @@ export interface ReopenOperation extends BaseOperation {
   payload: ReopenPayload;
 }
 
+// Publish types (v1.1)
+export interface PublishPayload {
+  id: string;
+  module: string;
+  path: string;
+  version: number;
+  url: string;
+  content?: string;
+  source?: { type: 'commitment' | 'memory'; id: string };
+}
+
+export interface PublishOperation extends BaseOperation {
+  op: 'publish';
+  payload: PublishPayload;
+}
+
 export type Operation =
   | CaptureOperation
   | CommitOperation
@@ -255,7 +272,8 @@ export type Operation =
   | TriageOperation
   | SubmitOperation
   | ApproveOperation
-  | ReopenOperation;
+  | ReopenOperation
+  | PublishOperation;
 
 // Computed state types
 // Commitment states (v1.0)
@@ -360,6 +378,17 @@ export interface Config {
 }
 
 // Genesis Key types
+export interface GenesisTierRule {
+  pattern?: string;
+  match?: {
+    tags?: string[];
+    actor?: string;
+    source_kind?: string;
+  };
+  tier?: string;
+  reason: string;
+}
+
 export interface GenesisKey {
   genesis: {
     version: string;
@@ -387,6 +416,11 @@ export interface GenesisKey {
       match: MatchRule;
     }>;
   };
+  triage?: {
+    tier_rules?: GenesisTierRule[];
+    default_tier?: string;
+  };
+  requires_approval?: GenesisTierRule[];
 }
 
 export type MatchRule = 'all' | { tags?: string[]; actor?: string; source_kind?: string } | Record<string, never>;
@@ -507,4 +541,122 @@ export interface ErrorOutput {
   value?: string;
   message: string;
   [key: string]: unknown;
+}
+
+// ============================================================
+// PUBLISH OUTPUT (v1.1)
+// ============================================================
+
+export interface PublishOutput {
+  id: string;
+  op: 'publish';
+  ts: string;
+  actor: string;
+  pub_id: string;
+  module: string;
+  path: string;
+  url: string;
+  version: number;
+  source?: { type: 'commitment' | 'memory'; id: string };
+}
+
+// ============================================================
+// COMPILED EVIDENCE (v1.0)
+// ============================================================
+
+export interface CompiledEvidence {
+  type: 'code_change' | 'test_result' | 'deployment' | 'document' | 'attestation';
+  artifacts: {
+    pr_number?: number;
+    pr_url?: string;
+    commit_sha?: string;
+    files?: string[];
+    urls?: string[];
+  };
+  summary: string;
+  compiled_at: string;
+}
+
+// ============================================================
+// TEMPORAL TYPES (v1.0)
+// ============================================================
+
+export type TemporalState = 'active' | 'waiting' | 'late' | 'scheduled' | 'due';
+
+export type LatePolicy = 'warn' | 'escalate' | 'ignore';
+
+export interface RecurrenceSpec {
+  pattern: string;
+  next_at?: string;
+  last_at?: string;
+  ends_at?: string;
+  count?: number;
+  timezone?: string;
+}
+
+export interface TemporalMeta {
+  due_at?: string;
+  deadline?: string;
+  wait_until?: string;
+  wait_for?: string;
+  wait_for_all?: string[];
+  wait_for_any?: string[];
+  recurrence?: RecurrenceSpec;
+  late_policy?: LatePolicy;
+  grace_period?: number;
+}
+
+// ============================================================
+// SCHEDULER TYPES (v1.0)
+// ============================================================
+
+export interface SchedulerConfig {
+  enabled: boolean;
+  tick_interval: number;
+  timezone: string;
+  max_batch: number;
+}
+
+export interface SchedulerAction {
+  type: 'create_commitment' | 'annotate_late' | 'escalate' | 'recurrence_tick';
+  target: string;
+  op_id: string;
+}
+
+export interface SchedulerError {
+  target: string;
+  error: string;
+  code: string;
+}
+
+export interface SchedulerTickResult {
+  tick_at: string;
+  processed: number;
+  actions: SchedulerAction[];
+  errors: SchedulerError[];
+}
+
+// ============================================================
+// DEPENDENCY RESOLVER TYPES (v1.0)
+// ============================================================
+
+export interface ResolverConfig {
+  enabled: boolean;
+  tick_interval: number;
+  max_batch: number;
+  dry_run: boolean;
+}
+
+export interface ResolverError {
+  commitment_id: string;
+  error: string;
+  code: string;
+}
+
+export interface ResolverTickResult {
+  tick_at: string;
+  checked: number;
+  spawned: string[];
+  blocked: Array<{ id: string; waiting_on: string[] }>;
+  errors: ResolverError[];
 }
