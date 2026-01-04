@@ -330,7 +330,19 @@ function fetchFromSupabase(workspaceId) {
               source: row.source,
               owner_name: row.owner_name,
               workspace_name: row.workspace_name,
-              workspace_display_name: row.workspace_display_name
+              workspace_display_name: row.workspace_display_name,
+              // Metadata from frontmatter
+              doc_type: row.doc_type,
+              tier: row.tier,
+              intent: row.intent,
+              doc_status: row.doc_status,
+              doc_version: row.doc_version,
+              created_date: row.created_date,
+              updated_date: row.updated_date,
+              parent_doc: row.parent_doc,
+              children_docs: row.children_docs,
+              dependencies: row.dependencies,
+              commitment_id: row.commitment_id
             };
           });
           // Update cache
@@ -915,6 +927,121 @@ const HEAD = `
     margin-left: auto;
   }
 
+  /* Metadata Badges */
+  .meta-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+  }
+  .meta-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .meta-badge.tier-t1 { background: #dcfce7; color: #166534; }
+  .meta-badge.tier-t2 { background: #fef3c7; color: #92400e; }
+  .meta-badge.tier-t3 { background: #fee2e2; color: #991b1b; }
+  .meta-badge.status-pending { background: var(--slate-100); color: var(--slate-600); }
+  .meta-badge.status-claimed { background: #dbeafe; color: #1e40af; }
+  .meta-badge.status-completed { background: #dcfce7; color: #166534; }
+  .meta-badge.intent { background: #f3e8ff; color: #7c3aed; }
+  .card-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.375rem;
+    font-size: 0.75rem;
+    color: var(--slate-400);
+  }
+  .card-meta-row .date { }
+  .card-meta-row .version { font-family: 'JetBrains Mono', monospace; }
+
+  /* Metadata Panel (Detail View) */
+  .metadata-panel {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .metadata-panel h4 {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate-400);
+    margin: 0 0 1rem 0;
+  }
+  .metadata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  .metadata-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .metadata-item .label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate-400);
+  }
+  .metadata-item .value {
+    font-size: 0.875rem;
+    color: var(--slate-700);
+  }
+  .metadata-item .value.mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .metadata-item .value a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+  .metadata-item .value a:hover {
+    text-decoration: underline;
+  }
+  .metadata-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--slate-100);
+  }
+  .metadata-section h5 {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate-400);
+    margin: 0 0 0.75rem 0;
+  }
+  .metadata-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .metadata-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--blue-500);
+    text-decoration: none;
+    font-size: 0.8125rem;
+  }
+  .metadata-links a:hover {
+    text-decoration: underline;
+  }
+  .metadata-links .arrow {
+    color: var(--slate-300);
+  }
+
   /* API Response Styles */
   .api-response {
     background: var(--slate-900);
@@ -1219,9 +1346,20 @@ const server = http.createServer(async (req, res) => {
             : `<ul>${items.map(([k, v]) => {
                 const pubStats = stats[v.id] || {};
                 const viewCount = pubStats.view_count || 0;
+                const tierClass = v.tier ? `tier-${v.tier.toLowerCase()}` : '';
+                const statusClass = v.doc_status ? `status-${v.doc_status}` : '';
                 return `<li>
                   <a href="${BASE_PATH}/${workspaceName}${k}">${v.path}</a>
-                  ${viewCount > 0 ? `<span class="stat-badge">${viewIcon} ${viewCount}</span>` : ''}
+                  <div class="meta-badges">
+                    ${v.tier ? `<span class="meta-badge ${tierClass}">${v.tier}</span>` : ''}
+                    ${v.doc_status ? `<span class="meta-badge ${statusClass}">${v.doc_status}</span>` : ''}
+                    ${v.intent ? `<span class="meta-badge intent">${v.intent}</span>` : ''}
+                  </div>
+                  <div class="card-meta-row">
+                    ${v.created_date ? `<span class="date">${v.created_date}</span>` : ''}
+                    ${v.doc_version ? `<span class="version">v${v.doc_version}</span>` : ''}
+                    ${viewCount > 0 ? `<span class="stat-badge">${viewIcon} ${viewCount}</span>` : ''}
+                  </div>
                 </li>`;
               }).join('')}</ul>`
           }
@@ -1270,6 +1408,37 @@ const server = http.createServer(async (req, res) => {
       const viewCount = pubStats.view_count || 0;
       const displayName = wsData?.display_name || workspaceName;
 
+      // Build metadata panel if metadata exists
+      const hasMetadata = pub.tier || pub.intent || pub.doc_status || pub.parent_doc || pub.commitment_id;
+      const tierClass = pub.tier ? `tier-${pub.tier.toLowerCase()}` : '';
+      const statusClass = pub.doc_status ? `status-${pub.doc_status}` : '';
+
+      const metadataPanel = hasMetadata ? `
+        <div class="metadata-panel">
+          <h4>Document Metadata</h4>
+          <div class="metadata-grid">
+            ${pub.doc_type ? `<div class="metadata-item"><span class="label">Type</span><span class="value">${pub.doc_type}</span></div>` : ''}
+            ${pub.tier ? `<div class="metadata-item"><span class="label">Tier</span><span class="value"><span class="meta-badge ${tierClass}">${pub.tier}</span></span></div>` : ''}
+            ${pub.intent ? `<div class="metadata-item"><span class="label">Intent</span><span class="value"><span class="meta-badge intent">${pub.intent}</span></span></div>` : ''}
+            ${pub.doc_status ? `<div class="metadata-item"><span class="label">Status</span><span class="value"><span class="meta-badge ${statusClass}">${pub.doc_status}</span></span></div>` : ''}
+            ${pub.doc_version ? `<div class="metadata-item"><span class="label">Doc Version</span><span class="value mono">${pub.doc_version}</span></div>` : ''}
+            ${pub.created_date ? `<div class="metadata-item"><span class="label">Created</span><span class="value">${pub.created_date}</span></div>` : ''}
+            ${pub.updated_date ? `<div class="metadata-item"><span class="label">Updated</span><span class="value">${pub.updated_date}</span></div>` : ''}
+          </div>
+          ${(pub.parent_doc || pub.children_docs || pub.dependencies || pub.commitment_id) ? `
+          <div class="metadata-section">
+            <h5>Relationships</h5>
+            <div class="metadata-links">
+              ${pub.parent_doc ? `<a href="${BASE_PATH}/${workspaceName}/docs/${pub.parent_doc.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">↑</span> Parent: ${pub.parent_doc}</a>` : ''}
+              ${pub.children_docs && pub.children_docs.length ? pub.children_docs.map(c => `<a href="${BASE_PATH}/${workspaceName}/docs/${c.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">↓</span> Child: ${c}</a>`).join('') : ''}
+              ${pub.dependencies && pub.dependencies.length ? pub.dependencies.map(d => `<a href="${BASE_PATH}/${workspaceName}/docs/${d.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">→</span> Dependency: ${d}</a>`).join('') : ''}
+              ${pub.commitment_id && pub.commitment_id !== 'pending' ? `<a href="#"><span class="arrow">◆</span> Commitment: ${pub.commitment_id}</a>` : ''}
+            </div>
+          </div>
+          ` : ''}
+        </div>
+      ` : '';
+
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(`<!DOCTYPE html>
 <html lang="en">
@@ -1289,6 +1458,7 @@ const server = http.createServer(async (req, res) => {
       <span>v${pub.version}</span>
       ${viewCount > 0 ? `<span class="stat-badge">${viewIcon} ${viewCount} views</span>` : ''}
     </div>
+    ${metadataPanel}
     <div class="prose">
       ${renderMarkdown(pub.content)}
     </div>
