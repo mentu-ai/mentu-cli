@@ -1,5 +1,5 @@
 {
-  "name": "@mentu/mcp",
+  "name": "mentu-mcp",
   "version": "0.1.0",
   "description": "Mentu MCP Server — commitment ledger protocol for AI-native IDEs",
   "type": "module",
