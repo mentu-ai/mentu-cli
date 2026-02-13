@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import { CloudClient } from '../cloud/client.js';
 import { findWorkspace, readConfig, writeConfig, getWorkspaceName } from '../core/config.js';
 import { initSyncState, loadSyncState } from '../core/sync-state.js';
+import { selectFromList, isInteractive } from '../utils/prompt.js';
 import type { Config } from '../types.js';
 
 export function registerWorkspaceCommand(program: Command): void {
@@ -71,23 +72,59 @@ export function registerWorkspaceCommand(program: Command): void {
       }
     });
 
-  // mentu workspace connect <name>
+  // mentu workspace connect [name]
   workspace
-    .command('connect <name>')
+    .command('connect [name]')
     .description('Connect local workspace to existing cloud workspace')
     .option('--json', 'Output as JSON')
-    .action(async (name: string, options) => {
+    .action(async (name: string | undefined, options) => {
       try {
         const workspacePath = findWorkspace(process.cwd());
         const client = await CloudClient.create();
-        const result = await client.getWorkspaceByName(name);
+
+        // If no name provided, show interactive picker or error
+        let resolvedName = name;
+        if (!resolvedName) {
+          if (!isInteractive(options)) {
+            const msg = 'Workspace name required in non-interactive mode.';
+            if (options.json) {
+              console.log(JSON.stringify({ error: msg }));
+            } else {
+              console.error(`Error: ${msg}`);
+              console.log('Usage: mentu workspace connect <name>');
+            }
+            process.exit(1);
+          }
+
+          // Interactive picker
+          const workspaces = await client.listWorkspaces();
+          if (workspaces.length === 0) {
+            if (options.json) {
+              console.log(JSON.stringify({ error: 'No workspaces found' }));
+            } else {
+              console.log('No workspaces found.');
+              console.log('\nTo create one, run: mentu workspace create <name>');
+            }
+            process.exit(1);
+          }
+
+          const items = workspaces.map(w => `${w.name} [${w.role}]`);
+          const idx = await selectFromList(items, 'Connect to workspace');
+          if (idx < 0) {
+            console.log('Cancelled.');
+            return;
+          }
+          resolvedName = workspaces[idx].name;
+        }
+
+        const result = await client.getWorkspaceByName(resolvedName);
 
         if (result.error) {
           if (options.json) {
             console.log(JSON.stringify({ error: result.error }));
           } else {
             console.error(`Error: ${result.error}`);
-            console.log(`\nTo create a new workspace, run: mentu workspace create ${name}`);
+            console.log(`\nTo create a new workspace, run: mentu workspace create ${resolvedName}`);
           }
           process.exit(1);
         }
@@ -95,7 +132,7 @@ export function registerWorkspaceCommand(program: Command): void {
         const ws = result.workspace!;
 
         // Update local config
-        const config = readConfig(workspacePath) || { workspace: name, created: new Date().toISOString() };
+        const config = readConfig(workspacePath) || { workspace: resolvedName, created: new Date().toISOString() };
 
         const updatedConfig: Config = {
           ...config,
@@ -112,7 +149,7 @@ export function registerWorkspaceCommand(program: Command): void {
         if (options.json) {
           console.log(JSON.stringify({ connected: true, workspace: ws }));
         } else {
-          console.log(`Connected to workspace: ${name}`);
+          console.log(`Connected to workspace: ${resolvedName}`);
           console.log(`Workspace ID: ${ws.id}`);
           console.log(`Role: ${ws.role}`);
           console.log(`\nRun "mentu sync" to sync with the cloud.`);

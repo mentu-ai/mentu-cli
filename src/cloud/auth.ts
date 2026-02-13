@@ -122,12 +122,8 @@ export async function refreshTokenIfNeeded(tokens: AuthTokens): Promise<AuthToke
   // Dynamic import to avoid requiring @supabase/supabase-js if not needed
   const { createClient } = await import('@supabase/supabase-js');
 
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    throw new Error('SUPABASE_URL and SUPABASE_ANON_KEY must be set');
-  }
+  const supabaseUrl = getSupabaseUrl();
+  const supabaseAnonKey = getSupabaseAnonKey();
 
   const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
@@ -167,6 +163,35 @@ export async function getValidCredentials(): Promise<AuthTokens | null> {
   } catch {
     // Token refresh failed, credentials are invalid
     return null;
+  }
+}
+
+/**
+ * Detailed credential state check for login flow.
+ * Distinguishes between: valid (or silently refreshed), expired with no recovery, and no credentials at all.
+ */
+export async function checkCredentialState(): Promise<{
+  state: 'valid' | 'expired_unrecoverable' | 'none';
+  credentials: AuthTokens | null;
+}> {
+  const creds = await getCredentials();
+
+  if (!creds) {
+    return { state: 'none', credentials: null };
+  }
+
+  // If not expiring soon, it's valid
+  if (!isTokenExpiringSoon(creds)) {
+    return { state: 'valid', credentials: creds };
+  }
+
+  // Try to refresh silently
+  try {
+    const refreshed = await refreshTokenIfNeeded(creds);
+    return { state: 'valid', credentials: refreshed };
+  } catch {
+    // Refresh failed — expired and unrecoverable
+    return { state: 'expired_unrecoverable', credentials: creds };
   }
 }
 

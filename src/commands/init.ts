@@ -10,6 +10,7 @@ import {
   writeConfig,
 } from '../core/config.js';
 import { getLedgerPath } from '../core/ledger.js';
+import { getValidCredentials } from '../cloud/auth.js';
 
 interface InitOptions {
   force?: boolean;
@@ -128,6 +129,20 @@ export function registerInitCommand(program: Command): void {
         };
 
         outputResult(result, json);
+
+        // Post-init guidance (interactive only)
+        if (!json && !options.silent) {
+          try {
+            const creds = await getValidCredentials();
+            if (creds) {
+              console.log('\nRun `mentu login` to connect this project to a cloud workspace.');
+            } else {
+              console.log('\nRun `mentu login` to authenticate and connect to a cloud workspace.');
+            }
+          } catch {
+            console.log('\nRun `mentu login` to authenticate and connect to a cloud workspace.');
+          }
+        }
       } catch (err) {
         if (err instanceof MentuError) {
           outputError(err, json);

@@ -1,10 +1,19 @@
 // mentu login - Authenticate with Mentu Cloud
 
+import fs from 'fs';
+import path from 'path';
 import { Command } from 'commander';
 import http from 'http';
 import { createClient } from '@supabase/supabase-js';
-import { saveCredentials, getCredentials, getSupabaseUrl, getSupabaseAnonKey } from '../cloud/auth.js';
-import type { AuthTokens } from '../cloud/types.js';
+import { saveCredentials, getCredentials, getSupabaseUrl, getSupabaseAnonKey, checkCredentialState } from '../cloud/auth.js';
+import { CloudClient } from '../cloud/client.js';
+import { findWorkspace, readConfig, writeConfig, getMentuDir } from '../core/config.js';
+import { initSyncState } from '../core/sync-state.js';
+import { getLedgerPath } from '../core/ledger.js';
+import { timestamp } from '../utils/time.js';
+import { confirm, selectFromList, isInteractive } from '../utils/prompt.js';
+import type { AuthTokens, Workspace } from '../cloud/types.js';
+import type { Config } from '../types.js';
 
 export function registerLoginCommand(program: Command): void {
   program
@@ -12,28 +21,151 @@ export function registerLoginCommand(program: Command): void {
     .description('Authenticate with Mentu Cloud')
     .option('--token <token>', 'Use existing access token (for CI/CD)')
     .option('--json', 'Output as JSON')
+    .option('--no-interactive', 'Skip all interactive prompts')
     .action(async (options) => {
       try {
-        // Check if already logged in
-        const existing = await getCredentials();
-        if (existing && !options.token) {
-          if (options.json) {
-            console.log(JSON.stringify({
-              success: true,
-              email: existing.email,
-              message: 'Already logged in'
-            }));
-          } else {
-            console.log(`Already logged in as ${existing.email}`);
-            console.log('Run "mentu logout" first to switch accounts.');
-          }
+        // --- Token login (CI/CD) bypasses the state machine ---
+        if (options.token) {
+          await loginWithToken(options.token, options.json);
           return;
         }
 
-        if (options.token) {
-          await loginWithToken(options.token, options.json);
-        } else {
+        // --- Step 1: Credential state check ---
+        const { state, credentials } = await checkCredentialState();
+        let email: string | undefined;
+
+        if (state === 'valid' && credentials) {
+          email = credentials.email;
+          if (!options.json) {
+            console.log(`Logged in as ${email}`);
+          }
+        } else if (state === 'expired_unrecoverable' && credentials) {
+          if (!options.json) {
+            console.log(`Session expired for ${credentials.email}. Re-authenticating...`);
+          }
           await loginWithBrowser(options.json);
+          const fresh = await getCredentials();
+          email = fresh?.email;
+        } else {
+          // state === 'none'
+          await loginWithBrowser(options.json);
+          const fresh = await getCredentials();
+          email = fresh?.email;
+        }
+
+        // --- Step 2: Post-auth context (workspace list) ---
+        let workspaces: Workspace[] = [];
+        try {
+          const client = await CloudClient.create();
+          workspaces = await client.listWorkspaces();
+        } catch {
+          // Cloud unreachable — skip workspace list gracefully
+        }
+
+        if (options.json) {
+          console.log(JSON.stringify({
+            success: true,
+            email,
+            workspaces: workspaces.map(w => ({ name: w.name, role: w.role })),
+          }));
+          return;
+        }
+
+        if (workspaces.length > 0) {
+          console.log('\nWorkspaces:');
+          for (const ws of workspaces) {
+            console.log(`  ${ws.name} [${ws.role}]`);
+          }
+        } else if (workspaces.length === 0) {
+          console.log('\nNo cloud workspaces yet.');
+        }
+
+        // Non-interactive: stop here
+        if (!isInteractive(options)) {
+          return;
+        }
+
+        // --- Step 3: Project detection ---
+        const cwd = process.cwd();
+        if (!isInProject(cwd)) {
+          console.log('\nNot in a project directory. cd into a project and run mentu init.');
+          return;
+        }
+
+        // --- Step 4: Local init (if needed) ---
+        const projectName = path.basename(cwd);
+        let workspacePath: string | null = null;
+
+        try {
+          workspacePath = findWorkspace(cwd);
+        } catch {
+          // No .mentu/ found
+        }
+
+        if (!workspacePath) {
+          const shouldInit = await confirm(`\nInitialize Mentu in ./${projectName}?`);
+          if (shouldInit) {
+            doLocalInit(cwd);
+            workspacePath = cwd;
+            console.log('Created .mentu/ with config.yaml and ledger.jsonl');
+          } else {
+            console.log('\nRun "mentu init" when ready.');
+            return;
+          }
+        }
+
+        // --- Step 5: Workspace connection (if needed) ---
+        const config = readConfig(workspacePath);
+        const cloudConfig = (config as any)?.cloud;
+
+        if (cloudConfig?.enabled && cloudConfig?.workspace_id) {
+          // Already connected — find workspace name
+          const connectedWs = workspaces.find(w => w.id === cloudConfig.workspace_id);
+          console.log(`\nConnected to workspace: ${connectedWs?.name || cloudConfig.workspace_id}`);
+          return;
+        }
+
+        // Need to connect
+        if (workspaces.length === 0) {
+          // Offer to create one
+          const shouldCreate = await confirm(`\nCreate cloud workspace "${projectName}"?`);
+          if (shouldCreate) {
+            try {
+              const client = await CloudClient.create();
+              const result = await client.createWorkspace(projectName);
+              if (result.workspace) {
+                connectWorkspaceLocally(workspacePath, config, result.workspace);
+                console.log(`Created and connected to workspace: ${projectName}`);
+              } else {
+                console.error(`Error creating workspace: ${result.error}`);
+              }
+            } catch (err) {
+              console.error(`Error: ${err instanceof Error ? err.message : 'Failed to create workspace'}`);
+            }
+          } else {
+            console.log('\nRun "mentu workspace create <name>" when ready.');
+          }
+        } else if (workspaces.length === 1) {
+          const ws = workspaces[0];
+          const shouldConnect = await confirm(`\nConnect to "${ws.name}"?`);
+          if (shouldConnect) {
+            connectWorkspaceLocally(workspacePath, config, ws);
+            console.log(`Connected to workspace: ${ws.name}`);
+          } else {
+            console.log('\nRun "mentu workspace connect <name>" when ready.');
+          }
+        } else {
+          // Multiple workspaces — picker
+          console.log('');
+          const items = workspaces.map(w => `${w.name} [${w.role}]`);
+          const idx = await selectFromList(items, 'Connect to workspace');
+          if (idx >= 0) {
+            const ws = workspaces[idx];
+            connectWorkspaceLocally(workspacePath, config, ws);
+            console.log(`Connected to workspace: ${ws.name}`);
+          } else {
+            console.log('\nRun "mentu workspace connect <name>" when ready.');
+          }
         }
       } catch (error) {
         const message = error instanceof Error ? error.message : 'Login failed';
@@ -46,6 +178,72 @@ export function registerLoginCommand(program: Command): void {
       }
     });
 }
+
+// ============================================
+// Helper functions
+// ============================================
+
+/**
+ * Check if the current directory looks like a project.
+ */
+function isInProject(dir: string): boolean {
+  return (
+    fs.existsSync(path.join(dir, '.git')) ||
+    fs.existsSync(path.join(dir, 'package.json'))
+  );
+}
+
+/**
+ * Initialize .mentu/ in the given directory (extracted from init.ts logic).
+ */
+function doLocalInit(projectRoot: string): void {
+  const mentuDir = getMentuDir(projectRoot);
+  fs.mkdirSync(mentuDir, { recursive: true });
+
+  // Create empty ledger
+  const ledgerPath = getLedgerPath(projectRoot);
+  fs.writeFileSync(ledgerPath, '', 'utf-8');
+
+  // Create config
+  const workspaceName = path.basename(projectRoot);
+  const config: Config = {
+    workspace: workspaceName,
+    created: timestamp(),
+  };
+  writeConfig(projectRoot, config);
+
+  // Update .gitignore
+  const gitignorePath = path.join(projectRoot, '.gitignore');
+  const mentuEntry = '.mentu/';
+  if (fs.existsSync(gitignorePath)) {
+    const content = fs.readFileSync(gitignorePath, 'utf-8');
+    if (!content.includes(mentuEntry)) {
+      fs.appendFileSync(gitignorePath, `\n# Mentu workspace\n${mentuEntry}\n`, 'utf-8');
+    }
+  } else {
+    fs.writeFileSync(gitignorePath, `# Mentu workspace\n${mentuEntry}\n`, 'utf-8');
+  }
+}
+
+/**
+ * Write cloud config to .mentu/config.yaml and initialize sync state.
+ */
+function connectWorkspaceLocally(workspacePath: string, config: Config | null, workspace: Workspace): void {
+  const updatedConfig: Config = {
+    ...(config || { workspace: path.basename(workspacePath), created: timestamp() }),
+    cloud: {
+      enabled: true,
+      endpoint: process.env.SUPABASE_URL || '',
+      workspace_id: workspace.id,
+    },
+  };
+  writeConfig(workspacePath, updatedConfig);
+  initSyncState(workspacePath, workspace.id);
+}
+
+// ============================================
+// Auth methods (unchanged)
+// ============================================
 
 /**
  * Login using a direct access token (for CI/CD).
