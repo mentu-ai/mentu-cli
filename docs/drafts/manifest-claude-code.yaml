@@ -1,0 +1,198 @@
+# Draft manifest for claude-code
+# Location: claude-code/.mentu/manifest.yaml
+# Status: DRAFT - Requires human review before deployment
+# Created: 2026-01-01
+# Author: agent:claude-meta-layer
+
+name: claude-code
+description: Claude Code coordination repository for Mentu operations and remote agent execution
+version: "1.0.0"
+
+requires:
+  - node >= 18
+  - bash
+  - curl
+  - jq
+
+capabilities:
+  # Memory Operations
+  - name: capture-memory
+    description: Capture a memory via Mentu proxy
+    command: tools/capture-memory.sh
+    inputs:
+      body:
+        type: string
+        required: true
+        description: Memory content
+      kind:
+        type: string
+        required: false
+        description: Memory kind (observation, task, evidence)
+    outputs:
+      id:
+        type: string
+        description: Memory ID (mem_XXXXXXXX)
+
+  # Commitment Operations
+  - name: create-commitment
+    description: Create a commitment from a memory
+    command: tools/create-commitment.sh
+    inputs:
+      body:
+        type: string
+        required: true
+        description: Commitment description
+      source:
+        type: string
+        required: true
+        description: Source memory ID
+    outputs:
+      id:
+        type: string
+        description: Commitment ID (cmt_XXXXXXXX)
+
+  - name: claim-commitment
+    description: Claim responsibility for a commitment
+    command: tools/claim-commitment.sh
+    inputs:
+      id:
+        type: string
+        required: true
+        description: Commitment ID to claim
+    outputs:
+      success:
+        type: boolean
+        description: Whether claim succeeded
+
+  - name: close-commitment
+    description: Close a commitment with evidence
+    command: tools/close-commitment.sh
+    inputs:
+      id:
+        type: string
+        required: true
+        description: Commitment ID to close
+      evidence:
+        type: string
+        required: true
+        description: Evidence memory ID
+    outputs:
+      success:
+        type: boolean
+        description: Whether close succeeded
+
+  # Query Operations
+  - name: query-commitments
+    description: Query commitments with optional state filter
+    command: tools/query-commitments.sh
+    inputs:
+      state:
+        type: string
+        required: false
+        description: Filter by state (open, claimed, in_review, closed)
+      limit:
+        type: number
+        required: false
+        description: Maximum results to return
+    outputs:
+      commitments:
+        type: array
+        description: List of commitment records
+
+  - name: query-commitment-detail
+    description: Get detailed commitment information
+    command: tools/query-commitment-detail.sh
+    inputs:
+      id:
+        type: string
+        required: true
+        description: Commitment ID
+    outputs:
+      commitment:
+        type: object
+        description: Full commitment record
+
+  - name: query-memories
+    description: Query memories with optional kind filter
+    command: tools/query-memories.sh
+    inputs:
+      kind:
+        type: string
+        required: false
+        description: Filter by kind (task, evidence, observation)
+      limit:
+        type: number
+        required: false
+        description: Maximum results to return
+    outputs:
+      memories:
+        type: array
+        description: List of memory records
+
+  # Bridge Operations
+  - name: send-command
+    description: Send a command to Mac bridge for execution
+    command: tools/send-command.sh
+    inputs:
+      prompt:
+        type: string
+        required: true
+        description: Agent prompt to execute
+      working_directory:
+        type: string
+        required: true
+        description: Directory to execute in
+      agent:
+        type: string
+        required: false
+        description: Agent type (default: claude)
+    outputs:
+      command_id:
+        type: string
+        description: Bridge command ID
+
+  - name: check-bridge
+    description: Check bridge machine status
+    command: tools/check-bridge.sh
+    outputs:
+      machines:
+        type: array
+        description: List of registered machines with status
+
+  # Discovery Operations
+  - name: discover
+    description: Discover capabilities in a repository
+    command: tools/discover.sh
+    inputs:
+      repo_path:
+        type: string
+        required: false
+        description: Path to repository (default: current)
+    outputs:
+      manifest:
+        type: object
+        description: Discovered manifest content
+
+  - name: invoke
+    description: Invoke a discovered capability
+    command: tools/invoke.sh
+    inputs:
+      capability:
+        type: string
+        required: true
+        description: Capability name to invoke
+      args:
+        type: object
+        required: false
+        description: Arguments to pass
+    outputs:
+      result:
+        type: object
+        description: Capability execution result
+
+dependencies: []
+  # claude-code is standalone tooling - no ecosystem dependencies
+
+mentu:
+  actor: agent:claude-code
+  auto_capture: false

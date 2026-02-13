@@ -28,7 +28,8 @@ export type ErrorCode =
   | 'E_UNAUTHORIZED'
   | 'E_FORBIDDEN'
   | 'E_NOT_FOUND'
-  | 'E_INTERNAL';
+  | 'E_INTERNAL'
+  | 'E_VISUAL_TEST_SPEC_NOT_FOUND';
 
 // Custom error class
 export class MentuError extends Error {
@@ -55,7 +56,8 @@ export type OperationType =
   | 'capture' | 'commit' | 'claim' | 'release' | 'close' | 'annotate'
   | 'link' | 'dismiss' | 'triage'
   | 'submit' | 'approve' | 'reopen'
-  | 'publish';
+  | 'publish'
+  | 'cancel';
 
 // Link relationship types (v0.8)
 export type LinkKind =
@@ -118,6 +120,12 @@ export interface DismissPayload {
   tags?: string[];    // optional categorization
 }
 
+// v1.0: Cancel operation payload
+export interface CancelPayload {
+  commitment: string;
+  reason: string;
+}
+
 export interface TriageDecision {
   memory: string;                 // mem_xxx
   action: 'create' | 'link' | 'dismiss' | 'defer';
@@ -167,7 +175,8 @@ export type Payload =
   | TriagePayload
   | SubmitPayload
   | ApprovePayload
-  | ReopenPayload;
+  | ReopenPayload
+  | CancelPayload;
 
 // Base operation (common envelope)
 export interface BaseOperation {
@@ -244,6 +253,11 @@ export interface ReopenOperation extends BaseOperation {
   payload: ReopenPayload;
 }
 
+export interface CancelOperation extends BaseOperation {
+  op: 'cancel';
+  payload: CancelPayload;
+}
+
 // Publish types (v1.1)
 export interface PublishPayload {
   id: string;
@@ -273,7 +287,8 @@ export type Operation =
   | SubmitOperation
   | ApproveOperation
   | ReopenOperation
-  | PublishOperation;
+  | PublishOperation
+  | CancelOperation;
 
 // Computed state types
 // Commitment states (v1.0)
@@ -366,6 +381,29 @@ export interface CloudConfig {
   enabled: boolean;
   endpoint: string;
   workspace_id: string;
+}
+
+// Commitment templates (v1.0)
+export interface CommitmentTemplate {
+  id: string;
+  workspace_id: string;
+  name: string;
+  body_template: string;
+  recurrence: {
+    frequency: 'daily' | 'weekly' | 'monthly' | 'cron';
+    days: number[];
+    time: string;
+    timezone: string;
+  };
+  defaults: {
+    duration_estimate?: number;
+    priority?: number;
+    source?: string;
+    tags?: string[];
+  };
+  active: boolean;
+  created_at?: string;
+  updated_at?: string;
 }
 
 // Config types
@@ -475,6 +513,15 @@ export interface ReleaseOutput {
   actor: string;
   commitment: string;
   reason?: string;
+}
+
+export interface CancelOutput {
+  id: string;
+  op: 'cancel';
+  ts: string;
+  actor: string;
+  commitment: string;
+  reason: string;
 }
 
 export interface CloseOutput {

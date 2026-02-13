@@ -1,7 +1,7 @@
 #!/bin/bash
 # Test UTL ticket creation with GitHub integration
 
-SERVICE_ROLE="<JWT_REDACTED>"
+SERVICE_ROLE="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVod2llZ3dwYWFnenVsb2xtcnV6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NjE4NDM4NSwiZXhwIjoyMDgxNzYwMzg1fQ.N3Vyv_MDYMbikBBjrq-JwqV9NXp4i5nFE_9Npzk31fI"
 
 echo "Creating test ticket..."
 echo ""

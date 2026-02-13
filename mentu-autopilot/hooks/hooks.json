@@ -1,0 +1,15 @@
+{
+  "description": "Mentu Autopilot stop hook for wave-based continuation loops",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/autopilot_stop.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+# Draft manifest for mentu-proxy
+# Location: mentu-proxy/.mentu/manifest.yaml
+# Status: DRAFT - Requires human review before deployment
+# Created: 2026-01-01
+# Author: agent:claude-meta-layer
+
+name: mentu-proxy
+description: Cloudflare Worker proxy for Mentu API - secure mobile access
+version: "1.0.0"
+
+requires:
+  - node >= 18
+  - wrangler
+
+capabilities:
+  # Core API Routing
+  - name: route-ops
+    description: Forward ledger operations to Mentu API edge function
+    command: POST /ops
+    inputs:
+      op:
+        type: string
+        required: true
+        description: Operation type (capture, commit, claim, close, etc.)
+      body:
+        type: string
+        required: true
+        description: Operation payload
+      actor:
+        type: string
+        required: false
+        description: Actor performing operation
+    outputs:
+      id:
+        type: string
+        description: Created record ID
+
+  # Bridge Command Queue
+  - name: bridge-commands
+    description: Accept commands for Mac bridge execution
+    command: POST /bridge/commands
+    inputs:
+      workspace_id:
+        type: string
+        required: true
+        description: Target workspace ID
+      prompt:
+        type: string
+        required: true
+        description: Agent prompt to execute
+      working_directory:
+        type: string
+        required: true
+        description: Execution directory
+      agent:
+        type: string
+        required: true
+        description: Agent type (claude, bash)
+    outputs:
+      id:
+        type: string
+        description: Command ID
+
+  # Signal Ingestion
+  - name: signal-github
+    description: Accept GitHub webhook events and transform to memories
+    command: POST /signals/github
+    inputs:
+      event_type:
+        type: string
+        required: true
+        description: GitHub event type (push, pull_request, issues)
+      payload:
+        type: object
+        required: true
+        description: GitHub webhook payload
+    outputs:
+      memory_id:
+        type: string
+        description: Created memory ID
+      source_key:
+        type: string
+        description: Idempotency key
+
+  # Health Check
+  - name: health-check
+    description: Return service health status
+    command: GET /health
+    outputs:
+      status:
+        type: string
+        description: healthy, degraded
+      timestamp:
+        type: string
+        description: ISO 8601 timestamp
+      services:
+        type: array
+        description: List of available services
+
+  # Info Endpoint
+  - name: info
+    description: Return workspace and endpoint configuration
+    command: GET /info
+    outputs:
+      workspace_id:
+        type: string
+        description: Configured workspace ID
+      mentu_endpoint:
+        type: string
+        description: Mentu API endpoint URL
+      supabase_url:
+        type: string
+        description: Supabase project URL
+
+  # REST Passthrough
+  - name: rest-query
+    description: Forward REST queries to Supabase PostgREST
+    command: GET/POST /rest/v1/{table}
+    inputs:
+      table:
+        type: string
+        required: true
+        description: Supabase table name
+      query:
+        type: string
+        required: false
+        description: PostgREST query parameters
+    outputs:
+      data:
+        type: array
+        description: Query results
+
+dependencies:
+  - name: mentu-ai
+    relationship: schema-consumer
+    description: Uses Supabase tables (commitments, memories, operations)
+
+mentu:
+  actor: agent:proxy-worker
+  auto_capture: false

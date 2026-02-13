@@ -409,38 +409,102 @@ const HEAD = `
 <script>mermaid.initialize({startOnLoad:true, theme:'neutral', securityLevel:'loose'});</script>
 <style>
   :root {
-    --slate-50: #f8fafc;
-    --slate-100: #f1f5f9;
-    --slate-200: #e2e8f0;
-    --slate-300: #cbd5e1;
-    --slate-400: #94a3b8;
-    --slate-500: #64748b;
-    --slate-600: #475569;
-    --slate-700: #334155;
-    --slate-800: #1e293b;
-    --slate-900: #0f172a;
+    /* Base palette - Zinc (matches mentu-web) */
+    --zinc-50: #fafafa;
+    --zinc-100: #f4f4f5;
+    --zinc-200: #e4e4e7;
+    --zinc-300: #d4d4d8;
+    --zinc-400: #a1a1aa;
+    --zinc-500: #71717a;
+    --zinc-600: #52525b;
+    --zinc-700: #3f3f46;
+    --zinc-800: #27272a;
+    --zinc-900: #18181b;
+    --zinc-950: #09090b;
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-400: #60a5fa;
     --blue-500: #3b82f6;
     --blue-600: #2563eb;
+    --green-400: #4ade80;
     --green-500: #22c55e;
     --pink-500: #ec4899;
+    --purple-400: #c084fc;
     --purple-500: #a855f7;
+
+    /* Semantic tokens - Light Mode */
+    --bg-primary: #ffffff;
+    --bg-secondary: var(--zinc-50);
+    --bg-tertiary: var(--zinc-100);
+    --text-primary: #171717;
+    --text-secondary: var(--zinc-600);
+    --text-muted: var(--zinc-500);
+    --border-primary: var(--zinc-200);
+    --border-secondary: var(--zinc-100);
+
+    /* Code block tokens - Light Mode */
+    --code-bg: var(--zinc-50);
+    --code-text: var(--zinc-800);
+    --code-line-num: var(--zinc-400);
+    --code-border: var(--zinc-200);
+    --code-titlebar: #ffffff;
+
+    /* Syntax highlighting - Light Mode */
+    --syn-keyword: #8b5cf6;
+    --syn-string: #059669;
+    --syn-comment: #6b7280;
+    --syn-number: #6366f1;
+    --syn-function: #ea580c;
+    --syn-const: #dc2626;
+    --syn-property: #0891b2;
   }
-  
+
+  /* Dark Mode - matches mentu-web exactly */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #18181b;
+      --bg-tertiary: #27272a;
+      --text-primary: #ededed;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --border-primary: #27272a;
+      --border-secondary: #3f3f46;
+
+      /* Code block tokens - Dark Mode */
+      --code-bg: #18181b;
+      --code-text: #ededed;
+      --code-line-num: #52525b;
+      --code-border: #27272a;
+      --code-titlebar: #0a0a0a;
+
+      /* Syntax highlighting - Dark Mode */
+      --syn-keyword: #c084fc;
+      --syn-string: #4ade80;
+      --syn-comment: #71717a;
+      --syn-number: #60a5fa;
+      --syn-function: #fdba74;
+      --syn-const: #f87171;
+      --syn-property: #22d3ee;
+    }
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  
-  body { 
+
+  body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--slate-50);
-    color: var(--slate-800);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
   
   /* Navigation */
   nav {
-    background: white;
+    background: var(--bg-primary);
     padding: 0 1.5rem;
-    border-bottom: 1px solid var(--slate-200);
+    border-bottom: 1px solid var(--border-primary);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -456,37 +520,37 @@ const HEAD = `
   nav .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--slate-900);
+    color: var(--text-primary);
     text-decoration: none;
     letter-spacing: -0.025em;
   }
   nav .logo span { color: var(--blue-500); }
   nav .links { display: flex; gap: 2rem; align-items: center; }
-  nav .links a { 
-    color: var(--slate-500); 
-    text-decoration: none; 
+  nav .links a {
+    color: var(--text-muted);
+    text-decoration: none;
     font-weight: 500;
     font-size: 0.9375rem;
     transition: color 0.15s;
   }
-  nav .links a:hover { color: var(--slate-900); }
+  nav .links a:hover { color: var(--text-primary); }
   
   /* Hero */
   .hero {
     text-align: center;
     padding: 5rem 1.5rem;
-    background: linear-gradient(to bottom, white, var(--slate-50));
+    background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
   }
   .hero h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 900;
     letter-spacing: -0.03em;
-    color: var(--slate-900);
+    color: var(--text-primary);
     margin-bottom: 1rem;
   }
-  .hero p { 
-    font-size: 1.25rem; 
-    color: var(--slate-500);
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
     max-width: 36rem;
     margin: 0 auto;
   }
@@ -506,21 +570,21 @@ const HEAD = `
     padding: 3rem 0 5rem;
   }
   .module-card {
-    background: white;
+    background: var(--bg-primary);
     border-radius: 1rem;
     padding: 1.75rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.05);
-    border: 1px solid var(--slate-100);
+    border: 1px solid var(--border-secondary);
     transition: box-shadow 0.2s, transform 0.2s;
   }
   .module-card:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     transform: translateY(-2px);
   }
   .module-card h2 {
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--slate-400);
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
@@ -540,22 +604,22 @@ const HEAD = `
   .module-card.assets h2::before { background: var(--pink-500); }
   
   .module-card ul { list-style: none; }
-  .module-card li { 
+  .module-card li {
     padding: 0.625rem 0;
-    border-bottom: 1px solid var(--slate-100);
+    border-bottom: 1px solid var(--border-secondary);
   }
   .module-card li:last-child { border-bottom: none; }
   .module-card a {
-    color: var(--slate-700);
+    color: var(--text-secondary);
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.875rem;
     display: block;
     transition: color 0.15s;
   }
-  .module-card a:hover { color: var(--blue-600); }
+  .module-card a:hover { color: var(--blue-500); }
   .module-card .empty {
-    color: var(--slate-400);
+    color: var(--text-muted);
     font-size: 0.875rem;
     font-style: italic;
   }
@@ -569,26 +633,67 @@ const HEAD = `
   article .meta {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 0.75rem;
-    color: var(--slate-500);
+    color: var(--text-muted);
     font-size: 0.875rem;
     padding-bottom: 1.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--slate-200);
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-primary);
   }
-  article .meta a { 
-    color: var(--blue-500); 
+  article .meta-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  article .meta a {
+    color: var(--blue-500);
     text-decoration: none;
     font-weight: 500;
+  }
+  .details-toggle {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .details-toggle:hover {
+    background: var(--border-primary);
+    border-color: var(--border-secondary);
+  }
+  .details-toggle[aria-expanded="true"] {
+    background: var(--blue-100);
+    border-color: var(--blue-200);
+    color: var(--blue-600);
+  }
+  .metadata-panel-wrapper {
+    overflow: hidden;
+    transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
+  }
+  .metadata-panel-wrapper[aria-hidden="true"] {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .metadata-panel-wrapper[aria-hidden="false"] {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   article .meta a:hover { text-decoration: underline; }
   article .badge {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    background: var(--slate-100);
-    color: var(--slate-600);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;
@@ -609,67 +714,71 @@ const HEAD = `
   
   article .path {
     font-family: 'JetBrains Mono', monospace;
-    color: var(--slate-600);
+    color: var(--text-secondary);
   }
-  article .sep { color: var(--slate-300); }
-  
-  /* Prose */
-  .prose h1 { 
-    font-size: 2.5rem; 
-    font-weight: 800; 
-    margin: 0 0 1.5rem; 
-    color: var(--slate-900);
+  article .sep { color: var(--text-muted); }
+
+  /* Prose - add top margin when metadata is hidden */
+  .prose {
+    margin-top: 2rem;
+  }
+  .prose h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1.5rem;
+    color: var(--text-primary);
     letter-spacing: -0.025em;
     line-height: 1.2;
   }
-  .prose h2 { 
-    font-size: 1.5rem; 
-    font-weight: 700; 
-    margin: 2.5rem 0 1rem; 
-    color: var(--slate-900);
+  .prose h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1rem;
+    color: var(--text-primary);
     letter-spacing: -0.015em;
   }
-  .prose h3 { 
-    font-size: 1.25rem; 
-    font-weight: 600; 
-    margin: 2rem 0 0.75rem; 
-    color: var(--slate-900); 
+  .prose h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+    color: var(--text-primary);
   }
-  .prose p { 
-    margin: 1.25rem 0; 
-    color: var(--slate-600);
+  .prose p {
+    margin: 1.25rem 0;
+    color: var(--text-secondary);
     font-size: 1.0625rem;
     line-height: 1.75;
   }
-  .prose ul, .prose ol { 
-    margin: 1.25rem 0; 
-    padding-left: 1.5rem; 
+  .prose ul, .prose ol {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
   }
-  .prose li { 
-    margin: 0.5rem 0; 
-    color: var(--slate-600);
+  .prose li {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
     line-height: 1.75;
   }
-  .prose li::marker { color: var(--slate-400); }
-  
+  .prose li::marker { color: var(--text-muted); }
+
   .prose code {
-    background: var(--slate-100);
+    background: var(--bg-tertiary);
     padding: 0.125rem 0.375rem;
     border-radius: 0.25rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.875em;
-    color: var(--pink-500);
+    color: var(--syn-const);
   }
-  
+
   .prose pre {
-    background: var(--slate-900);
-    color: var(--slate-100);
+    background: var(--code-bg);
+    color: var(--code-text);
     padding: 1.25rem 1.5rem;
     border-radius: 0.75rem;
     overflow-x: auto;
     margin: 1.75rem 0;
     font-size: 0.875rem;
     line-height: 1.75;
+    border: 1px solid var(--code-border);
   }
   .prose pre code {
     background: none;
@@ -677,31 +786,31 @@ const HEAD = `
     color: inherit;
     font-size: inherit;
   }
-  
-  .prose strong { font-weight: 600; color: var(--slate-800); }
+
+  .prose strong { font-weight: 600; color: var(--text-primary); }
   .prose em { font-style: italic; }
-  
+
   .prose a {
     color: var(--blue-500);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
   .prose a:hover { color: var(--blue-600); }
-  
+
   .prose blockquote {
     border-left: 3px solid var(--blue-500);
     padding-left: 1rem;
     margin: 1.5rem 0;
-    color: var(--slate-600);
+    color: var(--text-secondary);
     font-style: italic;
   }
-  
+
   .prose hr {
     border: none;
-    border-top: 1px solid var(--slate-200);
+    border-top: 1px solid var(--border-primary);
     margin: 2.5rem 0;
   }
-  
+
   .prose img {
     max-width: 100%;
     height: auto;
@@ -709,54 +818,79 @@ const HEAD = `
     margin: 1.5rem 0;
   }
   
-  /* Code Window */
+  /* Code Window - Adaptive light/dark theme with line numbers */
   .code-window {
-    background: white;
+    background: var(--code-bg);
     border-radius: 0.75rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    border: 1px solid var(--slate-200);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid var(--code-border);
     overflow: hidden;
     margin: 1.75rem 0;
   }
   .code-window .titlebar {
     display: flex;
     align-items: center;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--slate-100);
-    background: var(--slate-50);
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid var(--code-border);
+    background: var(--code-titlebar);
   }
   .code-window .dots {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.375rem;
   }
   .code-window .dot {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.625rem;
+    height: 0.625rem;
     border-radius: 50%;
-    background: var(--slate-200);
+    background: var(--text-muted);
+    opacity: 0.5;
   }
   .code-window .filename {
     flex: 1;
     text-align: center;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-family: 'JetBrains Mono', monospace;
-    color: var(--slate-400);
+    color: var(--text-muted);
   }
   .code-window pre {
     margin: 0;
-    padding: 1.25rem;
-    background: var(--slate-900);
+    padding: 1rem 1.25rem;
+    background: var(--code-bg);
     border-radius: 0;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    counter-reset: line;
+    overflow-x: auto;
+  }
+  .code-window code {
+    display: block;
+    color: var(--code-text);
+  }
+  .code-window .line {
+    display: block;
+    padding-left: 3rem;
+    position: relative;
+    min-height: 1.7em;
+  }
+  .code-window .line::before {
+    counter-increment: line;
+    content: counter(line);
+    position: absolute;
+    left: 0;
+    width: 2rem;
+    text-align: right;
+    color: var(--code-line-num);
+    font-size: 0.75rem;
+    user-select: none;
   }
   
   /* Mermaid */
   .mermaid {
-    background: white;
+    background: var(--bg-primary);
     border-radius: 0.75rem;
     padding: 1.5rem;
     margin: 1.75rem 0;
-    border: 1px solid var(--slate-200);
+    border: 1px solid var(--border-primary);
     text-align: center;
   }
   
@@ -770,15 +904,15 @@ const HEAD = `
   .prose th, .prose td {
     padding: 0.75rem 1rem;
     text-align: left;
-    border-bottom: 1px solid var(--slate-200);
+    border-bottom: 1px solid var(--border-primary);
   }
   .prose th {
-    background: var(--slate-50);
+    background: var(--bg-secondary);
     font-weight: 600;
-    color: var(--slate-700);
+    color: var(--text-secondary);
   }
-  .prose td { color: var(--slate-600); }
-  .prose tr:hover td { background: var(--slate-50); }
+  .prose td { color: var(--text-secondary); }
+  .prose tr:hover td { background: var(--bg-secondary); }
   
   /* 404 */
   .not-found {
@@ -788,19 +922,21 @@ const HEAD = `
   .not-found h1 {
     font-size: 8rem;
     font-weight: 900;
-    color: var(--slate-200);
+    color: var(--border-primary);
     line-height: 1;
   }
-  .not-found p { color: var(--slate-500); margin: 1rem 0; }
+  .not-found p { color: var(--text-muted); margin: 1rem 0; }
   .not-found a { color: var(--blue-500); }
   
-  /* Syntax Highlighting */
-  .token-keyword { color: #f472b6; }
-  .token-string { color: #a5f3fc; }
-  .token-comment { color: #64748b; }
-  .token-number { color: #fbbf24; }
-  .token-function { color: #c4b5fd; }
-  .token-const { color: #7dd3fc; }
+  /* Syntax Highlighting - Uses semantic tokens for dark/light */
+  .token-keyword { color: var(--syn-keyword); }
+  .token-string { color: var(--syn-string); }
+  .token-comment { color: var(--syn-comment); }
+  .token-number { color: var(--syn-number); }
+  .token-function { color: var(--syn-function); }
+  .token-const { color: var(--syn-const); }
+  .token-property { color: var(--syn-property); }
+  .token-variable { color: var(--text-secondary); }
 
   /* Phase 3: Workspace Switcher */
   .workspace-switcher {
@@ -812,18 +948,18 @@ const HEAD = `
   }
   .workspace-switcher select {
     appearance: none;
-    background: var(--slate-100);
-    border: 1px solid var(--slate-200);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
     border-radius: 0.5rem;
     padding: 0.375rem 2rem 0.375rem 0.75rem;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--slate-700);
+    color: var(--text-secondary);
     cursor: pointer;
     transition: border-color 0.15s, background 0.15s;
   }
   .workspace-switcher select:hover {
-    background: white;
+    background: var(--bg-primary);
     border-color: var(--blue-500);
   }
   .workspace-switcher::after {
@@ -833,7 +969,7 @@ const HEAD = `
     top: 50%;
     transform: translateY(-50%);
     border: 4px solid transparent;
-    border-top-color: var(--slate-400);
+    border-top-color: var(--text-muted);
     pointer-events: none;
   }
 
@@ -846,9 +982,10 @@ const HEAD = `
     width: 100%;
     padding: 0.875rem 1.25rem;
     font-size: 1rem;
-    border: 2px solid var(--slate-200);
+    border: 2px solid var(--border-primary);
     border-radius: 0.75rem;
-    background: white;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     transition: border-color 0.15s, box-shadow 0.15s;
   }
   .search-bar input:focus {
@@ -857,11 +994,11 @@ const HEAD = `
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   }
   .search-bar input::placeholder {
-    color: var(--slate-400);
+    color: var(--text-muted);
   }
   .search-results-count {
     text-align: center;
-    color: var(--slate-500);
+    color: var(--text-muted);
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
   }
@@ -872,7 +1009,7 @@ const HEAD = `
     align-items: center;
     gap: 0.25rem;
     font-size: 0.75rem;
-    color: var(--slate-400);
+    color: var(--text-muted);
     margin-left: 0.5rem;
   }
   .stat-badge svg {
@@ -882,18 +1019,18 @@ const HEAD = `
 
   /* Phase 4: Version History */
   .version-history {
-    background: var(--slate-50);
+    background: var(--bg-secondary);
     border-radius: 0.5rem;
     padding: 1rem;
     margin-top: 1.5rem;
-    border: 1px solid var(--slate-200);
+    border: 1px solid var(--border-primary);
   }
   .version-history h4 {
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--slate-500);
+    color: var(--text-muted);
     margin-bottom: 0.75rem;
   }
   .version-history ul {
@@ -907,7 +1044,7 @@ const HEAD = `
     gap: 0.75rem;
     padding: 0.5rem 0;
     font-size: 0.875rem;
-    border-bottom: 1px solid var(--slate-200);
+    border-bottom: 1px solid var(--border-primary);
   }
   .version-history li:last-child {
     border-bottom: none;
@@ -918,11 +1055,11 @@ const HEAD = `
     font-family: 'JetBrains Mono', monospace;
   }
   .version-history .version-date {
-    color: var(--slate-500);
+    color: var(--text-muted);
     font-size: 0.8125rem;
   }
   .version-history .version-actor {
-    color: var(--slate-400);
+    color: var(--text-muted);
     font-size: 0.8125rem;
     margin-left: auto;
   }
@@ -944,39 +1081,21 @@ const HEAD = `
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
-  .meta-badge.tier-t1 { background: #dcfce7; color: #166534; }
-  .meta-badge.tier-t2 { background: #fef3c7; color: #92400e; }
-  .meta-badge.tier-t3 { background: #fee2e2; color: #991b1b; }
-  .meta-badge.status-pending { background: var(--slate-100); color: var(--slate-600); }
-  .meta-badge.status-claimed { background: #dbeafe; color: #1e40af; }
-  .meta-badge.status-completed { background: #dcfce7; color: #166534; }
+  /* Intent is the primary pillar - what's the purpose? */
+  .meta-badge.intent-execute { background: #fef3c7; color: #92400e; }
+  .meta-badge.intent-reference { background: #e0e7ff; color: #3730a3; }
+  .meta-badge.intent-launch { background: #dcfce7; color: #166534; }
   .meta-badge.intent { background: #f3e8ff; color: #7c3aed; }
-  .card-meta-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.375rem;
-    font-size: 0.75rem;
-    color: var(--slate-400);
-  }
-  .card-meta-row .date { }
-  .card-meta-row .version { font-family: 'JetBrains Mono', monospace; }
+  /* Tier T1 = critical (visible), T2/T3 = silent */
+  .meta-badge.tier-t1 { background: #fee2e2; color: #991b1b; }
 
-  /* Metadata Panel (Detail View) */
+  /* Metadata Panel (Detail View) - minimal pillars */
   .metadata-panel {
-    background: white;
-    border: 1px solid var(--slate-200);
-    border-radius: 0.75rem;
-    padding: 1.25rem;
-    margin-bottom: 2rem;
-  }
-  .metadata-panel h4 {
-    font-size: 0.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--slate-400);
-    margin: 0 0 1rem 0;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
   }
   .metadata-grid {
     display: grid;
@@ -993,11 +1112,11 @@ const HEAD = `
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--slate-400);
+    color: var(--text-muted);
   }
   .metadata-item .value {
     font-size: 0.875rem;
-    color: var(--slate-700);
+    color: var(--text-secondary);
   }
   .metadata-item .value.mono {
     font-family: 'JetBrains Mono', monospace;
@@ -1012,14 +1131,14 @@ const HEAD = `
   .metadata-section {
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--slate-100);
+    border-top: 1px solid var(--border-secondary);
   }
   .metadata-section h5 {
     font-size: 0.625rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--slate-400);
+    color: var(--text-muted);
     margin: 0 0 0.75rem 0;
   }
   .metadata-links {
@@ -1039,38 +1158,51 @@ const HEAD = `
     text-decoration: underline;
   }
   .metadata-links .arrow {
-    color: var(--slate-300);
+    color: var(--text-muted);
   }
 
   /* API Response Styles */
   .api-response {
-    background: var(--slate-900);
-    color: var(--slate-100);
+    background: var(--code-bg);
+    color: var(--code-text);
     padding: 2rem;
     border-radius: 0.75rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.875rem;
     white-space: pre-wrap;
     overflow-x: auto;
+    border: 1px solid var(--code-border);
   }
 </style>
 `;
 
 function syntaxHighlight(code, lang) {
-  return code
+  let highlighted = code
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/(["'`])((?:[^"'`\\]|\\.)*)(\1)/g, '<span class="token-string">$1$2$3</span>')
-    .replace(/\b(const|let|var|function|async|await|return|export|default|import|from|if|else|for|while|class|extends|new|this|try|catch|throw)\b/g, '<span class="token-keyword">$1</span>')
-    .replace(/\b(true|false|null|undefined|NaN|Infinity)\b/g, '<span class="token-const">$1</span>')
-    .replace(/\b(\d+\.?\d*)\b/g, '<span class="token-number">$1</span>')
+    // Comments first (preserve them)
     .replace(/(\/\/.*$)/gm, '<span class="token-comment">$1</span>')
-    .replace(/(\/\*[\s\S]*?\*\/)/g, '<span class="token-comment">$1</span>');
+    .replace(/(\/\*[\s\S]*?\*\/)/g, '<span class="token-comment">$1</span>')
+    // Strings
+    .replace(/(["'`])((?:[^"'`\\]|\\.)*)(\1)/g, '<span class="token-string">$1$2$3</span>')
+    // Keywords
+    .replace(/\b(const|let|var|function|async|await|return|export|default|import|from|if|else|for|while|class|extends|new|this|try|catch|throw|type|interface)\b/g, '<span class="token-keyword">$1</span>')
+    // Constants
+    .replace(/\b(true|false|null|undefined|NaN|Infinity)\b/g, '<span class="token-const">$1</span>')
+    // Function/method calls
+    .replace(/\.([a-zA-Z_][a-zA-Z0-9_]*)\(/g, '.<span class="token-function">$1</span>(')
+    .replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\(/g, '<span class="token-function">$1</span>(')
+    // Numbers
+    .replace(/\b(\d+\.?\d*)\b/g, '<span class="token-number">$1</span>');
+
+  // Wrap each line in a span for line numbers
+  const lines = highlighted.split('\n');
+  return lines.map(line => `<span class="line">${line}</span>`).join('\n');
 }
 
 function renderMarkdown(content) {
-  if (!content) return '<p style="color:var(--slate-400);font-style:italic">No content</p>';
+  if (!content) return '<p style="color:var(--text-muted);font-style:italic">No content</p>';
   
   let html = content;
   
@@ -1256,6 +1388,22 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // API: Restart server (hot reload)
+  if (pathname === '/api/restart' || pathname === '/_restart') {
+    const token = url.searchParams.get('token') || req.headers['x-restart-token'];
+    // Simple auth: must match API token or be from localhost
+    const isLocal = req.socket.remoteAddress === '127.0.0.1' || req.socket.remoteAddress === '::1';
+    if (isLocal || token === API_TOKEN) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'restarting', pid: process.pid }));
+      setTimeout(() => process.exit(0), 100); // Exit cleanly, let supervisor restart
+      return;
+    }
+    res.writeHead(403, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'unauthorized' }));
+    return;
+  }
+
   // ============================================================
   // PHASE 2: Resolve workspace from request
   // ============================================================
@@ -1344,22 +1492,15 @@ const server = http.createServer(async (req, res) => {
           ${items.length === 0
             ? '<p class="empty">No publications yet</p>'
             : `<ul>${items.map(([k, v]) => {
-                const pubStats = stats[v.id] || {};
-                const viewCount = pubStats.view_count || 0;
-                const tierClass = v.tier ? `tier-${v.tier.toLowerCase()}` : '';
-                const statusClass = v.doc_status ? `status-${v.doc_status}` : '';
+                // Minimal, first-principled: Intent (why) + T1 critical only
+                const intentClass = v.intent ? `intent-${v.intent.toLowerCase()}` : 'intent';
+                const isT1 = v.tier && v.tier.toUpperCase() === 'T1';
                 return `<li>
                   <a href="${BASE_PATH}/${workspaceName}${k}">${v.path}</a>
-                  <div class="meta-badges">
-                    ${v.tier ? `<span class="meta-badge ${tierClass}">${v.tier}</span>` : ''}
-                    ${v.doc_status ? `<span class="meta-badge ${statusClass}">${v.doc_status}</span>` : ''}
-                    ${v.intent ? `<span class="meta-badge intent">${v.intent}</span>` : ''}
-                  </div>
-                  <div class="card-meta-row">
-                    ${v.created_date ? `<span class="date">${v.created_date}</span>` : ''}
-                    ${v.doc_version ? `<span class="version">v${v.doc_version}</span>` : ''}
-                    ${viewCount > 0 ? `<span class="stat-badge">${viewIcon} ${viewCount}</span>` : ''}
-                  </div>
+                  ${(v.intent || isT1) ? `<div class="meta-badges">
+                    ${v.intent ? `<span class="meta-badge ${intentClass}">${v.intent}</span>` : ''}
+                    ${isT1 ? `<span class="meta-badge tier-t1">T1</span>` : ''}
+                  </div>` : ''}
                 </li>`;
               }).join('')}</ul>`
           }
@@ -1408,31 +1549,26 @@ const server = http.createServer(async (req, res) => {
       const viewCount = pubStats.view_count || 0;
       const displayName = wsData?.display_name || workspaceName;
 
-      // Build metadata panel if metadata exists
-      const hasMetadata = pub.tier || pub.intent || pub.doc_status || pub.parent_doc || pub.commitment_id;
-      const tierClass = pub.tier ? `tier-${pub.tier.toLowerCase()}` : '';
-      const statusClass = pub.doc_status ? `status-${pub.doc_status}` : '';
+      // Minimal metadata: Intent (why), Tier (if T1), Type (what)
+      const hasMetadata = pub.intent || pub.tier || pub.doc_type || pub.parent_doc || pub.children_docs;
+      const intentClass = pub.intent ? `intent-${pub.intent.toLowerCase()}` : 'intent';
+      const isT1 = pub.tier && pub.tier.toUpperCase() === 'T1';
 
       const metadataPanel = hasMetadata ? `
         <div class="metadata-panel">
-          <h4>Document Metadata</h4>
           <div class="metadata-grid">
+            ${pub.intent ? `<div class="metadata-item"><span class="label">Intent</span><span class="value"><span class="meta-badge ${intentClass}">${pub.intent}</span></span></div>` : ''}
             ${pub.doc_type ? `<div class="metadata-item"><span class="label">Type</span><span class="value">${pub.doc_type}</span></div>` : ''}
-            ${pub.tier ? `<div class="metadata-item"><span class="label">Tier</span><span class="value"><span class="meta-badge ${tierClass}">${pub.tier}</span></span></div>` : ''}
-            ${pub.intent ? `<div class="metadata-item"><span class="label">Intent</span><span class="value"><span class="meta-badge intent">${pub.intent}</span></span></div>` : ''}
-            ${pub.doc_status ? `<div class="metadata-item"><span class="label">Status</span><span class="value"><span class="meta-badge ${statusClass}">${pub.doc_status}</span></span></div>` : ''}
-            ${pub.doc_version ? `<div class="metadata-item"><span class="label">Doc Version</span><span class="value mono">${pub.doc_version}</span></div>` : ''}
-            ${pub.created_date ? `<div class="metadata-item"><span class="label">Created</span><span class="value">${pub.created_date}</span></div>` : ''}
-            ${pub.updated_date ? `<div class="metadata-item"><span class="label">Updated</span><span class="value">${pub.updated_date}</span></div>` : ''}
+            ${isT1 ? `<div class="metadata-item"><span class="label">Tier</span><span class="value"><span class="meta-badge tier-t1">T1 Critical</span></span></div>` : ''}
+            ${pub.doc_version ? `<div class="metadata-item"><span class="label">Version</span><span class="value mono">${pub.doc_version}</span></div>` : ''}
           </div>
-          ${(pub.parent_doc || pub.children_docs || pub.dependencies || pub.commitment_id) ? `
+          ${(pub.parent_doc || pub.children_docs || pub.dependencies) ? `
           <div class="metadata-section">
-            <h5>Relationships</h5>
+            <h5>Lineage</h5>
             <div class="metadata-links">
-              ${pub.parent_doc ? `<a href="${BASE_PATH}/${workspaceName}/docs/${pub.parent_doc.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">↑</span> Parent: ${pub.parent_doc}</a>` : ''}
-              ${pub.children_docs && pub.children_docs.length ? pub.children_docs.map(c => `<a href="${BASE_PATH}/${workspaceName}/docs/${c.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">↓</span> Child: ${c}</a>`).join('') : ''}
-              ${pub.dependencies && pub.dependencies.length ? pub.dependencies.map(d => `<a href="${BASE_PATH}/${workspaceName}/docs/${d.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">→</span> Dependency: ${d}</a>`).join('') : ''}
-              ${pub.commitment_id && pub.commitment_id !== 'pending' ? `<a href="#"><span class="arrow">◆</span> Commitment: ${pub.commitment_id}</a>` : ''}
+              ${pub.parent_doc ? `<a href="${BASE_PATH}/${workspaceName}/docs/${pub.parent_doc.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">↑</span> ${pub.parent_doc}</a>` : ''}
+              ${pub.children_docs && pub.children_docs.length ? pub.children_docs.map(c => `<a href="${BASE_PATH}/${workspaceName}/docs/${c.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">↓</span> ${c}</a>`).join('') : ''}
+              ${pub.dependencies && pub.dependencies.length ? pub.dependencies.map(d => `<a href="${BASE_PATH}/${workspaceName}/docs/${d.toLowerCase().replace(/^(prd|handoff|prompt|result|audit|intent|spec)-/i, (m, p) => p.toLowerCase() + '/')}"><span class="arrow">→</span> ${d}</a>`).join('') : ''}
             </div>
           </div>
           ` : ''}
@@ -1450,15 +1586,30 @@ const server = http.createServer(async (req, res) => {
   ${NAV}
   <article>
     <div class="meta">
-      <a href="${BASE_PATH}/${workspaceName}/">← ${displayName}</a>
-      <span class="sep">|</span>
-      <span class="badge ${pub.module}">${pub.module}</span>
-      <span class="path">${pub.path}</span>
-      <span class="sep">|</span>
-      <span>v${pub.version}</span>
-      ${viewCount > 0 ? `<span class="stat-badge">${viewIcon} ${viewCount} views</span>` : ''}
+      <div class="meta-left">
+        <a href="${BASE_PATH}/${workspaceName}/">← ${displayName}</a>
+        <span class="sep">|</span>
+        <span class="badge ${pub.module}">${pub.module}</span>
+        <span class="path">${pub.path}</span>
+        <span class="sep">|</span>
+        <span>v${pub.version}</span>
+        ${viewCount > 0 ? `<span class="stat-badge">${viewIcon} ${viewCount} views</span>` : ''}
+      </div>
+      ${hasMetadata ? `<button class="details-toggle" onclick="toggleDetails()" aria-expanded="false">Details</button>` : ''}
     </div>
-    ${metadataPanel}
+    <div class="metadata-panel-wrapper" aria-hidden="true">
+      ${metadataPanel}
+    </div>
+    <script>
+      function toggleDetails() {
+        const wrapper = document.querySelector('.metadata-panel-wrapper');
+        const btn = document.querySelector('.details-toggle');
+        const isHidden = wrapper.getAttribute('aria-hidden') === 'true';
+        wrapper.setAttribute('aria-hidden', !isHidden);
+        btn.setAttribute('aria-expanded', isHidden);
+        btn.textContent = isHidden ? 'Hide' : 'Details';
+      }
+    </script>
     <div class="prose">
       ${renderMarkdown(pub.content)}
     </div>

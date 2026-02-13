@@ -1,0 +1,19 @@
+{
+  "name": "mentu-autopilot",
+  "version": "1.0.0",
+  "description": "Autonomous bug-fix pipeline — triage, fix, push in waves via Mentu commitment ledger",
+  "author": {
+    "name": "Rashid Azarang",
+    "url": "https://mentu.ai"
+  },
+  "repository": "https://github.com/mentu-ai/mentu-autopilot",
+  "homepage": "https://mentu.ai",
+  "license": "MIT",
+  "keywords": ["mentu", "autopilot", "bug-fix", "triage", "pipeline", "commitment-ledger", "mcp"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "mcp": ["@mentu/mcp"]
+  }
+}

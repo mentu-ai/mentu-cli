@@ -135,6 +135,14 @@ export class CloudClient {
    * List all workspaces the user is a member of.
    */
   async listWorkspaces(): Promise<Workspace[]> {
+    // Verify auth context is set (catches expired/invalid tokens)
+    const { data: { user }, error: authError } = await this.supabase.auth.getUser();
+    if (authError || !user) {
+      throw new Error(
+        `Auth session invalid: ${authError?.message || 'no user'}. Run: mentu login`
+      );
+    }
+
     const { data, error } = await this.supabase
       .from('workspace_members')
       .select(`
@@ -150,7 +158,11 @@ export class CloudClient {
       `)
       .order('joined_at', { ascending: false });
 
-    if (error || !data) {
+    if (error) {
+      throw new Error(`Failed to list workspaces: ${error.message}`);
+    }
+
+    if (!data) {
       return [];
     }
 
@@ -178,13 +190,13 @@ export class CloudClient {
       .select('user_id, role, joined_at')
       .eq('workspace_id', wsId);
 
-    if (error || !data) {
-      return [];
+    if (error) {
+      throw new Error(`Failed to get workspace members: ${error.message}`);
     }
 
     // Get user emails from auth
     const members: WorkspaceMember[] = [];
-    for (const m of data) {
+    for (const m of (data || [])) {
       members.push({
         userId: m.user_id,
         email: '', // Would need separate auth lookup

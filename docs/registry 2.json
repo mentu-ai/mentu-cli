@@ -1,0 +1,331 @@
+{
+  "$schema": "https://mentu.ai/schemas/registry.v1.json",
+  "version": "1.0",
+  "workspace": "mentu-ai",
+  "last_updated": "2025-12-30T00:00:00Z",
+  "description": "Central index of all Mentu documents. Tracks PRDs, HANDOFFs, RESULTs, specifications, and their relationships.",
+
+  "schema_definition": {
+    "document": {
+      "id": "string - Unique identifier (matches front matter id)",
+      "path": "string - Relative path from repo root",
+      "type": "string - prd|handoff|result|prompt|context|delegation|spec|guide|reference",
+      "tier": "string? - T1|T2|T3 (for PRD/HANDOFF)",
+      "status": "string - draft|active|superseded|archived",
+      "created": "string - ISO date",
+      "last_updated": "string? - ISO date",
+      "parent": "string? - Parent document ID",
+      "children": "string[]? - Child document IDs",
+      "dependencies": "string[]? - Required document IDs",
+      "mentu": {
+        "commitment": "string? - Commitment ID",
+        "evidence": "string? - Evidence memory ID",
+        "status": "string? - pending|in_progress|closed"
+      }
+    },
+    "commitment": {
+      "documents": "string[] - Document IDs linked to this commitment",
+      "tier": "string - T1|T2|T3",
+      "status": "string - open|claimed|in_review|closed|reopened"
+    }
+  },
+
+  "documents": [
+    {
+      "id": "Mentu-Spec-v0",
+      "path": "docs/Mentu-Spec-v0.md",
+      "type": "spec",
+      "status": "active",
+      "created": "2025-07-03",
+      "description": "Normative protocol specification for Mentu"
+    },
+    {
+      "id": "Genesis-Key-Canonical-Schema",
+      "path": "docs/Genesis-Key-Canonical-Schema.md",
+      "type": "spec",
+      "status": "active",
+      "created": "2025-07-03",
+      "description": "YAML schema for workspace governance"
+    },
+    {
+      "id": "Mentu-Core",
+      "path": "docs/Mentu-Core.md",
+      "type": "spec",
+      "status": "active",
+      "created": "2025-07-03",
+      "description": "Architecture overview and module dependencies"
+    },
+    {
+      "id": "SubAgent-Validation-Architecture",
+      "path": "docs/SubAgent-Validation-Architecture.md",
+      "type": "spec",
+      "status": "active",
+      "created": "2025-12-15",
+      "description": "Validator sub-agent architecture for tier-based review"
+    },
+    {
+      "id": "Canonical-Front-Matter-Spec",
+      "path": "docs/Canonical-Front-Matter-Spec.md",
+      "type": "spec",
+      "status": "active",
+      "created": "2025-12-20",
+      "description": "YAML front matter specification for Mentu documents"
+    },
+    {
+      "id": "PRD-Triage-Pipeline-v1.0",
+      "path": "docs/PRD-Triage-Pipeline-v1.0.md",
+      "type": "prd",
+      "tier": "T2",
+      "status": "draft",
+      "created": "2025-12-30",
+      "dependencies": [
+        "Mentu-Spec-v0",
+        "Genesis-Key-Canonical-Schema"
+      ],
+      "children": [
+        "HANDOFF-Triage-Pipeline-v1.0"
+      ],
+      "mentu": {
+        "commitment": "cmt_6ad12b95",
+        "status": "in_progress"
+      },
+      "description": "Tier classification, Genesis extensions, AI agent protocol, autonomous dispatch"
+    },
+    {
+      "id": "HANDOFF-Triage-Pipeline-v1.0",
+      "path": "docs/HANDOFF-Triage-Pipeline-v1.0.md",
+      "type": "handoff",
+      "tier": "T2",
+      "status": "draft",
+      "created": "2025-12-30",
+      "parent": "PRD-Triage-Pipeline-v1.0",
+      "mentu": {
+        "commitment": "pending",
+        "status": "draft"
+      },
+      "description": "Build instructions for triage pipeline implementation"
+    },
+    {
+      "id": "PRD-Protocol-Consistency-v1.0",
+      "path": "docs/PRD-Protocol-Consistency-v1.0.md",
+      "type": "prd",
+      "tier": "T2",
+      "status": "active",
+      "created": "2025-12-31",
+      "children": [
+        "HANDOFF-Protocol-Consistency-v1.0",
+        "RESULT-Protocol-Consistency-v1.0"
+      ],
+      "description": "Protocol consistency for CLI and API"
+    },
+    {
+      "id": "HANDOFF-Protocol-Consistency-v1.0",
+      "path": "docs/HANDOFF-Protocol-Consistency-v1.0.md",
+      "type": "handoff",
+      "tier": "T2",
+      "status": "active",
+      "created": "2025-12-31",
+      "parent": "PRD-Protocol-Consistency-v1.0",
+      "description": "Build instructions for protocol consistency"
+    },
+    {
+      "id": "RESULT-Protocol-Consistency-v1.0",
+      "path": "docs/RESULT-Protocol-Consistency-v1.0.md",
+      "type": "result",
+      "tier": "T2",
+      "status": "active",
+      "created": "2025-12-31",
+      "parent": "PRD-Protocol-Consistency-v1.0",
+      "mentu": {
+        "commitment": "cmt_17c30f40",
+        "evidence": "mem_0b8190cf",
+        "status": "closed"
+      },
+      "description": "Implementation result for protocol consistency"
+    },
+    {
+      "id": "PRD-Mentu-Plugin-v1.0",
+      "path": "docs/PRD-Mentu-Plugin-v1.0.md",
+      "type": "prd",
+      "tier": "T2",
+      "status": "active",
+      "created": "2025-12-28",
+      "children": [
+        "HANDOFF-Mentu-Plugin-v1.0",
+        "RESULT-Mentu-Plugin-v1.0"
+      ],
+      "description": "Claude Code plugin for Mentu integration"
+    },
+    {
+      "id": "PRD-Review-Operations-v1.0",
+      "path": "docs/PRD-Review-Operations-v1.0.md",
+      "type": "prd",
+      "tier": "T2",
+      "status": "active",
+      "created": "2025-12-25",
+      "children": [
+        "HANDOFF-Review-Operations-v1.0",
+        "RESULT-Review-Operations-v1.0"
+      ],
+      "description": "Submit, approve, reopen operations"
+    },
+    {
+      "id": "PRD-Mentu-Git-Workflow-v1.0",
+      "path": "docs/PRD-Mentu-Git-Workflow-v1.0.md",
+      "type": "prd",
+      "tier": "T2",
+      "status": "draft",
+      "created": "2025-12-30",
+      "children": [
+        "HANDOFF-Mentu-Git-Workflow-v1.0"
+      ],
+      "description": "Git-backed recovery with diff evidence trail"
+    },
+    {
+      "id": "PRD-Checkpoint-Guidance-v1.0",
+      "path": "docs/PRD-Checkpoint-Guidance-v1.0.md",
+      "type": "prd",
+      "tier": "T1",
+      "status": "draft",
+      "created": "2025-12-30",
+      "children": [
+        "HANDOFF-Checkpoint-Guidance-v1.0"
+      ],
+      "description": "Checkpoint recovery documentation skill"
+    },
+    {
+      "id": "DELEGATION-Triage-Pipeline-Spec-Author",
+      "path": "docs/DELEGATION-Triage-Pipeline-Spec-Author.md",
+      "type": "delegation",
+      "status": "active",
+      "created": "2025-12-30",
+      "description": "Delegation to produce triage pipeline specifications"
+    },
+    {
+      "id": "CLI",
+      "path": "docs/CLI.md",
+      "type": "reference",
+      "status": "active",
+      "created": "2025-12-01",
+      "description": "CLI command reference"
+    },
+    {
+      "id": "API",
+      "path": "docs/API.md",
+      "type": "reference",
+      "status": "active",
+      "created": "2025-12-01",
+      "description": "API endpoint reference"
+    },
+    {
+      "id": "QUICKSTART",
+      "path": "docs/QUICKSTART.md",
+      "type": "guide",
+      "status": "active",
+      "created": "2025-12-01",
+      "description": "Getting started guide"
+    }
+  ],
+
+  "commitments": {
+    "cmt_6ad12b95": {
+      "documents": ["PRD-Triage-Pipeline-v1.0", "HANDOFF-Triage-Pipeline-v1.0"],
+      "tier": "T2",
+      "status": "closed",
+      "body": "Deliver Triage Pipeline specifications"
+    },
+    "cmt_e15a73d5": {
+      "documents": ["HANDOFF-Triage-Pipeline-v1.0"],
+      "tier": "T2",
+      "status": "claimed",
+      "body": "Deliver Triage Pipeline: classifier, genesis-matcher, doc-generator, auto-triage command, registry"
+    },
+    "cmt_17c30f40": {
+      "documents": ["PRD-Protocol-Consistency-v1.0", "HANDOFF-Protocol-Consistency-v1.0", "RESULT-Protocol-Consistency-v1.0"],
+      "tier": "T2",
+      "status": "closed",
+      "body": "Implement Protocol Consistency v1.0"
+    }
+  },
+
+  "document_types": {
+    "spec": {
+      "description": "Normative specifications (protocol, schemas)",
+      "requires_approval": false
+    },
+    "prd": {
+      "description": "Product Requirements Document - what to build",
+      "requires_approval": true,
+      "expected_children": ["handoff"]
+    },
+    "handoff": {
+      "description": "Build instructions for coding agents",
+      "requires_parent": "prd",
+      "expected_children": ["prompt", "result"]
+    },
+    "prompt": {
+      "description": "Exact prompt for agent execution",
+      "requires_parent": "handoff"
+    },
+    "result": {
+      "description": "Implementation result with evidence",
+      "requires_parent": "prd"
+    },
+    "context": {
+      "description": "Background information for understanding",
+      "requires_approval": false
+    },
+    "delegation": {
+      "description": "Instructions for delegated work",
+      "requires_approval": true
+    },
+    "guide": {
+      "description": "How-to documentation",
+      "requires_approval": false
+    },
+    "reference": {
+      "description": "API/CLI reference documentation",
+      "requires_approval": false
+    }
+  },
+
+  "statistics": {
+    "total_documents": 18,
+    "by_type": {
+      "spec": 5,
+      "prd": 7,
+      "handoff": 3,
+      "result": 2,
+      "delegation": 1,
+      "guide": 1,
+      "reference": 2
+    },
+    "by_status": {
+      "draft": 5,
+      "active": 13,
+      "superseded": 0,
+      "archived": 0
+    },
+    "by_tier": {
+      "T1": 1,
+      "T2": 6,
+      "T3": 0
+    }
+  },
+
+  "maintenance": {
+    "commands": {
+      "rebuild": "mentu registry rebuild",
+      "add": "mentu registry add <path>",
+      "validate": "mentu registry validate",
+      "list": "mentu registry list [--type TYPE]",
+      "show": "mentu registry show <id> [--graph]"
+    },
+    "notes": [
+      "Registry should be updated when documents are created or modified",
+      "Use 'mentu registry rebuild' to sync with file system",
+      "Document IDs must match front matter 'id' field",
+      "Paths are relative to repository root"
+    ]
+  }
+}

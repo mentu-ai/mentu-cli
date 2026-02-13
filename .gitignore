@@ -6,6 +6,18 @@ dist/
 # OS
 .DS_Store
 
+# Build caches
+.astro/
+
+# Syncthing conflict files
+*.sync-conflict-*
+
+# Playwright MCP local state
+.playwright-mcp/
+
+# Duplicate junk files (iCloud conflicts)
+.gitignore 2
+
 # IDE
 .idea/
 .vscode/

@@ -3,9 +3,10 @@ import { findWorkspace, readConfig, writeConfig } from '../core/config.js';
 import { generateApiKey } from '../utils/id.js';
 import { hashApiKey, type ApiKeyStored } from '../server/types.js';
 import { MentuError, type Config } from '../types.js';
+import { resolveActor } from '../utils/actor.js';
 
 interface CreateOptions {
-  actor: string;
+  actor?: string;
   name: string;
   json: boolean;
 }
@@ -24,7 +25,7 @@ export function registerApiKeyCommand(program: Command): void {
   apiKey
     .command('create')
     .description('Create a new API key')
-    .requiredOption('--actor <actor>', 'Actor identity for this key')
+    .option('--actor <id>', 'Override actor identity')
     .option('--name <name>', 'Key name', 'API Key')
     .option('--json', 'Output as JSON')
     .action((options: CreateOptions) => {
@@ -33,6 +34,7 @@ export function registerApiKeyCommand(program: Command): void {
         const config = (readConfig(workspacePath) || {}) as Config & {
           api?: { keys?: ApiKeyStored[] };
         };
+        const actor = resolveActor(options.actor, config ?? undefined);
 
         // Generate the full key (shown only once)
         const fullKey = `mentu_key_${generateApiKey()}`;
@@ -43,7 +45,7 @@ export function registerApiKeyCommand(program: Command): void {
           name: options.name,
           key_hash: hashApiKey(fullKey),
           key_prefix: fullKey.slice(0, 16), // For identification
-          actor: options.actor,
+          actor,
           permissions: ['read', 'write'],
           created: new Date().toISOString(),
         };

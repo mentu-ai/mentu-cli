@@ -1,0 +1,73 @@
+# Example Visual Test Specification
+# Feature: User Login Form
+# This is an example spec demonstrating the visual testing workflow
+
+feature: "User login form with validation"
+commitment_id: cmt_example_login
+workspace_id: 00000000-0000-0000-0000-000000000000  # System workspace
+base_url: "http://localhost:3000"
+
+visual_checkpoints:
+  # Checkpoint 1: Initial form render
+  - name: "form-renders"
+    description: "Login form displays with email and password fields"
+    url: "http://localhost:3000/login"
+    viewport: { width: 1280, height: 720 }
+    selectors:
+      - "input[type='email']"
+      - "input[type='password']"
+      - "button[type='submit']"
+      - "h1:contains('Sign In')"
+      - "a[href='/register']"
+
+  # Checkpoint 2: Empty form validation
+  - name: "empty-validation"
+    description: "Shows validation errors when submitting empty form"
+    url: "http://localhost:3000/login"
+    viewport: { width: 1280, height: 720 }
+    actions:
+      - { type: "click", selector: "button[type='submit']" }
+    wait_for: ".error-message"
+    selectors:
+      - ".error-message:contains('Email is required')"
+      - ".error-message:contains('Password is required')"
+
+  # Checkpoint 3: Invalid email validation
+  - name: "invalid-email"
+    description: "Shows error for invalid email format"
+    url: "http://localhost:3000/login"
+    viewport: { width: 1280, height: 720 }
+    actions:
+      - { type: "fill", selector: "input[type='email']", value: "not-an-email" }
+      - { type: "fill", selector: "input[type='password']", value: "password123" }
+      - { type: "click", selector: "button[type='submit']" }
+    wait_for: ".error-message"
+    selectors:
+      - ".error-message:contains('Invalid email')"
+
+  # Checkpoint 4: Successful login redirect
+  - name: "successful-login"
+    description: "User redirected to dashboard after valid credentials"
+    url: "http://localhost:3000/login"
+    viewport: { width: 1280, height: 720 }
+    actions:
+      - { type: "fill", selector: "input[type='email']", value: "test@example.com" }
+      - { type: "fill", selector: "input[type='password']", value: "Test123!" }
+      - { type: "click", selector: "button[type='submit']" }
+    wait_for: "navigation"
+    expect_url: "http://localhost:3000/dashboard"
+    selectors:
+      - "h1:contains('Dashboard')"
+      - "nav .user-menu"
+      - ".welcome-message"
+
+  # Checkpoint 5: Mobile responsive
+  - name: "mobile-responsive"
+    description: "Login form is usable on mobile viewport"
+    url: "http://localhost:3000/login"
+    viewport: { width: 375, height: 667 }  # iPhone SE
+    selectors:
+      - "input[type='email']"
+      - "input[type='password']"
+      - "button[type='submit']"
+      - ".mobile-optimized-form"

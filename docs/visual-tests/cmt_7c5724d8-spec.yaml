@@ -1,0 +1,40 @@
+# Test Visual Test Specification
+# Feature: Sample dashboard with user profile
+# Commitment: cmt_7c5724d8
+
+feature: "Sample dashboard with user profile"
+commitment_id: cmt_7c5724d8
+workspace_id: 00000000-0000-0000-0000-000000000000
+base_url: "http://localhost:3000"
+
+visual_checkpoints:
+  - name: "dashboard-renders"
+    description: "Dashboard displays with all widgets"
+    url: "http://localhost:3000/test-app.html"
+    viewport: { width: 1280, height: 720 }
+    selectors:
+      - "h1"
+      - ".widget-stats"
+      - ".widget-activity"
+      - "nav .user-menu"
+
+  - name: "user-profile-modal"
+    description: "User profile modal opens when clicking user menu"
+    url: "http://localhost:3000/test-app.html"
+    viewport: { width: 1280, height: 720 }
+    actions:
+      - { type: "click", selector: "nav .user-menu" }
+    wait_for: ".profile-modal.show"
+    selectors:
+      - ".profile-modal h2"
+      - ".profile-modal input[name='name']"
+      - ".profile-modal input[name='email']"
+      - ".profile-modal button"
+
+  - name: "mobile-responsive"
+    description: "Dashboard is responsive on mobile viewport"
+    url: "http://localhost:3000/test-app.html"
+    viewport: { width: 375, height: 667 }
+    selectors:
+      - "nav"
+      - ".widget-stats"

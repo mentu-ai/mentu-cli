@@ -2,7 +2,7 @@
 # Create GitHub Project for Universal Ticket Layer
 # Links both the tickets repo and warrantyos repo
 
-GITHUB_TOKEN="${GITHUB_TOKEN:-<GITHUB_TOKEN>}"
+GITHUB_TOKEN="${GITHUB_TOKEN:-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}"
 OWNER="rashidazarang"
 
 echo "Creating GitHub Project for Universal Ticket Layer..."

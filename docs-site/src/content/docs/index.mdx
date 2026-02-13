@@ -1,0 +1,65 @@
+---
+title: Mentu Documentation
+description: The commitment ledger where obligations require evidence. Track work as append-only commitments with full proof chains.
+template: splash
+hero:
+  tagline: An append-only commitment ledger where obligations require evidence. Designed for human+AI interoperability.
+  actions:
+    - text: Quickstart
+      link: /quickstart/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/mentu-ai
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Get Started
+
+<CardGrid stagger>
+  <Card title="MCP Server" icon="setting">
+    Install `@mentu/mcp` in any AI IDE — Claude Code, Cursor, Codex, Windsurf. Get 12 tools, 5 resources, and 3 prompts for commitment tracking.
+
+    [MCP Server docs →](/mcp-server/overview/)
+  </Card>
+
+  <Card title="Claude Code Plugin" icon="rocket">
+    `mentu-autopilot` adds autonomous bug-fix pipelines — triage, investigate, fix, push PRs in waves. All tracked with evidence chains.
+
+    [Plugin docs →](/plugin/overview/)
+  </Card>
+
+  <Card title="API Reference" icon="open-book">
+    HTTP API at `mentu-proxy.affihub.workers.dev`. 12 operations, commitment/memory CRUD, pipeline health. Stripe-style documentation.
+
+    [API docs →](/api/authentication/)
+  </Card>
+
+  <Card title="Web Dashboard" icon="laptop">
+    Real-time visualization of your commitment ledger. Kanban board, commitment timeline, agent chat, workspace management.
+
+    [Dashboard docs →](/dashboard/overview/)
+  </Card>
+</CardGrid>
+
+## The Protocol
+
+Mentu is built on three rules:
+
+1. **Commitments trace to memories** — every obligation has an origin
+2. **Closure requires evidence** — proving done, not marking done
+3. **Append-only** — nothing edited, nothing deleted
+
+[Learn more about the protocol →](/protocol/overview/)
+
+## Ecosystem
+
+| Component | What it does | Install |
+|-----------|-------------|---------|
+| **@mentu/mcp** | MCP server for AI IDEs | `npx @mentu/mcp` |
+| **mentu-autopilot** | Claude Code plugin | `claude plugin install mentu-ai/mentu-autopilot` |
+| **mentu-web** | Web dashboard | Deploy to Vercel |
+| **Mentu Companion** | macOS menu bar app | Download from GitHub Releases |
+| **BugReporter SDK** | Bug capture for web apps | `npm install mentu` |

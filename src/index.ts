@@ -34,6 +34,8 @@ import { registerSubmitCommand } from './commands/submit.js';
 import { registerApproveCommand } from './commands/approve.js';
 import { registerReopenCommand } from './commands/reopen.js';
 import { registerReviewQueueCommand } from './commands/review-queue.js';
+import { registerSearchCommand } from './commands/search.js';
+import { registerAutopilotCommand } from './commands/autopilot.js';
 import { getMentuVersion } from './utils/version.js';
 
 const program = new Command();
@@ -87,5 +89,7 @@ registerSubmitCommand(program);
 registerApproveCommand(program);
 registerReopenCommand(program);
 registerReviewQueueCommand(program);
+registerSearchCommand(program);
+registerAutopilotCommand(program);
 
 program.parse();

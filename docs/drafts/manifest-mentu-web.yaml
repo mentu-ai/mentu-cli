@@ -1,0 +1,183 @@
+# Draft manifest for mentu-web
+# Location: mentu-web/.mentu/manifest.yaml
+# Status: DRAFT - Requires human review before deployment
+# Created: 2026-01-01
+# Author: agent:claude-meta-layer
+
+name: mentu-web
+description: Next.js dashboard for commitment visualization and management
+version: "0.1.0"
+
+requires:
+  - node >= 18
+  - npm
+
+capabilities:
+  # Commitment Views
+  - name: view-commitments
+    description: Display commitment list with filtering by state
+    command: /workspace/[workspace]/commitments
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+      state:
+        type: string
+        required: false
+        description: Filter by state (open, claimed, in_review, closed)
+    outputs:
+      commitments:
+        type: array
+        description: List of commitment records
+
+  - name: view-commitment-detail
+    description: Display single commitment with full history
+    command: /workspace/[workspace]/commitments/[id]
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+      id:
+        type: string
+        required: true
+        description: Commitment ID
+    outputs:
+      commitment:
+        type: object
+        description: Full commitment record with annotations
+
+  # Memory Views
+  - name: view-memories
+    description: Display memory timeline with filtering by kind
+    command: /workspace/[workspace]/memories
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+      kind:
+        type: string
+        required: false
+        description: Filter by kind (task, evidence, observation)
+    outputs:
+      memories:
+        type: array
+        description: List of memory records
+
+  - name: view-memory-detail
+    description: Display single memory with linked commitments
+    command: /workspace/[workspace]/memories/[id]
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+      id:
+        type: string
+        required: true
+        description: Memory ID
+    outputs:
+      memory:
+        type: object
+        description: Full memory record
+
+  # Ledger View
+  - name: view-ledger
+    description: Display operation history (append-only log)
+    command: /workspace/[workspace]/ledger
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+      limit:
+        type: number
+        required: false
+        description: Number of operations to show
+    outputs:
+      operations:
+        type: array
+        description: List of ledger operations
+
+  # Bridge Views
+  - name: view-bridge
+    description: Display bridge command history and status
+    command: /workspace/[workspace]/bridge
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+    outputs:
+      commands:
+        type: array
+        description: List of bridge commands with status
+
+  - name: view-bridge-detail
+    description: Display single bridge command with result
+    command: /workspace/[workspace]/bridge/[id]
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+      id:
+        type: string
+        required: true
+        description: Command ID
+    outputs:
+      command:
+        type: object
+        description: Command record with result
+
+  # Settings Management
+  - name: manage-actors
+    description: Configure actor identities and mappings
+    command: /workspace/[workspace]/settings/actors
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+
+  - name: manage-github
+    description: Configure GitHub integration settings
+    command: /workspace/[workspace]/settings/github
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+
+  - name: manage-webhooks
+    description: Configure webhook endpoints
+    command: /workspace/[workspace]/settings/webhooks
+    inputs:
+      workspace:
+        type: string
+        required: true
+        description: Workspace ID
+
+  # Authentication
+  - name: login
+    description: User authentication via Supabase
+    command: /login
+    outputs:
+      session:
+        type: object
+        description: Authenticated user session
+
+dependencies:
+  - name: mentu-ai
+    relationship: api-client
+    description: Consumes Mentu API for all data operations
+
+  - name: mentu-proxy
+    relationship: gateway-consumer
+    description: Routes API calls through proxy (for mobile/external access)
+
+mentu:
+  actor: user:dashboard
+  auto_capture: false

@@ -1,0 +1,121 @@
+# Draft manifest for mentu-bridge
+# Location: mentu-bridge/.mentu/manifest.yaml
+# Status: DRAFT - Requires human review before deployment
+# Created: 2026-01-01
+# Author: agent:claude-meta-layer
+
+name: mentu-bridge
+description: Terminal bridge daemon for Mentu - executes commands from cloud
+version: "1.0.0"
+
+requires:
+  - node >= 18
+  - npm
+  - launchd (macOS)
+
+capabilities:
+  # Daemon Lifecycle
+  - name: start-daemon
+    description: Start the bridge daemon and begin polling for commands
+    command: npm start
+    inputs:
+      config_path:
+        type: string
+        required: false
+        description: Path to bridge.yaml config file
+    outputs:
+      status:
+        type: string
+        description: Daemon status (running, error)
+
+  # Command Execution
+  - name: execute-command
+    description: Execute an agent command received from bridge_commands table
+    command: (internal) - triggered by Supabase realtime subscription
+    inputs:
+      command_id:
+        type: string
+        required: true
+        description: Bridge command ID from database
+      prompt:
+        type: string
+        required: true
+        description: Agent prompt to execute
+      working_directory:
+        type: string
+        required: true
+        description: Directory to execute in
+      agent:
+        type: string
+        required: true
+        description: Agent type (claude, bash, etc.)
+    outputs:
+      status:
+        type: string
+        description: success, failed, timeout
+      exit_code:
+        type: number
+        description: Process exit code
+      stdout:
+        type: string
+        description: Standard output (truncated)
+      stderr:
+        type: string
+        description: Standard error (truncated)
+
+  # Mentu Integration
+  - name: capture-memory
+    description: Capture a Mentu memory for task/evidence tracking
+    command: (internal) - POST to proxy /ops endpoint
+    inputs:
+      body:
+        type: string
+        required: true
+        description: Memory content
+      kind:
+        type: string
+        required: false
+        description: Memory kind (task, evidence, observation)
+    outputs:
+      id:
+        type: string
+        description: Memory ID (mem_XXXXXXXX)
+
+  # Commitment Scheduling
+  - name: poll-commitments
+    description: Poll for due commitments and execute them on schedule
+    command: (internal) - scheduler.ts polling loop
+    inputs:
+      interval_seconds:
+        type: number
+        required: false
+        description: Polling interval (default 60)
+    outputs:
+      executed:
+        type: array
+        description: List of commitment IDs executed
+
+  # Machine Registration
+  - name: register-machine
+    description: Register this machine with the bridge_machines table
+    command: (internal) - upsert to bridge_machines on startup
+    outputs:
+      machine_id:
+        type: string
+        description: Registered machine ID
+      status:
+        type: string
+        description: online, offline, busy
+
+dependencies:
+  - name: mentu-ai
+    relationship: api-client
+    description: Consumes Mentu API for commitment and memory operations
+
+  - name: mentu-proxy
+    relationship: gateway-consumer
+    description: Routes all API calls through proxy worker
+
+mentu:
+  actor: agent:bridge-daemon
+  auto_capture: false

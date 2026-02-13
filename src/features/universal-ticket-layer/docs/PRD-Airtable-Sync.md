@@ -24,7 +24,7 @@ Enable bidirectional synchronization between the Universal Ticket Layer (Supabas
 | Table ID | `tblQcExUHhBTbOJX7` |
 | View ID | `viwmReIzbf6Tly57N` |
 | Base Name | universal-ticket-layer |
-| API Token | `<AIRTABLE_PAT>.c1ae34300ff572e29e2276d9aa24b1153202c208cc024e95bb5ba9b58efaac83` |
+| API Token | `<YOUR_AIRTABLE_TOKEN>` |
 
 ### Airtable MCP
 
@@ -43,7 +43,7 @@ Enable bidirectional synchronization between the Universal Ticket Layer (Supabas
       "command": "node",
       "args": ["/Users/rashid/Desktop/airtable-mcp-main/dist/index.js"],
       "env": {
-        "AIRTABLE_TOKEN": "<AIRTABLE_PAT>.c1ae34300ff572e29e2276d9aa24b1153202c208cc024e95bb5ba9b58efaac83",
+        "AIRTABLE_TOKEN": "<YOUR_AIRTABLE_TOKEN>",
         "AIRTABLE_BASE_ID": "apppH8Loitcb1dwpJ"
       }
     }
@@ -709,7 +709,7 @@ backfill();
 ### Supabase Secrets (set via CLI)
 
 ```bash
-supabase secrets set AIRTABLE_TOKEN=<AIRTABLE_PAT>.c1ae34300ff572e29e2276d9aa24b1153202c208cc024e95bb5ba9b58efaac83
+supabase secrets set AIRTABLE_TOKEN=<YOUR_AIRTABLE_TOKEN>
 supabase secrets set AIRTABLE_BASE_ID=apppH8Loitcb1dwpJ
 supabase secrets set AIRTABLE_WEBHOOK_SECRET=<generated-secret>
 ```

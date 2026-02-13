@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "mentu": {
+      "command": "npx",
+      "args": ["@mentu/mcp"],
+      "env": {
+        "MENTU_API_URL": "${MENTU_API_URL}",
+        "MENTU_API_TOKEN": "${MENTU_API_TOKEN}",
+        "MENTU_WORKSPACE_ID": "${MENTU_WORKSPACE_ID}"
+      }
+    }
+  }
+}

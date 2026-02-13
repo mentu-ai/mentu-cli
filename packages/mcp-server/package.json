@@ -1,0 +1,47 @@
+{
+  "name": "@mentu/mcp",
+  "version": "0.1.0",
+  "description": "Mentu MCP Server — commitment ledger protocol for AI-native IDEs",
+  "type": "module",
+  "bin": {
+    "mentu-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "tsc"
+  },
+  "keywords": [
+    "mentu",
+    "mcp",
+    "model-context-protocol",
+    "commitment-ledger",
+    "claude-code",
+    "cursor",
+    "codex"
+  ],
+  "author": "Rashid Azarang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mentu-ai/mentu-mcp.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}

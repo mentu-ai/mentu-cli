@@ -1,7 +1,7 @@
 #!/bin/bash
 # Setup GitHub Project auto-add workflow for issues
 
-GITHUB_TOKEN="${GITHUB_TOKEN:-<GITHUB_TOKEN>}"
+GITHUB_TOKEN="${GITHUB_TOKEN:-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}"
 OWNER="rashidazarang"
 REPO="tickets"
 PROJECT_NUMBER=2
