@@ -3,18 +3,41 @@ title: Mentu overview
 description: An append-only commitment ledger where obligations require evidence. Designed for human+AI coordination.
 ---
 
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
 Mentu is a commitment ledger — an append-only protocol where every obligation traces to a memory, and closure requires evidence. It is designed for human+AI interoperability: any agent or human can query Mentu to reconstruct the full state of a pipeline without local files.
+
+---
 
 ## Get started
 
-| Component | Description | Get started |
-|-----------|-------------|-------------|
-| **MCP Server** | Install `@mentu/mcp` in any AI IDE (Claude Code, Cursor, Codex, Windsurf). Provides 12 tools, 5 resources, and 3 prompts. | [MCP Server docs](/mcp-server/overview/) |
-| **Plugin** | `mentu-autopilot` adds autonomous bug-fix pipelines to Claude Code — triage, investigate, fix, and push PRs in waves. | [Plugin docs](/plugin/overview/) |
-| **Dashboard** | Real-time visualization of your commitment ledger. Kanban board, commitment timeline, agent chat. | [Dashboard docs](/dashboard/overview/) |
-| **Companion** | macOS menu bar app for quick access to your workspace. | [Companion docs](/companion/overview/) |
-| **SDK** | Bug capture and browser widget for web apps. | [SDK docs](/sdk/bug-reporter/) |
-| **API** | HTTP API for commitment and memory CRUD, pipeline health, and workspace management. | [API docs](/api/authentication/) |
+<CardGrid>
+  <Card title="MCP Server" icon="setting">
+    Install `@mentu/mcp` in any AI IDE (Claude Code, Cursor, Codex, Windsurf). Provides 12 tools, 5 resources, and 3 prompts.
+
+    [Get started →](/mcp-server/overview/)
+  </Card>
+
+  <Card title="Plugin" icon="rocket">
+    `mentu-autopilot` adds autonomous bug-fix pipelines to Claude Code — triage, investigate, fix, and push PRs in waves.
+
+    [Get started →](/plugin/overview/)
+  </Card>
+
+  <Card title="Dashboard" icon="laptop">
+    Real-time visualization of your commitment ledger. Kanban board, commitment timeline, agent chat.
+
+    [Get started →](/dashboard/overview/)
+  </Card>
+
+  <Card title="API" icon="open-book">
+    HTTP API for commitment and memory CRUD, pipeline health, and workspace management.
+
+    [Get started →](/api/authentication/)
+  </Card>
+</CardGrid>
+
+---
 
 ## What you can do
 
@@ -26,6 +49,8 @@ Mentu is a commitment ledger — an append-only protocol where every obligation 
 
 **Run autonomous pipelines.** The plugin's autopilot mode picks up committed work, runs triage and investigation, applies fixes, and pushes PRs — all while recording evidence at every step.
 
+---
+
 ## The protocol
 
 Mentu is built on three rules:
@@ -35,6 +60,8 @@ Mentu is built on three rules:
 3. **Append-only** — nothing edited, nothing deleted
 
 These rules ensure that the ledger is a reliable, auditable record of all work. [Learn more about the protocol](/protocol/overview/).
+
+---
 
 ## Next steps
 

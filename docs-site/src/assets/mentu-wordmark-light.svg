@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 44" fill="none">
+  <!-- Mentu Wordmark — dark brown on transparent (for light backgrounds) -->
+  <g stroke="#2D1F15" stroke-width="2.5" fill="none">
+    <!-- Outer square frame -->
+    <rect x="2" y="2" width="40" height="40"/>
+    <!-- Large arc sweeping from bottom-left to top -->
+    <path d="M 2 42 A 24 24 0 0 0 22 2"/>
+    <!-- Outer nested rectangle -->
+    <rect x="21" y="8" width="17" height="21"/>
+    <!-- Inner nested rectangle -->
+    <rect x="26" y="13" width="7" height="10"/>
+  </g>
+  <!-- Wordmark text -->
+  <text x="52" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#2D1F15" letter-spacing="0.5">mentu</text>
+</svg>
