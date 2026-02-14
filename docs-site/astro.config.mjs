@@ -2,14 +2,14 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
-  site: 'https://docs.mentu.dev',
+  site: 'https://docs.mentu.ai',
   integrations: [
     starlight({
       title: 'Mentu Docs',
       description: 'Documentation for the Mentu commitment ledger — an append-only protocol where commitments require evidence.',
       logo: {
-        light: './src/assets/logo-light.svg',
-        dark: './src/assets/logo-dark.svg',
+        src: './src/assets/mentu-isotype.png',
+        alt: 'Mentu',
         replacesTitle: false,
       },
       social: [

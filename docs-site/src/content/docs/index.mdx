@@ -1,50 +1,32 @@
 ---
-title: Mentu Documentation
-description: The commitment ledger where obligations require evidence. Track work as append-only commitments with full proof chains.
-template: splash
-hero:
-  tagline: An append-only commitment ledger where obligations require evidence. Designed for human+AI interoperability.
-  actions:
-    - text: Quickstart
-      link: /quickstart/
-      icon: right-arrow
-      variant: primary
-    - text: View on GitHub
-      link: https://github.com/mentu-ai
-      icon: external
+title: Mentu overview
+description: An append-only commitment ledger where obligations require evidence. Designed for human+AI coordination.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+Mentu is a commitment ledger — an append-only protocol where every obligation traces to a memory, and closure requires evidence. It is designed for human+AI interoperability: any agent or human can query Mentu to reconstruct the full state of a pipeline without local files.
 
-## Get Started
+## Get started
 
-<CardGrid stagger>
-  <Card title="MCP Server" icon="setting">
-    Install `@mentu/mcp` in any AI IDE — Claude Code, Cursor, Codex, Windsurf. Get 12 tools, 5 resources, and 3 prompts for commitment tracking.
+| Component | Description | Get started |
+|-----------|-------------|-------------|
+| **MCP Server** | Install `@mentu/mcp` in any AI IDE (Claude Code, Cursor, Codex, Windsurf). Provides 12 tools, 5 resources, and 3 prompts. | [MCP Server docs](/mcp-server/overview/) |
+| **Plugin** | `mentu-autopilot` adds autonomous bug-fix pipelines to Claude Code — triage, investigate, fix, and push PRs in waves. | [Plugin docs](/plugin/overview/) |
+| **Dashboard** | Real-time visualization of your commitment ledger. Kanban board, commitment timeline, agent chat. | [Dashboard docs](/dashboard/overview/) |
+| **Companion** | macOS menu bar app for quick access to your workspace. | [Companion docs](/companion/overview/) |
+| **SDK** | Bug capture and browser widget for web apps. | [SDK docs](/sdk/bug-reporter/) |
+| **API** | HTTP API for commitment and memory CRUD, pipeline health, and workspace management. | [API docs](/api/authentication/) |
 
-    [MCP Server docs →](/mcp-server/overview/)
-  </Card>
+## What you can do
 
-  <Card title="Claude Code Plugin" icon="rocket">
-    `mentu-autopilot` adds autonomous bug-fix pipelines — triage, investigate, fix, push PRs in waves. All tracked with evidence chains.
+**Track commitments as append-only records.** Every piece of work — a bug fix, a feature, a deployment — becomes a commitment with a full lifecycle: `commit → claim → evidence → submit → close`. Nothing is edited. Nothing is deleted.
 
-    [Plugin docs →](/plugin/overview/)
-  </Card>
+**Attach evidence to every state transition.** Build passes, PR links, test results, circuit-breaker events — all captured as evidence arrays on the commitment. Closing a commitment requires proof, not just a status change.
 
-  <Card title="API Reference" icon="open-book">
-    HTTP API at `mentu-proxy.affihub.workers.dev`. 12 operations, commitment/memory CRUD, pipeline health. Stripe-style documentation.
+**Coordinate agents and humans.** Mentu acts as the shared source of truth. Any participant (AI agent, CI pipeline, human developer) can query the ledger to understand what has been committed, what is in progress, and what has been delivered.
 
-    [API docs →](/api/authentication/)
-  </Card>
+**Run autonomous pipelines.** The plugin's autopilot mode picks up committed work, runs triage and investigation, applies fixes, and pushes PRs — all while recording evidence at every step.
 
-  <Card title="Web Dashboard" icon="laptop">
-    Real-time visualization of your commitment ledger. Kanban board, commitment timeline, agent chat, workspace management.
-
-    [Dashboard docs →](/dashboard/overview/)
-  </Card>
-</CardGrid>
-
-## The Protocol
+## The protocol
 
 Mentu is built on three rules:
 
@@ -52,14 +34,12 @@ Mentu is built on three rules:
 2. **Closure requires evidence** — proving done, not marking done
 3. **Append-only** — nothing edited, nothing deleted
 
-[Learn more about the protocol →](/protocol/overview/)
+These rules ensure that the ledger is a reliable, auditable record of all work. [Learn more about the protocol](/protocol/overview/).
 
-## Ecosystem
+## Next steps
 
-| Component | What it does | Install |
-|-----------|-------------|---------|
-| **@mentu/mcp** | MCP server for AI IDEs | `npx @mentu/mcp` |
-| **mentu-autopilot** | Claude Code plugin | `claude plugin install mentu-ai/mentu-autopilot` |
-| **mentu-web** | Web dashboard | Deploy to Vercel |
-| **Mentu Companion** | macOS menu bar app | Download from GitHub Releases |
-| **BugReporter SDK** | Bug capture for web apps | `npm install mentu` |
+- [**Quickstart**](/quickstart/) — set up Mentu in under five minutes
+- [**How Mentu Works**](/concepts/how-mentu-works/) — understand the core model
+- [**The Three Rules**](/concepts/three-rules/) — the protocol's foundational constraints
+- [**API Reference**](/api/authentication/) — integrate Mentu into your own tools
+- [**First Bug Fix**](/guides/first-bug-fix/) — walk through a complete bug-fix pipeline
