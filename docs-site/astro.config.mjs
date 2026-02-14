@@ -8,8 +8,8 @@ export default defineConfig({
       title: 'Mentu Docs',
       description: 'Documentation for the Mentu commitment ledger — an append-only protocol where commitments require evidence.',
       logo: {
-        dark: './src/assets/mentu-wordmark-dark.svg',
-        light: './src/assets/mentu-wordmark-light.svg',
+        dark: './src/assets/mentu-wordmark-dark.png',
+        light: './src/assets/mentu-wordmark-light.png',
         alt: 'Mentu',
         replacesTitle: true,
       },
