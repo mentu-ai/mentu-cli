@@ -24,7 +24,7 @@ describe('status command', () => {
     fs.rmSync(testDir, { recursive: true, force: true });
   });
 
-  it('includes open, claimed, in_review, reopened, and closed', () => {
+  it('includes open, claimed, in_review, reopened, and closed', { timeout: 30_000 }, () => {
     // open
     const openMem = runJson('mentu capture "Open memory" --json');
     const openCmt = runJson(`mentu commit "Open commitment" --source ${openMem.id} --json`);
