@@ -108,6 +108,12 @@ export function registerCaptureCommand(program: Command): void {
           operation.payload.path = options.path;
         }
 
+        // Auto-link to workflow step commitment if env var set
+        const workflowStepCmt = process.env.RALPH_WORKFLOW_STEP_CMT;
+        if (workflowStepCmt && !options.refs) {
+          options.refs = workflowStepCmt;
+        }
+
         // Validate and add refs
         if (options.refs) {
           const refs = options.refs.split(',').map(r => r.trim()).filter(r => r.length > 0);

@@ -1,0 +1,298 @@
+# Parallel Agent Execution
+#
+# Spawns one GitHub Actions job per open commitment with a HANDOFF.
+# Uses matrix strategy for true parallel execution.
+#
+# Leverages GitHub's improvements:
+#   - Lazy loading for 300+ jobs
+#   - Job status filtering (view only failed/in-progress)
+#
+# Triggers:
+#   - Manual dispatch with commitment selection
+#   - Scheduled runs (configurable)
+#   - Comment trigger: "@claude-parallel"
+
+name: Parallel Agents
+
+on:
+  workflow_dispatch:
+    inputs:
+      commitments:
+        description: 'Commitment IDs (comma-separated, or "auto" for all open)'
+        required: false
+        default: 'auto'
+      max_parallel:
+        description: 'Maximum parallel jobs'
+        required: false
+        default: '10'
+  issue_comment:
+    types: [created]
+  schedule:
+    # Run every 6 hours to process queued commitments
+    - cron: '0 */6 * * *'
+
+jobs:
+  # Discovery job: find commitments to execute
+  discover:
+    name: Discover Commitments
+    runs-on: ubuntu-latest
+
+    # Only run on @claude-parallel comments or dispatch/schedule
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule' ||
+      (github.event_name == 'issue_comment' &&
+       contains(github.event.comment.body, '@claude-parallel'))
+
+    outputs:
+      matrix: ${{ steps.get-matrix.outputs.matrix }}
+      count: ${{ steps.get-matrix.outputs.count }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install and build
+        run: npm ci && npm run build
+
+      - name: Get open commitments
+        id: get-matrix
+        run: |
+          INPUT="${{ github.event.inputs.commitments || 'auto' }}"
+          MAX="${{ github.event.inputs.max_parallel || '10' }}"
+
+          if [ "$INPUT" = "auto" ]; then
+            # Find open commitments that have HANDOFF files
+            OPEN_CMTS=$(node dist/index.js list commitments --state open --json 2>/dev/null || echo '[]')
+
+            # Filter to commitments with HANDOFFs
+            CMTS_WITH_HANDOFFS=""
+            for cmt_id in $(echo "$OPEN_CMTS" | jq -r '.[].id'); do
+              # Check if any HANDOFF references this commitment
+              if grep -rq "commitment: $cmt_id" docs/HANDOFF-*.md 2>/dev/null; then
+                CMTS_WITH_HANDOFFS="$CMTS_WITH_HANDOFFS $cmt_id"
+              fi
+            done
+
+            # Convert to array and limit
+            CMTS_ARRAY=$(echo $CMTS_WITH_HANDOFFS | tr ' ' '\n' | head -n "$MAX" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          else
+            # Use provided list
+            CMTS_ARRAY=$(echo "$INPUT" | tr ',' '\n' | head -n "$MAX" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          fi
+
+          # Create matrix
+          if [ "$CMTS_ARRAY" = "[]" ] || [ -z "$CMTS_ARRAY" ]; then
+            echo "matrix={\"commitment\":[]}" >> $GITHUB_OUTPUT
+            echo "count=0" >> $GITHUB_OUTPUT
+            echo "No commitments to process"
+          else
+            MATRIX=$(echo "$CMTS_ARRAY" | jq -c '{commitment: .}')
+            COUNT=$(echo "$CMTS_ARRAY" | jq 'length')
+            echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+            echo "count=$COUNT" >> $GITHUB_OUTPUT
+            echo "Found $COUNT commitments to process"
+          fi
+
+      - name: Comment on issue (if triggered by comment)
+        if: github.event_name == 'issue_comment' && steps.get-matrix.outputs.count != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const count = ${{ steps.get-matrix.outputs.count }};
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `🚀 Spawning ${count} parallel agents...\n\nTrack progress: [Workflow Run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+            });
+
+  # Matrix job: one agent per commitment
+  agent:
+    name: Agent ${{ matrix.commitment }}
+    needs: discover
+    if: needs.discover.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    strategy:
+      matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
+      fail-fast: false  # Don't cancel others if one fails
+      max-parallel: 10
+
+    concurrency:
+      group: agent-${{ matrix.commitment }}
+      cancel-in-progress: false
+
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    env:
+      MENTU_ACTOR: "agent:claude-parallel"
+      MENTU_WORKSPACE: ".mentu"
+      COMMITMENT_ID: ${{ matrix.commitment }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install and build
+        run: npm ci && npm run build
+
+      - name: Create work branch
+        run: |
+          git checkout -b mentu/${{ matrix.commitment }}
+
+      - name: Find HANDOFF for commitment
+        id: handoff
+        run: |
+          # Find HANDOFF file referencing this commitment
+          HANDOFF=$(grep -rl "commitment: ${{ matrix.commitment }}" docs/HANDOFF-*.md 2>/dev/null | head -1)
+
+          if [ -z "$HANDOFF" ]; then
+            echo "No HANDOFF found for ${{ matrix.commitment }}"
+            echo "found=false" >> $GITHUB_OUTPUT
+          else
+            echo "Found: $HANDOFF"
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "path=$HANDOFF" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Claim commitment
+        if: steps.handoff.outputs.found == 'true'
+        run: |
+          node dist/index.js claim ${{ matrix.commitment }} --actor agent:claude-parallel || true
+
+      - name: Run Claude Agent
+        if: steps.handoff.outputs.found == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: "--max-turns 50"
+          allowed_tools: |
+            Bash(npm:*)
+            Bash(npx:*)
+            Bash(node:*)
+            Bash(git:*)
+            Read
+            Write
+            Edit
+            Glob
+            Grep
+            mcp__github__*
+          prompt: |
+            ## Parallel Agent Execution
+
+            You are agent:claude-parallel executing commitment ${{ matrix.commitment }}.
+
+            ### Instructions
+
+            1. Read ${{ steps.handoff.outputs.path }} for full build instructions
+            2. The commitment is already claimed for you
+            3. Follow the HANDOFF's Build Order exactly
+            4. Create RESULT document before submitting
+            5. Submit with evidence when complete
+
+            ### Mentu Commands
+
+            ```bash
+            # Already claimed - just verify
+            node dist/index.js show ${{ matrix.commitment }}
+
+            # On completion
+            node dist/index.js submit ${{ matrix.commitment }} --summary "..." --include-files
+            ```
+
+            ### Context
+
+            - Commitment: ${{ matrix.commitment }}
+            - HANDOFF: ${{ steps.handoff.outputs.path }}
+            - Branch: mentu/${{ matrix.commitment }}
+            - Actor: agent:claude-parallel
+
+          use_claude_files: true
+
+      - name: Commit changes
+        if: always() && steps.handoff.outputs.found == 'true'
+        run: |
+          git config user.name "Claude Parallel Agent"
+          git config user.email "claude-agent@mentu.dev"
+
+          # Add all changes
+          git add -A
+
+          # Commit if there are changes
+          if ! git diff --cached --quiet; then
+            git commit -m "agent(${{ matrix.commitment }}): parallel execution complete
+
+          Commitment: ${{ matrix.commitment }}
+          HANDOFF: ${{ steps.handoff.outputs.path }}
+
+          🤖 Generated by Claude Parallel Agent"
+
+            # Push the branch
+            git push origin mentu/${{ matrix.commitment }} || echo "Push failed"
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Sync ledger to main
+        if: always() && steps.handoff.outputs.found == 'true'
+        run: |
+          # Switch to main and merge ledger changes
+          git checkout main
+          git checkout mentu/${{ matrix.commitment }} -- .mentu/ledger.jsonl || true
+
+          if ! git diff --quiet .mentu/; then
+            git add .mentu/
+            git commit -m "chore(mentu): sync ledger from ${{ matrix.commitment }}" || true
+            git push origin main || echo "Ledger sync failed - manual merge needed"
+          fi
+
+  # Summary job: report results
+  summary:
+    name: Execution Summary
+    needs: [discover, agent]
+    if: always() && needs.discover.outputs.count != '0'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate summary
+        run: |
+          echo "## Parallel Agent Execution Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Commitment | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|------------|--------|" >> $GITHUB_STEP_SUMMARY
+
+          # This would need to query job statuses - simplified for now
+          echo "| See workflow jobs above | Check individual job status |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Use the job filter to view only failed or in-progress jobs." >> $GITHUB_STEP_SUMMARY
+
+      - name: Comment on issue (if triggered by comment)
+        if: github.event_name == 'issue_comment'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `✅ Parallel agent execution complete.\n\nSee results: [Workflow Run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+            });

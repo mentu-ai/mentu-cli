@@ -1,0 +1,12 @@
+cli:
+  backend: "claude"
+
+event_loop:
+  prompt_file: ".ralph/PROMPT.md"
+  max_iterations: 40
+  completion_keyword: "{{COMPLETION_PROMISE}}"
+
+backpressure:
+  - name: "build_gate"
+    command: "{{BUILD_CMD}} 2>&1"
+    on_fail: "reject"

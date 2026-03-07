@@ -1,0 +1,2 @@
+[console_scripts]
+cf-ai = cf_ai:main

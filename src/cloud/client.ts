@@ -135,12 +135,19 @@ export class CloudClient {
    * List all workspaces the user is a member of.
    */
   async listWorkspaces(): Promise<Workspace[]> {
-    // Verify auth context is set (catches expired/invalid tokens)
-    const { data: { user }, error: authError } = await this.supabase.auth.getUser();
-    if (authError || !user) {
-      throw new Error(
-        `Auth session invalid: ${authError?.message || 'no user'}. Run: mentu login`
-      );
+    // Verify auth by decoding JWT payload (avoids network call that fails with magic-link sessions)
+    const credentials = await getCredentials();
+    if (!credentials?.accessToken) {
+      throw new Error('Auth session invalid: no access token. Run: mentu login');
+    }
+    try {
+      const payloadB64 = credentials.accessToken.split('.')[1];
+      const payload = JSON.parse(Buffer.from(payloadB64, 'base64').toString());
+      if (!payload.sub) {
+        throw new Error('Invalid token payload');
+      }
+    } catch {
+      throw new Error('Auth session invalid: could not decode token. Run: mentu login');
     }
 
     const { data, error } = await this.supabase

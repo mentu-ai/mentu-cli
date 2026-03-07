@@ -36,6 +36,8 @@ import { registerReopenCommand } from './commands/reopen.js';
 import { registerReviewQueueCommand } from './commands/review-queue.js';
 import { registerSearchCommand } from './commands/search.js';
 import { registerAutopilotCommand } from './commands/autopilot.js';
+import { registerWorkspaceInitCommand } from './commands/workspace-init.js';
+import { registerWorkflowCommand } from './commands/workflow.js';
 import { getMentuVersion } from './utils/version.js';
 
 const program = new Command();
@@ -91,5 +93,7 @@ registerReopenCommand(program);
 registerReviewQueueCommand(program);
 registerSearchCommand(program);
 registerAutopilotCommand(program);
+registerWorkspaceInitCommand(program);
+registerWorkflowCommand(program);
 
 program.parse();

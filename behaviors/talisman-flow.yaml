@@ -1,0 +1,148 @@
+# Talisman App Behavior Recording
+# Recorded: 2026-01-12
+# Target: https://dev.talismanapp.co/
+
+name: talisman-flow
+target: https://dev.talismanapp.co/
+duration: 138s
+recorded: 2026-01-12T21:34:00Z
+
+# Authentication
+auth:
+  method: cookie
+  cookie_file: ~/.mentu/cookies/dev-talismanapp-co.json
+
+# Recorded Steps
+steps:
+  # Login Flow
+  - action: navigate
+    url: https://dev.talismanapp.co/
+
+  - action: navigate
+    url: https://dev.talismanapp.co/auth/signin
+
+  - action: click
+    selector: "#email"
+
+  - action: type
+    selector: "#email"
+    value: "[email]"  # Redacted - use credentials
+
+  - action: type
+    selector: "#password"
+    value: "[password]"  # Redacted - use credentials
+
+  - action: click
+    selector: "button.w-full.bg-indigo-300"
+    description: "Login button"
+    wait: 5000
+
+  # Auth Redirect (automatic)
+  - action: wait
+    url_pattern: "**/auth/redirect*"
+    timeout: 10000
+
+  # Dashboard Landing
+  - action: navigate
+    url: https://dev.talismanapp.co/
+
+  # Project Selection
+  - action: click
+    selector: "div.flex.items-center"
+    description: "Account/workspace selector"
+
+  - action: click
+    selector: "button.flex.items-center"
+    description: "Dropdown trigger"
+
+  - action: click
+    selector: "span.text-sm.2xl\\:text-base"
+    description: "Project selection (talismandev)"
+    wait: 2000
+
+  # Project: talismandev
+  - action: navigate
+    url: https://dev.talismanapp.co/talismandev
+
+  # Transaction Review
+  - action: click
+    selector: "button.flex.items-center"
+    description: "Menu/nav button"
+
+  - action: navigate
+    url: https://dev.talismanapp.co/talismandev/transactions/review
+
+  - action: click
+    selector: "[data-prefix='far']"
+    description: "Icon button (back/close)"
+
+  # Project Management Module
+  - action: navigate
+    url: https://dev.talismanapp.co/talismandev/pm
+
+  # PM Views
+  - action: click
+    selector: "button.px-3.lg\\:px-4"
+    description: "View toggle button"
+
+  - action: navigate
+    url: https://dev.talismanapp.co/talismandev/pm/feed
+    description: "Feed view"
+
+  - action: click
+    selector: "span"
+
+  - action: navigate
+    url: https://dev.talismanapp.co/talismandev/pm/board
+    description: "Board view (Kanban)"
+
+  - action: click
+    selector: "span"
+
+  - action: navigate
+    url: https://dev.talismanapp.co/talismandev/pm/timeline
+    description: "Timeline view (Gantt)"
+
+  - action: click
+    selector: "span"
+
+  - action: navigate
+    url: https://dev.talismanapp.co/talismandev/pm/plan
+    description: "Plan view"
+
+  - action: click
+    selector: "span"
+
+  - action: navigate
+    url: https://dev.talismanapp.co/talismandev/pm/workload
+    description: "Workload view"
+
+# Unique URLs Visited
+urls:
+  - https://dev.talismanapp.co/
+  - https://dev.talismanapp.co/auth/signin
+  - https://dev.talismanapp.co/talismandev
+  - https://dev.talismanapp.co/talismandev/transactions/review
+  - https://dev.talismanapp.co/talismandev/pm
+  - https://dev.talismanapp.co/talismandev/pm/feed
+  - https://dev.talismanapp.co/talismandev/pm/board
+  - https://dev.talismanapp.co/talismandev/pm/timeline
+  - https://dev.talismanapp.co/talismandev/pm/plan
+  - https://dev.talismanapp.co/talismandev/pm/workload
+
+# Summary
+summary:
+  total_clicks: 15
+  total_navigations: 20
+  total_type_events: 36
+  pages_visited: 10
+  modules_explored:
+    - auth (login)
+    - dashboard
+    - project selection
+    - transactions/review
+    - pm/feed
+    - pm/board
+    - pm/timeline
+    - pm/plan
+    - pm/workload

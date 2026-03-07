@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+import Sidebar from '../components/Sidebar.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  headings?: { depth: number; text: string; slug: string }[];
+  section?: string;
+}
+
+const { title, description, headings = [], section } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description || 'Mentu Documentation'} />
+    <title>{title} | Mentu Docs</title>
+    <link rel="icon" type="image/x-icon" href="/knowledge-base/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <nav class="docs-nav">
+      <div class="inner">
+        <a href="/" class="logo">mentu<span>.</span></a>
+        <div class="links">
+          <a href="/knowledge-base/" class="active">Knowledge Base</a>
+          <a href="/docs/">Publications</a>
+          <a href="/overview/">Overview</a>
+          <a href="https://github.com/mentu-ai" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="docs-layout">
+      <Sidebar currentPath={currentPath} />
+
+      <main class="main-content">
+        {section && (
+          <div class="breadcrumb">
+            <a href="/knowledge-base/">Home</a>
+            <span class="sep">/</span>
+            <span class="current">{section}</span>
+            <span class="sep">/</span>
+            <span class="current">{title}</span>
+          </div>
+        )}
+        <h1>{title}</h1>
+        <slot />
+      </main>
+
+      {headings.length > 0 && (
+        <TableOfContents headings={headings} />
+      )}
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+
+    <script>
+      // Mobile menu toggle
+      const toggle = document.getElementById('menu-toggle');
+      const sidebar = document.querySelector('.nav-sidebar');
+
+      toggle?.addEventListener('click', () => {
+        sidebar?.classList.toggle('open');
+      });
+
+      // TOC active state tracking
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.id;
+            const tocLink = document.querySelector(`.toc-item a[href="#${id}"]`);
+            if (entry.isIntersecting) {
+              document.querySelectorAll('.toc-item a.active').forEach((el) => {
+                el.classList.remove('active');
+              });
+              tocLink?.classList.add('active');
+            }
+          });
+        },
+        { rootMargin: '-100px 0px -66% 0px' }
+      );
+
+      document.querySelectorAll('h2[id], h3[id], h4[id]').forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Initialize Mermaid
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: 'neutral',
+          securityLevel: 'loose'
+        });
+      }
+    </script>
+  </body>
+</html>

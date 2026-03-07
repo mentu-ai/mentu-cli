@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "mentu": {
+      "command": "npx",
+      "args": ["-y", "mentu-mcp"],
+      "env": {
+        "MENTU_API_TOKEN": "__MENTU_TOKEN__",
+        "MENTU_WORKSPACE_ID": "__WORKSPACE_ID__",
+        "MENTU_API_URL": "https://mentu-proxy.affihub.workers.dev"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    }
+  }
+}

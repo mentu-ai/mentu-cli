@@ -1,0 +1,15 @@
+# Example Pathway: Login Flow
+# Usage: mentu pathway run pathways/example-login.pathway.yaml --dry-run
+
+name: Login Flow
+target_url: https://app.example.com
+
+steps:
+  - navigate: /login
+  - checkpoint: login-page-loaded
+  - fill: "#email" → test@example.com
+  - fill: "#password" → secret123
+  - click: button[type=submit]
+  - wait: .dashboard
+  - checkpoint: dashboard-loaded
+  - screenshot: final-state

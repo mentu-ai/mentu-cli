@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Visual Test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+        nav { background: #333; color: white; padding: 1rem; }
+        nav h1 { display: inline; }
+        nav .user-menu { float: right; cursor: pointer; padding: 0.5rem 1rem; background: #555; border-radius: 4px; }
+        .container { padding: 2rem; }
+        .widgets { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+        .widget-stats, .widget-activity { background: #f0f0f0; padding: 1.5rem; border-radius: 8px; }
+        .profile-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .profile-modal.show { display: block; }
+        .profile-modal h2 { margin-bottom: 1rem; }
+        .profile-modal input {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .profile-modal button {
+            background: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .widgets { grid-template-columns: 1fr; }
+            .mobile-nav { display: block; }
+            .widget-stats.mobile-stacked { margin-bottom: 1rem; }
+        }
+        @media (min-width: 769px) {
+            .mobile-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Dashboard</h1>
+        <div class="user-menu" onclick="openProfile()">User Menu</div>
+        <div class="mobile-nav" style="display: none;">☰ Menu</div>
+    </nav>
+
+    <div class="container">
+        <div class="widgets">
+            <div class="widget-stats mobile-stacked">
+                <h3>Statistics</h3>
+                <p>Active Users: 1,234</p>
+                <p>Revenue: $56,789</p>
+            </div>
+            <div class="widget-activity">
+                <h3>Recent Activity</h3>
+                <p>Last login: 2 hours ago</p>
+                <p>New messages: 5</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-modal" id="profileModal">
+        <h2>Profile</h2>
+        <input type="text" name="name" placeholder="Name" value="Test User">
+        <input type="email" name="email" placeholder="Email" value="test@example.com">
+        <button onclick="closeProfile()">Save</button>
+    </div>
+
+    <script>
+        function openProfile() {
+            document.getElementById('profileModal').classList.add('show');
+        }
+        function closeProfile() {
+            document.getElementById('profileModal').classList.remove('show');
+        }
+    </script>
+</body>
+</html>

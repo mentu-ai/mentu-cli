@@ -1,0 +1,89 @@
+---
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+const navigation = [
+  {
+    title: 'Getting Started',
+    slug: 'getting-started',
+    items: [
+      { title: 'quickstart', slug: 'quickstart' },
+      { title: 'installation', slug: 'installation' },
+    ]
+  },
+  {
+    title: 'Core Concepts',
+    slug: 'core-concepts',
+    items: [
+      { title: 'overview', slug: 'overview' },
+      { title: 'memories-commitments', slug: 'memories-commitments' },
+      { title: 'three-rules', slug: 'three-rules' },
+      { title: 'glossary', slug: 'glossary' },
+    ]
+  },
+  {
+    title: 'CLI Reference',
+    slug: 'cli-reference',
+    items: [
+      { title: 'overview', slug: 'overview' },
+      { title: 'core-commands', slug: 'core-commands' },
+      { title: 'triage-commands', slug: 'triage-commands' },
+      { title: 'advanced-commands', slug: 'advanced-commands' },
+    ]
+  },
+  {
+    title: 'API Reference',
+    slug: 'api-reference',
+    items: [
+      { title: 'overview', slug: 'overview' },
+      { title: 'endpoints', slug: 'endpoints' },
+      { title: 'authentication', slug: 'authentication' },
+    ]
+  },
+  {
+    title: 'Architecture',
+    slug: 'architecture',
+    items: [
+      { title: 'overview', slug: 'overview' },
+      { title: 'ledger-format', slug: 'ledger-format' },
+      { title: 'genesis-keys', slug: 'genesis-keys' },
+    ]
+  },
+  {
+    title: 'Guides',
+    slug: 'guides',
+    items: [
+      { title: 'github-integration', slug: 'github-integration' },
+      { title: 'claude-code-integration', slug: 'claude-code-integration' },
+    ]
+  },
+];
+
+function isActive(sectionSlug: string, itemSlug: string): boolean {
+  const expected = `/knowledge-base/${sectionSlug}/${itemSlug}`;
+  return currentPath === expected || currentPath === expected + '/';
+}
+---
+
+<nav class="nav-sidebar">
+  {navigation.map((section) => (
+    <div class="nav-section">
+      <div class="nav-section-title">{section.title}</div>
+      <ul class="nav-items">
+        {section.items.map((item) => (
+          <li class="nav-item">
+            <a
+              href={`/knowledge-base/${section.slug}/${item.slug}/`}
+              class:list={[{ active: isActive(section.slug, item.slug) }]}
+            >
+              {item.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</nav>

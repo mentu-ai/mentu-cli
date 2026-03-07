@@ -1,0 +1,385 @@
+{
+  "name": "warrantyos-login-v2",
+  "target": "https://app.warrantyos.com",
+  "created": "2026-01-13T00:46:07.788Z",
+  "version": "1.0",
+  "steps": [
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com",
+      "timestamp": 0,
+      "description": "Initial navigation"
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/",
+      "timestamp": 336,
+      "description": "Page navigation"
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/",
+      "timestamp": 1835,
+      "description": "Page navigation"
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/login",
+      "timestamp": 2941,
+      "description": "Page navigation"
+    },
+    {
+      "action": "hover",
+      "selector": "#email",
+      "timestamp": 4658
+    },
+    {
+      "action": "click",
+      "selector": "#email",
+      "timestamp": 5039,
+      "description": "focus"
+    },
+    {
+      "action": "click",
+      "selector": "#email",
+      "timestamp": 5122
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 5806
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 5987
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 6070
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 6148
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 6229
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 6439
+    },
+    {
+      "action": "click",
+      "selector": "#email",
+      "timestamp": 6675
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 6742
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 7107
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 7703
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 7929
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 8000
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 8002
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 8017
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 8083
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 8327
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 8592
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 8820
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 8888
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 9036
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 9182
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 9614
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 9867
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 9962
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 10075
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 10120
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 10268
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 10384
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 10470
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 10734
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 10955
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 11067
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 11129
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 11238
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 11465
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 11645
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 11745
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 11870
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 11959
+    },
+    {
+      "action": "click",
+      "selector": "#password",
+      "timestamp": 13131,
+      "description": "focus"
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 13654
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 13769
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 14078
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 14165
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 14369
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 14461
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 14752
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 14880
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 15133
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 15333
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 15566
+    },
+    {
+      "action": "hover",
+      "selector": "#password",
+      "timestamp": 15792
+    },
+    {
+      "action": "click",
+      "selector": "button.inline-flex.items-center.justify-center (Sign in)",
+      "timestamp": 16408
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/",
+      "timestamp": 17555,
+      "description": "Page navigation"
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/dashboard",
+      "timestamp": 18602,
+      "description": "Page navigation"
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.gap-2",
+      "timestamp": 25163
+    }
+  ],
+  "cookies": [],
+  "evidence": [],
+  "mentu": {
+    "evidence_id": "mem_a30fbc88"
+  }
+}

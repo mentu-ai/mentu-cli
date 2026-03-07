@@ -1,0 +1,15 @@
+[Unit]
+Description=Mentu Knowledge Base Server
+After=network.target
+
+[Service]
+Type=simple
+User=mentu
+WorkingDirectory=/home/mentu/Workspaces/mentu-ai/docs-site
+ExecStart=/home/mentu/Workspaces/mentu-ai/docs-site/kb-start.sh
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target

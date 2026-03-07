@@ -1,0 +1,194 @@
+behavior:
+  name: warrantyos-login-v2
+  target: https://app.warrantyos.com
+  version: "1.0"
+  created: 2026-01-13T00:46:07.788Z
+  steps:
+    - action: navigate
+      url: https://app.warrantyos.com
+      description: Initial navigation
+    - action: navigate
+      url: https://app.warrantyos.com/
+      description: Page navigation
+    - action: navigate
+      url: https://app.warrantyos.com/
+      description: Page navigation
+    - action: navigate
+      url: https://app.warrantyos.com/login
+      description: Page navigation
+    - action: hover
+      selector: "#email"
+    - action: click
+      selector: "#email"
+      description: focus
+    - action: click
+      selector: "#email"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: click
+      selector: "#email"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: click
+      selector: "#password"
+      description: focus
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: hover
+      selector: "#password"
+    - action: click
+      selector: button.inline-flex.items-center.justify-center (Sign in)
+    - action: navigate
+      url: https://app.warrantyos.com/
+      description: Page navigation
+    - action: navigate
+      url: https://app.warrantyos.com/dashboard
+      description: Page navigation
+    - action: hover
+      selector: button.inline-flex.items-center.gap-2
+  evidence: []
+replay:
+  headless: true
+  viewport: 1280x720
+  timeout: 30000

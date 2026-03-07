@@ -321,12 +321,59 @@ async function loginWithBrowser(json: boolean): Promise<void> {
       const url = new URL(req.url || '/', `http://localhost:${port}`);
 
       if (url.pathname === '/callback') {
-        // Parse hash fragments from URL (Supabase returns tokens in hash)
+        // PKCE flow: Supabase v2 returns ?code=XXX that must be exchanged
+        const code = url.searchParams.get('code');
+        if (code) {
+          try {
+            const { data, error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
+            if (exchangeError || !data.session) {
+              res.writeHead(400, { 'Content-Type': 'text/html' });
+              res.end('<h1>Login failed</h1><p>Code exchange failed.</p>');
+              server.close();
+              reject(new Error(exchangeError?.message || 'Code exchange failed'));
+              return;
+            }
+            const tokens: AuthTokens = {
+              accessToken: data.session.access_token,
+              refreshToken: data.session.refresh_token,
+              expiresAt: new Date((data.session.expires_at ?? Math.floor(Date.now() / 1000) + 3600) * 1000).toISOString(),
+              userId: data.user!.id,
+              email: data.user!.email!,
+            };
+            await saveCredentials(tokens);
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(`
+              <!DOCTYPE html>
+              <html>
+              <head><title>Mentu Login</title></head>
+              <body style="font-family: system-ui; padding: 40px; text-align: center;">
+                <h1>Logged in!</h1>
+                <p>Welcome, ${data.user!.email}</p>
+                <p>You can close this window and return to your terminal.</p>
+              </body>
+              </html>
+            `);
+            if (json) {
+              console.log(JSON.stringify({ success: true, email: data.user!.email }));
+            } else {
+              console.log(`\nLogged in as ${data.user!.email}`);
+            }
+            server.close();
+            resolve();
+          } catch (err) {
+            res.writeHead(500, { 'Content-Type': 'text/html' });
+            res.end('<h1>Login failed</h1><p>Code exchange error.</p>');
+            server.close();
+            reject(err instanceof Error ? err : new Error('Code exchange error'));
+          }
+          return;
+        }
+
+        // Implicit flow fallback: tokens in hash fragment
         const hashParams = url.hash ? new URLSearchParams(url.hash.slice(1)) : null;
         const accessToken = url.searchParams.get('access_token') || hashParams?.get('access_token');
         const refreshToken = url.searchParams.get('refresh_token') || hashParams?.get('refresh_token');
 
-        // If tokens not in URL, show a page that extracts them from hash
         if (!accessToken) {
           res.writeHead(200, { 'Content-Type': 'text/html' });
           res.end(`
@@ -336,14 +383,11 @@ async function loginWithBrowser(json: boolean): Promise<void> {
             <body>
               <h1>Processing login...</h1>
               <script>
-                // Extract tokens from hash
                 const hash = window.location.hash.substring(1);
                 const params = new URLSearchParams(hash);
                 const accessToken = params.get('access_token');
                 const refreshToken = params.get('refresh_token');
-
                 if (accessToken) {
-                  // Redirect with tokens in query params
                   window.location.href = '/complete?access_token=' + accessToken + '&refresh_token=' + refreshToken;
                 } else {
                   document.body.innerHTML = '<h1>Login failed</h1><p>No access token received.</p>';
@@ -355,7 +399,6 @@ async function loginWithBrowser(json: boolean): Promise<void> {
           return;
         }
 
-        // We have tokens, complete the login
         await handleTokens(accessToken, refreshToken || '', supabase, res, json, server, resolve, reject);
       } else if (url.pathname === '/complete') {
         // Handle the redirect from the hash extraction
@@ -437,22 +480,21 @@ async function handleTokens(
   reject: (err: Error) => void
 ): Promise<void> {
   try {
-    // Set the session in Supabase client
-    await supabase.auth.setSession({
-      access_token: accessToken,
-      refresh_token: refreshToken,
-    });
+    // Decode JWT payload to get user info (works without network call)
+    const payloadB64 = accessToken.split('.')[1];
+    const payload = JSON.parse(Buffer.from(payloadB64, 'base64').toString());
+    const userId = payload.sub;
+    const email = payload.email;
 
-    // Get user info
-    const { data: { user }, error } = await supabase.auth.getUser();
-
-    if (error || !user) {
+    if (!userId || !email) {
       res.writeHead(400, { 'Content-Type': 'text/html' });
-      res.end('<h1>Login failed</h1><p>Could not get user information.</p>');
+      res.end('<h1>Login failed</h1><p>Invalid token payload.</p>');
       server.close();
-      reject(new Error('Could not get user information'));
+      reject(new Error('Invalid token payload'));
       return;
     }
+
+    const user = { id: userId, email };
 
     // Save credentials
     const tokens: AuthTokens = {

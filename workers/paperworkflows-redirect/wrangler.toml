@@ -1,0 +1,13 @@
+# Paperworkflows Redirect Worker
+# Handles branded redirects with custom OG meta tags
+
+name = "paperworkflows-redirect"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+account_id = "87c0cdbd93616c844386ed9f3d702ba1"
+
+# Routes - will be active once DNS propagates
+routes = [
+  { pattern = "paperworkflows.com/prepa-anahuac-inscripciones-2026", zone_id = "f3f1b4292386b6e7645efd45c9179fe1" },
+  { pattern = "paperworkflows.com/prepa-anahuac-becas-liderazgo-2026", zone_id = "f3f1b4292386b6e7645efd45c9179fe1" }
+]

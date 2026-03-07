@@ -12,6 +12,7 @@ interface InitClaudeOptions {
 
 interface InitClaudeOutput {
   created: string[];
+  updated: string[];
   config_path: string;
   hooks_path: string;
 }
@@ -20,22 +21,32 @@ function outputResult(result: InitClaudeOutput, json: boolean): void {
   if (json) {
     console.log(JSON.stringify(result));
   } else {
-    console.log('Mentu Claude Code v0.7 MVP initialized');
+    console.log('Mentu Claude Code v0.8 initialized');
     console.log('');
     console.log('Created:');
     for (const file of result.created) {
       console.log(`  ${file}`);
     }
+    if (result.updated.length > 0) {
+      console.log('');
+      console.log('Updated:');
+      for (const file of result.updated) {
+        console.log(`  ${file}`);
+      }
+    }
     console.log('');
-    console.log('Hooks installed:');
-    console.log('  - mentu_session_start.py: Shows claimed commitments at session start');
-    console.log('  - mentu_post_tool.py: Auto-captures file edits as evidence');
+    console.log('Hooks wired in Claude Code settings:');
+    console.log('  - SessionStart: Injects claimed commitments into agent context');
+    console.log('  - PostToolUse (Edit|Write): Auto-captures file edits as evidence');
+    console.log('');
+    console.log('Permissions added:');
+    console.log('  - Bash(mentu:*) — allows mentu CLI commands');
     console.log('');
     console.log('Workflow:');
-    console.log('  1. Before session: mentu commit "Task" --source mem_xxx');
-    console.log('  2. Before session: mentu claim cmt_xxx --actor agent:claude-code');
-    console.log('  3. During session: Edit files (evidence auto-captured)');
-    console.log('  4. Before stop: mentu submit cmt_xxx --summary "Done"');
+    console.log('  1. mentu commit "Task" --source mem_xxx');
+    console.log('  2. mentu claim cmt_xxx');
+    console.log('  3. Work (edits auto-captured as evidence)');
+    console.log('  4. mentu submit cmt_xxx --summary "Done"');
   }
 }
 
@@ -141,8 +152,86 @@ hooks:
           }
         }
 
+        // Wire hooks into Claude Code settings.json
+        const updated: string[] = [];
+        const settingsPath = path.join(claudeDir, 'settings.json');
+        let settings: Record<string, unknown> = {};
+
+        if (fs.existsSync(settingsPath)) {
+          try {
+            settings = JSON.parse(fs.readFileSync(settingsPath, 'utf-8'));
+          } catch {
+            settings = {};
+          }
+        }
+
+        // Ensure hooks section exists
+        if (!settings.hooks || typeof settings.hooks !== 'object') {
+          settings.hooks = {};
+        }
+        const hooks = settings.hooks as Record<string, unknown[]>;
+
+        // Add SessionStart hook (injects claimed commitments)
+        const sessionStartHook = {
+          matcher: '',
+          hooks: [{
+            type: 'command',
+            command: '"$CLAUDE_PROJECT_DIR"/.claude/hooks/mentu_session_start.py',
+            timeout: 15
+          }]
+        };
+
+        if (!hooks.SessionStart) {
+          hooks.SessionStart = [];
+        }
+        const sessionHooks = hooks.SessionStart as Record<string, unknown>[];
+        const hasSessionHook = sessionHooks.some((h) =>
+          JSON.stringify(h).includes('mentu_session_start')
+        );
+        if (!hasSessionHook) {
+          sessionHooks.push(sessionStartHook);
+        }
+
+        // Add PostToolUse hook (auto-captures file edits)
+        const postToolHook = {
+          matcher: 'Edit|Write',
+          hooks: [{
+            type: 'command',
+            command: '"$CLAUDE_PROJECT_DIR"/.claude/hooks/mentu_post_tool.py',
+            timeout: 15
+          }]
+        };
+
+        if (!hooks.PostToolUse) {
+          hooks.PostToolUse = [];
+        }
+        const postHooks = hooks.PostToolUse as Record<string, unknown>[];
+        const hasPostHook = postHooks.some((h) =>
+          JSON.stringify(h).includes('mentu_post_tool')
+        );
+        if (!hasPostHook) {
+          postHooks.push(postToolHook);
+        }
+
+        // Ensure mentu CLI permission is allowed
+        if (!settings.permissions || typeof settings.permissions !== 'object') {
+          settings.permissions = {};
+        }
+        const permissions = settings.permissions as Record<string, unknown>;
+        if (!Array.isArray(permissions.allow)) {
+          permissions.allow = [];
+        }
+        const allowList = permissions.allow as string[];
+        if (!allowList.includes('Bash(mentu:*)')) {
+          allowList.push('Bash(mentu:*)');
+        }
+
+        fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2) + '\n');
+        updated.push('.claude/settings.json');
+
         const result: InitClaudeOutput = {
           created,
+          updated,
           config_path: configPath,
           hooks_path: hooksDir,
         };

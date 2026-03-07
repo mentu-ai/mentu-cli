@@ -1,0 +1,184 @@
+{
+  "$schema": "behavior-registry-v1",
+  "version": "1.0.0",
+  "updated": "2026-01-13T01:00:00Z",
+  "description": "Registry of recorded browser behaviors and authenticated sessions",
+
+  "sessions": {
+    "talisman-dev": {
+      "name": "Talisman Dev",
+      "domain": "dev.talismanapp.co",
+      "url": "https://dev.talismanapp.co",
+      "authMethod": "cookie",
+      "cookiePath": "~/.mentu/cookies/dev-talismanapp-co.json",
+      "cookieCount": 5,
+      "authenticated": true,
+      "lastUpdated": "2026-01-12T15:32:00Z",
+      "notes": "Development environment login - cookies work"
+    },
+    "warrantyos": {
+      "name": "WarrantyOS",
+      "domain": "app.warrantyos.com",
+      "url": "https://app.warrantyos.com",
+      "authMethod": "localStorage",
+      "cookiePath": null,
+      "localStoragePath": "~/.mentu/cookies/app-warrantyos-com-localStorage.json",
+      "localStorageCount": 3,
+      "authenticated": true,
+      "lastUpdated": "2026-01-13T01:14:17Z",
+      "notes": "Supabase JWT captured via localStorage. Token includes access_token, refresh_token, user data."
+    }
+  },
+
+  "recordings": {
+    "talisman-flow": {
+      "name": "talisman-flow",
+      "target": "https://dev.talismanapp.co/",
+      "description": "Full Talisman app navigation through PM modules",
+      "files": {
+        "yaml": "behaviors/talisman-flow.yaml",
+        "json": null
+      },
+      "recorded": "2026-01-12T21:34:00Z",
+      "duration": 138,
+      "stats": {
+        "steps": 30,
+        "clicks": 15,
+        "navigations": 20,
+        "typing": 36
+      },
+      "auth": {
+        "method": "cookie",
+        "session": "talisman-dev",
+        "replayable": true
+      },
+      "pages": [
+        "https://dev.talismanapp.co/",
+        "https://dev.talismanapp.co/auth/signin",
+        "https://dev.talismanapp.co/talismandev",
+        "https://dev.talismanapp.co/talismandev/transactions/review",
+        "https://dev.talismanapp.co/talismandev/pm",
+        "https://dev.talismanapp.co/talismandev/pm/feed",
+        "https://dev.talismanapp.co/talismandev/pm/board",
+        "https://dev.talismanapp.co/talismandev/pm/timeline",
+        "https://dev.talismanapp.co/talismandev/pm/plan",
+        "https://dev.talismanapp.co/talismandev/pm/workload"
+      ],
+      "modules": [
+        "auth",
+        "dashboard",
+        "project-selection",
+        "transactions/review",
+        "pm/feed",
+        "pm/board",
+        "pm/timeline",
+        "pm/plan",
+        "pm/workload"
+      ]
+    },
+    "warrantyos-login": {
+      "name": "warrantyos-login",
+      "target": "https://app.warrantyos.com",
+      "description": "WarrantyOS full session with dashboard, customers, quotes",
+      "files": {
+        "yaml": "behaviors/warrantyos-login.yaml",
+        "json": "behaviors/warrantyos-login.json"
+      },
+      "recorded": "2026-01-13T00:26:46Z",
+      "duration": 278,
+      "stats": {
+        "steps": 1012,
+        "clicks": 43,
+        "navigations": 11,
+        "typing": 890,
+        "scrolls": 11
+      },
+      "auth": {
+        "method": "localStorage",
+        "session": "warrantyos",
+        "replayable": false,
+        "note": "Recording includes login steps - will need to enter credentials on replay"
+      },
+      "pages": [
+        "https://app.warrantyos.com/",
+        "https://app.warrantyos.com/login",
+        "https://app.warrantyos.com/dashboard",
+        "https://app.warrantyos.com/customers",
+        "https://app.warrantyos.com/quotes"
+      ],
+      "modules": [
+        "login",
+        "dashboard",
+        "customers",
+        "quotes"
+      ],
+      "evidence": {
+        "memoryId": "mem_3b68d4d4"
+      }
+    },
+    "warrantyos-login-v2": {
+      "name": "warrantyos-login-v2",
+      "target": "https://app.warrantyos.com",
+      "description": "Cleaner WarrantyOS login recording - login to dashboard only",
+      "files": {
+        "yaml": "behaviors/warrantyos-login-v2.yaml",
+        "json": "behaviors/warrantyos-login-v2.json"
+      },
+      "recorded": "2026-01-13T00:45:00Z",
+      "duration": 25,
+      "stats": {
+        "steps": 63,
+        "clicks": 5,
+        "navigations": 6,
+        "typing": 49
+      },
+      "auth": {
+        "method": "localStorage",
+        "session": "warrantyos",
+        "replayable": false,
+        "note": "Recording includes login steps - will need to enter credentials on replay"
+      },
+      "pages": [
+        "https://app.warrantyos.com/",
+        "https://app.warrantyos.com/login",
+        "https://app.warrantyos.com/dashboard"
+      ],
+      "modules": [
+        "login",
+        "dashboard"
+      ],
+      "evidence": {
+        "memoryId": "mem_a30fbc88"
+      }
+    }
+  },
+
+  "visualCaptures": {},
+
+  "defaults": {
+    "outputDir": "behaviors/",
+    "cookieDir": "~/.mentu/cookies/",
+    "screenshotBucket": "visual-evidence",
+    "viewports": ["desktop", "tablet", "mobile"],
+    "format": "webp",
+    "quality": 85
+  },
+
+  "authMethods": {
+    "cookie": {
+      "description": "HTTP cookies - can be captured and replayed",
+      "replayable": true,
+      "capture": "Automatic via Puppeteer page.cookies()"
+    },
+    "localStorage": {
+      "description": "JWT/tokens in browser localStorage - captured and replayable",
+      "replayable": true,
+      "capture": "Implemented via page.evaluate() with 1-second auto-save + browser close detection"
+    },
+    "sessionStorage": {
+      "description": "Session-only tokens - cleared on browser close",
+      "replayable": false,
+      "capture": "Not practical - session-scoped"
+    }
+  }
+}

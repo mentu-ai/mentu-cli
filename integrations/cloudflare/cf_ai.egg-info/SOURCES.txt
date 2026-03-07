@@ -1,0 +1,9 @@
+README.md
+cf_ai.py
+setup.py
+cf_ai.egg-info/PKG-INFO
+cf_ai.egg-info/SOURCES.txt
+cf_ai.egg-info/dependency_links.txt
+cf_ai.egg-info/entry_points.txt
+cf_ai.egg-info/requires.txt
+cf_ai.egg-info/top_level.txt

@@ -1,0 +1,5979 @@
+{
+  "name": "warrantyos-login",
+  "target": "https://app.warrantyos.com",
+  "created": "2026-01-13T00:26:46.595Z",
+  "version": "1.0",
+  "steps": [
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com",
+      "timestamp": 0,
+      "description": "Initial navigation"
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/",
+      "timestamp": 253,
+      "description": "Page navigation"
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/",
+      "timestamp": 1812,
+      "description": "Page navigation"
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/login",
+      "timestamp": 2955,
+      "description": "Page navigation"
+    },
+    {
+      "action": "hover",
+      "selector": "#email",
+      "timestamp": 11424
+    },
+    {
+      "action": "click",
+      "selector": "#email",
+      "timestamp": 11812,
+      "description": "focus"
+    },
+    {
+      "action": "click",
+      "selector": "#email",
+      "timestamp": 11937
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 12342
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 12544
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 12732
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 12825
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 12944
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 13109
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 13989
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 14236
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 14377
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 14614
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 14710
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 14910
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 14974
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 15121
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 15317
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 15689
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 15930
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 16090
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 16368
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 16463
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 16610
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 16678
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 16771
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 16878
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 16946
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 17065
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 17212
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 17308
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 17609
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 17937
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 18021
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 18140
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 18251
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 18651
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 18863
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 18943
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 19088
+    },
+    {
+      "action": "type",
+      "selector": "#email",
+      "value": "[redacted]",
+      "timestamp": 19175
+    },
+    {
+      "action": "click",
+      "selector": "#password",
+      "timestamp": 19987,
+      "description": "focus"
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 20325
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 20473
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 20770
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 20859
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 21005
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 21089
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 21401
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 21519
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 21787
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 21982
+    },
+    {
+      "action": "type",
+      "selector": "#password",
+      "value": "[redacted]",
+      "timestamp": 22287
+    },
+    {
+      "action": "hover",
+      "selector": "#password",
+      "timestamp": 22396
+    },
+    {
+      "action": "hover",
+      "selector": "#password",
+      "timestamp": 22895
+    },
+    {
+      "action": "click",
+      "selector": "svg",
+      "timestamp": 24004
+    },
+    {
+      "action": "hover",
+      "selector": "button.absolute.right-3.top-1/2",
+      "timestamp": 24230
+    },
+    {
+      "action": "click",
+      "selector": "path",
+      "timestamp": 24409
+    },
+    {
+      "action": "click",
+      "selector": "path",
+      "timestamp": 25275
+    },
+    {
+      "action": "hover",
+      "selector": "button.absolute.right-3.top-1/2",
+      "timestamp": 25300
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 26175
+    },
+    {
+      "action": "click",
+      "selector": "button.inline-flex.items-center.justify-center (Sign in)",
+      "timestamp": 26541
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/",
+      "timestamp": 27643,
+      "description": "Page navigation"
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/dashboard",
+      "timestamp": 29107,
+      "description": "Page navigation"
+    },
+    {
+      "action": "hover",
+      "selector": "[data-sidebar=\"menu-button\"]",
+      "timestamp": 33232
+    },
+    {
+      "action": "click",
+      "selector": "span.font-medium.text-sm.truncate (Quotes)",
+      "timestamp": 34630
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/quotes",
+      "timestamp": 34684,
+      "description": "Page navigation"
+    },
+    {
+      "action": "click",
+      "selector": "span.font-medium.text-sm.truncate (Quotes)",
+      "timestamp": 36926
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/quotes",
+      "timestamp": 36961,
+      "description": "Page navigation"
+    },
+    {
+      "action": "hover",
+      "selector": "[data-sidebar=\"menu-button\"]",
+      "timestamp": 37889
+    },
+    {
+      "action": "click",
+      "selector": "[data-sidebar=\"menu-button\"] (Customers)",
+      "timestamp": 38223
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/customers",
+      "timestamp": 38257,
+      "description": "Page navigation"
+    },
+    {
+      "action": "click",
+      "selector": "span.font-medium.text-sm.truncate (Customers)",
+      "timestamp": 39950
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/customers",
+      "timestamp": 39983,
+      "description": "Page navigation"
+    },
+    {
+      "action": "click",
+      "selector": "span.font-medium.text-sm.truncate (Customers)",
+      "timestamp": 41885
+    },
+    {
+      "action": "navigate",
+      "url": "https://app.warrantyos.com/customers",
+      "timestamp": 41937,
+      "description": "Page navigation"
+    },
+    {
+      "action": "hover",
+      "selector": "[data-sidebar=\"menu-button\"]",
+      "timestamp": 42462
+    },
+    {
+      "action": "hover",
+      "selector": "[data-sidebar=\"menu-button\"]",
+      "timestamp": 43039
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 44665
+    },
+    {
+      "action": "click",
+      "selector": "button.inline-flex.items-center.justify-center (Details)",
+      "timestamp": 45090
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 47922
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 49619
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 50080
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 50979
+    },
+    {
+      "action": "hover",
+      "selector": "input.flex.h-10.w-full",
+      "timestamp": 51580
+    },
+    {
+      "action": "hover",
+      "selector": "#radix-",
+      "timestamp": 53035
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 53763
+    },
+    {
+      "action": "click",
+      "selector": "[data-state=\"closed\"]",
+      "timestamp": 64059
+    },
+    {
+      "action": "click",
+      "selector": "[data-state=\"closed\"]",
+      "timestamp": 66283
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 66284
+    },
+    {
+      "action": "click",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 66344
+    },
+    {
+      "action": "click",
+      "selector": "div.flex.items-center.justify-between (Customer WorkspaceReview conta)",
+      "timestamp": 66727
+    },
+    {
+      "action": "click",
+      "selector": "#radix-",
+      "timestamp": 66727
+    },
+    {
+      "action": "click",
+      "selector": "div.flex.items-center.justify-between (Customer WorkspaceReview conta)",
+      "timestamp": 66733
+    },
+    {
+      "action": "click",
+      "selector": "[data-state=\"closed\"]",
+      "timestamp": 66735
+    },
+    {
+      "action": "hover",
+      "selector": "#radix-",
+      "timestamp": 67557
+    },
+    {
+      "action": "click",
+      "selector": "#radix-",
+      "timestamp": 67557
+    },
+    {
+      "action": "click",
+      "selector": "svg",
+      "timestamp": 67566
+    },
+    {
+      "action": "click",
+      "selector": "textarea",
+      "timestamp": 68112,
+      "description": "focus"
+    },
+    {
+      "action": "click",
+      "selector": "[data-state=\"closed\"]",
+      "timestamp": 68143
+    },
+    {
+      "action": "hover",
+      "selector": "[data-bugReporterIgnore=\"true\"]",
+      "timestamp": 68808
+    },
+    {
+      "action": "click",
+      "selector": "[data-bugReporterIgnore=\"true\"]",
+      "timestamp": 69404
+    },
+    {
+      "action": "hover",
+      "selector": "#root",
+      "timestamp": 69641
+    },
+    {
+      "action": "hover",
+      "selector": "input.flex.w-full.border-input",
+      "timestamp": 70376
+    },
+    {
+      "action": "click",
+      "selector": "textarea",
+      "timestamp": 70853,
+      "description": "focus"
+    },
+    {
+      "action": "hover",
+      "selector": "textarea",
+      "timestamp": 70934
+    },
+    {
+      "action": "hover",
+      "selector": "textarea",
+      "timestamp": 71513
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 72513
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 72979
+    },
+    {
+      "action": "click",
+      "selector": "button (Click to select)",
+      "timestamp": 73425
+    },
+    {
+      "action": "hover",
+      "selector": "#root",
+      "timestamp": 73699
+    },
+    {
+      "action": "hover",
+      "selector": "textarea",
+      "timestamp": 79476
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 81796
+    },
+    {
+      "action": "click",
+      "selector": "svg",
+      "timestamp": 82753
+    },
+    {
+      "action": "hover",
+      "selector": "#root",
+      "timestamp": 82762
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 83630
+    },
+    {
+      "action": "click",
+      "selector": "button.inline-flex.items-center.justify-center (Details)",
+      "timestamp": 83995
+    },
+    {
+      "action": "hover",
+      "selector": "input.flex.h-10.w-full",
+      "timestamp": 88882
+    },
+    {
+      "action": "click",
+      "selector": "[data-state=\"closed\"]",
+      "timestamp": 89795
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 90037
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 91756
+    },
+    {
+      "action": "click",
+      "selector": "button (Click to select)",
+      "timestamp": 92454
+    },
+    {
+      "action": "hover",
+      "selector": "#root",
+      "timestamp": 92907
+    },
+    {
+      "action": "hover",
+      "selector": "[data-bugReporterIgnore=\"true\"]",
+      "timestamp": 95204
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 96718
+    },
+    {
+      "action": "hover",
+      "selector": "[data-bugReporterIgnore=\"true\"]",
+      "timestamp": 97868
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 98537
+    },
+    {
+      "action": "click",
+      "selector": "div (CancelSubmit)",
+      "timestamp": 98964
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 99134
+    },
+    {
+      "action": "click",
+      "selector": "button (Cancel)",
+      "timestamp": 99295
+    },
+    {
+      "action": "click",
+      "selector": "main.flex-1.overflow-auto (Customers48,358 total customer)",
+      "timestamp": 99674
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 100284
+    },
+    {
+      "action": "click",
+      "selector": "button.inline-flex.items-center.justify-center (Details)",
+      "timestamp": 100554
+    },
+    {
+      "action": "hover",
+      "selector": "input.flex.h-10.w-full",
+      "timestamp": 102056
+    },
+    {
+      "action": "hover",
+      "selector": "input.flex.h-10.w-full",
+      "timestamp": 106311
+    },
+    {
+      "action": "click",
+      "selector": "[data-state=\"closed\"]",
+      "timestamp": 108769
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 109153
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 110107
+    },
+    {
+      "action": "click",
+      "selector": "button (Click to select)",
+      "timestamp": 110799
+    },
+    {
+      "action": "hover",
+      "selector": "#root",
+      "timestamp": 110835
+    },
+    {
+      "action": "hover",
+      "selector": "textarea",
+      "timestamp": 112250
+    },
+    {
+      "action": "hover",
+      "selector": "[aria-label=\"Close\"]",
+      "timestamp": 113214
+    },
+    {
+      "action": "click",
+      "selector": "svg",
+      "timestamp": 113492
+    },
+    {
+      "action": "hover",
+      "selector": "input.flex.w-full.border-input",
+      "timestamp": 120053
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 121087
+    },
+    {
+      "action": "click",
+      "selector": "button.inline-flex.items-center.justify-center (Details)",
+      "timestamp": 121395
+    },
+    {
+      "action": "hover",
+      "selector": "#radix-",
+      "timestamp": 122169
+    },
+    {
+      "action": "hover",
+      "selector": "button.inline-flex.items-center.justify-center",
+      "timestamp": 122807
+    },
+    {
+      "action": "hover",
+      "selector": "#radix-",
+      "timestamp": 126528
+    },
+    {
+      "action": "click",
+      "selector": "[data-state=\"closed\"]",
+      "timestamp": 127170
+    },
+    {
+      "action": "hover",
+      "selector": "textarea",
+      "timestamp": 127456
+    },
+    {
+      "action": "click",
+      "selector": "textarea",
+      "timestamp": 127546,
+      "description": "focus"
+    },
+    {
+      "action": "click",
+      "selector": "textarea",
+      "timestamp": 127614
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 127977
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128338
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128350
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128350
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128549
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128580
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128591
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128694
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128893
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 128935
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 129143
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 129305
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 129449
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 129719
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 129892
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 130032
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 130174
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 130279
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 130384
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 130459
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 130742
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 130821
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 130933
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 131361
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 132798
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 132947
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133004
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133166
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133298
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133382
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133479
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133526
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133630
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133710
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 133875
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135046
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135122
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135210
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135315
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135460
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135545
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135661
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135750
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135789
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 135846
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 136042
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 136129
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 136214
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 136343
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 136501
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 136726
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 136870
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 136897
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137026
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137097
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137145
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137247
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137303
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137405
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137753
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137833
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 137962
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 138014
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 138106
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 138268
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 138466
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 138586
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 138690
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 138879
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 141241
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 141360
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 141442
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 141579
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 141683
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 141775
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 141839
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 141903
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 142077
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 142720
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 142744
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 142930
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 143093
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 143506
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 143585
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 143681
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 143753
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 143874
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 143917
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 143977
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144033
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144143
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144333
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144427
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144513
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144589
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144675
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144749
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144826
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144909
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 144949
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 145045
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 145169
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 145248
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 145564
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 146164
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 146397
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 146536
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 146644
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 146752
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 146852
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 146947
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 147127
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 147259
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 147868
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 148032
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 148085
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 148197
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 148249
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 148332
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 148547
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 148663
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 148854
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149089
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149445
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149448
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149449
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149449
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149453
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149486
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149520
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149553
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149587
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149678
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149886
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 149973
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 150193
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 150415
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 150791
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 150851
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 150926
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 151061
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 151153
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 151325
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 151473
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 151563
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 151651
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 151724
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 151906
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152172
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152326
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152390
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152532
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152604
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152716
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152848
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152877
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 152944
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153058
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153120
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153306
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153370
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153516
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153649
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153745
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153809
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 153962
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 154022
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 154100
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 154243
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 154299
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 154406
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 154555
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 155137
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 155280
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 155388
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 155428
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 155659
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 155813
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 155976
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156059
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156146
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156242
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156344
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156400
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156496
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156564
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156677
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156724
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156889
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 156972
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 157117
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 157227
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 157494
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 157593
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 157726
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 157760
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 157881
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158006
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158061
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158153
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158370
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158473
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158568
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158679
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158731
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 158807
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159031
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159237
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159413
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159593
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159638
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159774
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159838
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159881
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 159938
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160167
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160237
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160355
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160434
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160486
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160555
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160739
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160814
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 160926
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 161223
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 161398
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 161498
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 161647
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 161746
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 161853
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 162064
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 162301
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 162546
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 162693
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 162764
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 162867
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 163006
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 163170
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 163314
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 165439
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 165527
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 165594
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 165619
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 165710
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 165731
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 165920
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166032
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166207
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166365
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166616
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166650
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166683
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166716
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166749
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166783
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166825
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166849
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166883
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166916
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 166949
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 167233
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 167442
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 167590
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 168056
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 168247
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 168390
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 168556
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 168956
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 169473
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 170728
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 170979
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171013
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171045
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171079
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171114
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171464
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171718
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171749
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171783
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171817
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171849
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171883
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171916
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171949
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 171984
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172018
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172050
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172084
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172118
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172152
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172188
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172222
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172257
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 172289
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173010
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173039
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173200
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173322
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173408
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173483
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173563
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173631
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173720
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173802
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 173806
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 174056
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 174316
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 174431
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 174611
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 174750
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 174830
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 174944
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 175089
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 175213
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 175338
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 175539
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 175619
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 175776
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 176369
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 177477
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 177556
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 177661
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 177809
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 177869
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 177990
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178072
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178165
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178283
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178420
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178503
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178648
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178724
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178763
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178819
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 178907
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 179096
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 181417
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 181605
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 181649
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 181795
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 181917
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 181985
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 182073
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 182314
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 182473
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 183343
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 183433
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 183633
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 183668
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 183864
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 184048
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 184272
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 184413
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 184531
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 184624
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 184720
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 184812
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 185057
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 185215
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 185378
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 185583
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 185639
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 185758
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 185842
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 185974
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186038
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186130
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186212
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186279
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 186281
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186409
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186449
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186518
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186639
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 186809
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187033
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187170
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187340
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187353
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187492
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187552
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187750
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187849
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 187917
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188006
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188243
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188382
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188499
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188533
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188617
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188772
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188905
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 188963
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 189145
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 189291
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 189327
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 189497
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 189635
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 189718
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 190114
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 190218
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 190326
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 190501
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 190689
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 190796
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 190955
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 191076
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 191168
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 191363
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 191476
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 191587
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 191665
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 191835
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 191906
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192111
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192164
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192292
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192341
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192457
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192521
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192617
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192710
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192782
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192892
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 192979
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 193138
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 193169
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 193329
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 193357
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 193493
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 193577
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 193638
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 194101
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 194394
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 194555
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 194857
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 195031
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 195145
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 195436
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 200140
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 200440
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 200818
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 200953
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 201044
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 201123
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 201138
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 201199
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 201329
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 201396
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 201536
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 201695
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 201943
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 202374
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 202693
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 202844
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 202963
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 203027
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 203145
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 204036
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 204444
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 204527
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 204676
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 204770
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 204804
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 204923
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 205039
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 205190
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 205530
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 206012
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 206869
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 206960
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 207089
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 207121
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 207384
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 207687
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 207814
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 207832
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 207906
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 207992
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 208060
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 208243
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 208287
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 208381
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 208568
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 208750
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 208835
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 209713
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 209714
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 209752
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 209809
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 209895
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 209971
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 210228
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 210299
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 210397
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 210507
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 210599
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 210737
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 211177
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 211272
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 211362
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 211722
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 211883
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 212022
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 212609
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 212808
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 212938
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213003
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 213015
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213101
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213211
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213281
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213402
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213479
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213563
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213637
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 213931
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 214024
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 214110
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 214235
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 214308
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 214475
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 214649
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 214792
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 214911
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 215417
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 215539
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 215707
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 215824
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 216578
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 216720
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 216777
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 216864
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 217033
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 217036
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 217186
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 217265
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 217552
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 217689
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 217831
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 217976
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218090
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218204
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218296
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218379
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218468
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218516
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218592
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218680
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218735
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218894
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 218971
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 219080
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 219118
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 219163
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 219259
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 219369
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 219607
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 219707
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 219876
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220003
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220347
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220502
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220589
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220653
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220750
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220838
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220889
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 220988
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221049
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221103
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221188
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221296
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221420
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221497
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221581
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221665
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221732
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221843
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 221904
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222064
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 222073
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222117
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222211
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222332
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222482
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222628
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222638
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222702
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222790
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222871
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 222964
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223016
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223104
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223199
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223271
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223451
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223520
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223679
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223825
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223911
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 223999
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224069
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224162
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224245
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224401
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224486
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224653
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224717
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224828
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 224918
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 225018
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 225090
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 225296
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 225747
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 226050
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 226359
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 226493
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 226592
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 226680
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 226925
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227013
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227114
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227236
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227352
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227424
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227481
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227521
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227625
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227669
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227712
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227816
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227910
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 227965
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228002
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228125
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228226
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228335
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228394
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228536
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228624
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228644
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228744
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228857
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 228932
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 229044
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 229126
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 231364
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 231530
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 231566
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 231684
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 231811
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 231977
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232126
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232227
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232310
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 232312
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232382
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232462
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232547
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232598
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232689
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232765
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 232845
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 233978
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 234136
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 234260
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 234403
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 234499
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 234563
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 234647
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 234752
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 234884
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 235131
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 235321
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 235413
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 235494
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 235618
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 235727
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 236205
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 236348
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 236380
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 236518
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 236655
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 236739
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 236847
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 236908
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 237088
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 237229
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 237370
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 237509
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 238179
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 238271
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 238507
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 238541
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 238713
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 238805
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 238976
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239009
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239067
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239269
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239405
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239519
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239583
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239614
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239707
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239831
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239891
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 239991
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 240107
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 240219
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 240297
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 240389
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 240830
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 240901
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 240958
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241056
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241305
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241473
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241560
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241660
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241732
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241830
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241893
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 241935
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 242069
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 242173
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 242220
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 242413
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 242578
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 242856
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 242925
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 243087
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 243257
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 243479
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 243606
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 243690
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 243746
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 243863
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 243970
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 244210
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 244240
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 244374
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 244496
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 244539
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245084
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245160
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245232
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245363
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245437
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245585
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245677
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245732
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245812
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245876
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 245971
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 246036
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 246148
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 246224
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 246343
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 246388
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 246625
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 246913
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 247271
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 247502
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 247605
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 247922
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 248073
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 248463
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 248658
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 249231
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 249466
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 250443
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 250606
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 250710
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 250892
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 251052
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 252597
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 252673
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 252749
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 252866
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 253239
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 253396
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 253485
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 253554
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 253608
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 253786
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 253866
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 253930
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 254026
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 254205
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 254361
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 254528
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 254763
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 254771
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 255019
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 255153
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 255245
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 255369
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 255515
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 255650
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 255806
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 255955
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 256180
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 256517
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 257069
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 257229
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 257379
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 257539
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 257714
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 258027
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 258796
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 258851
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 258969
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 259012
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 259096
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 259251
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 259292
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 259376
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 259487
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 259507
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 259971
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260123
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260172
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260255
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260348
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260469
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260545
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260618
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260693
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260831
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 260953
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 261687
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 261897
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 261932
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 261960
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 262115
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 262187
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 262291
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 262377
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 262492
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 262712
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 262862
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 263098
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 263114
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 263203
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 263286
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 263488
+    },
+    {
+      "action": "type",
+      "selector": "textarea",
+      "value": "[redacted]",
+      "timestamp": 263877
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 270124
+    },
+    {
+      "action": "click",
+      "selector": "button (Submit)",
+      "timestamp": 270557
+    },
+    {
+      "action": "hover",
+      "selector": "button",
+      "timestamp": 271478
+    },
+    {
+      "action": "hover",
+      "selector": "[data-bugReporterIgnore=\"true\"]",
+      "timestamp": 272240
+    },
+    {
+      "action": "scroll",
+      "value": "0,0",
+      "timestamp": 273832
+    },
+    {
+      "action": "hover",
+      "selector": "#radix-",
+      "timestamp": 278382
+    }
+  ],
+  "cookies": [],
+  "evidence": [],
+  "mentu": {
+    "evidence_id": "mem_3b68d4d4"
+  }
+}

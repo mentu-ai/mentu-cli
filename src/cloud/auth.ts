@@ -197,7 +197,7 @@ export async function checkCredentialState(): Promise<{
 
 // Default Supabase configuration for Mentu Cloud
 const DEFAULT_SUPABASE_URL = 'https://nwhtjzgcbjuewuhapjua.supabase.co';
-const DEFAULT_SUPABASE_ANON_KEY = '<JWT_REDACTED>';
+const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53aHRqemdjYmp1ZXd1aGFwanVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY5ODIzMjQsImV4cCI6MjA4MjU1ODMyNH0.w6LwQAK7P3S2VvKs1G1QVK_FI11A2x9tUKdXr0iG1N8';
 
 /**
  * Get Supabase URL (from environment or default).

@@ -1,0 +1,2941 @@
+behavior:
+  name: warrantyos-login
+  target: https://app.warrantyos.com
+  version: "1.0"
+  created: 2026-01-13T00:26:46.595Z
+  steps:
+    - action: navigate
+      url: https://app.warrantyos.com
+      description: Initial navigation
+    - action: navigate
+      url: https://app.warrantyos.com/
+      description: Page navigation
+    - action: navigate
+      url: https://app.warrantyos.com/
+      description: Page navigation
+    - action: navigate
+      url: https://app.warrantyos.com/login
+      description: Page navigation
+    - action: hover
+      selector: "#email"
+    - action: click
+      selector: "#email"
+      description: focus
+    - action: click
+      selector: "#email"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: type
+      selector: "#email"
+      value: "[redacted]"
+    - action: click
+      selector: "#password"
+      description: focus
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: type
+      selector: "#password"
+      value: "[redacted]"
+    - action: hover
+      selector: "#password"
+    - action: hover
+      selector: "#password"
+    - action: click
+      selector: svg
+    - action: hover
+      selector: button.absolute.right-3.top-1/2
+    - action: click
+      selector: path
+    - action: click
+      selector: path
+    - action: hover
+      selector: button.absolute.right-3.top-1/2
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: click
+      selector: button.inline-flex.items-center.justify-center (Sign in)
+    - action: navigate
+      url: https://app.warrantyos.com/
+      description: Page navigation
+    - action: navigate
+      url: https://app.warrantyos.com/dashboard
+      description: Page navigation
+    - action: hover
+      selector: '[data-sidebar="menu-button"]'
+    - action: click
+      selector: span.font-medium.text-sm.truncate (Quotes)
+    - action: navigate
+      url: https://app.warrantyos.com/quotes
+      description: Page navigation
+    - action: click
+      selector: span.font-medium.text-sm.truncate (Quotes)
+    - action: navigate
+      url: https://app.warrantyos.com/quotes
+      description: Page navigation
+    - action: hover
+      selector: '[data-sidebar="menu-button"]'
+    - action: click
+      selector: '[data-sidebar="menu-button"] (Customers)'
+    - action: navigate
+      url: https://app.warrantyos.com/customers
+      description: Page navigation
+    - action: click
+      selector: span.font-medium.text-sm.truncate (Customers)
+    - action: navigate
+      url: https://app.warrantyos.com/customers
+      description: Page navigation
+    - action: click
+      selector: span.font-medium.text-sm.truncate (Customers)
+    - action: navigate
+      url: https://app.warrantyos.com/customers
+      description: Page navigation
+    - action: hover
+      selector: '[data-sidebar="menu-button"]'
+    - action: hover
+      selector: '[data-sidebar="menu-button"]'
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: click
+      selector: button.inline-flex.items-center.justify-center (Details)
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: scroll
+      value: 0,0
+    - action: scroll
+      value: 0,0
+    - action: hover
+      selector: input.flex.h-10.w-full
+    - action: hover
+      selector: "#radix-"
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: click
+      selector: '[data-state="closed"]'
+    - action: click
+      selector: '[data-state="closed"]'
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: click
+      selector: button.inline-flex.items-center.justify-center
+    - action: click
+      selector: div.flex.items-center.justify-between (Customer WorkspaceReview conta)
+    - action: click
+      selector: "#radix-"
+    - action: click
+      selector: div.flex.items-center.justify-between (Customer WorkspaceReview conta)
+    - action: click
+      selector: '[data-state="closed"]'
+    - action: hover
+      selector: "#radix-"
+    - action: click
+      selector: "#radix-"
+    - action: click
+      selector: svg
+    - action: click
+      selector: textarea
+      description: focus
+    - action: click
+      selector: '[data-state="closed"]'
+    - action: hover
+      selector: '[data-bugReporterIgnore="true"]'
+    - action: click
+      selector: '[data-bugReporterIgnore="true"]'
+    - action: hover
+      selector: "#root"
+    - action: hover
+      selector: input.flex.w-full.border-input
+    - action: click
+      selector: textarea
+      description: focus
+    - action: hover
+      selector: textarea
+    - action: hover
+      selector: textarea
+    - action: hover
+      selector: button
+    - action: hover
+      selector: button
+    - action: click
+      selector: button (Click to select)
+    - action: hover
+      selector: "#root"
+    - action: hover
+      selector: textarea
+    - action: hover
+      selector: button
+    - action: click
+      selector: svg
+    - action: hover
+      selector: "#root"
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: click
+      selector: button.inline-flex.items-center.justify-center (Details)
+    - action: hover
+      selector: input.flex.h-10.w-full
+    - action: click
+      selector: '[data-state="closed"]'
+    - action: hover
+      selector: button
+    - action: hover
+      selector: button
+    - action: click
+      selector: button (Click to select)
+    - action: hover
+      selector: "#root"
+    - action: hover
+      selector: '[data-bugReporterIgnore="true"]'
+    - action: hover
+      selector: button
+    - action: hover
+      selector: '[data-bugReporterIgnore="true"]'
+    - action: hover
+      selector: button
+    - action: click
+      selector: div (CancelSubmit)
+    - action: hover
+      selector: button
+    - action: click
+      selector: button (Cancel)
+    - action: click
+      selector: main.flex-1.overflow-auto (Customers48,358 total customer)
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: click
+      selector: button.inline-flex.items-center.justify-center (Details)
+    - action: hover
+      selector: input.flex.h-10.w-full
+    - action: hover
+      selector: input.flex.h-10.w-full
+    - action: click
+      selector: '[data-state="closed"]'
+    - action: hover
+      selector: button
+    - action: hover
+      selector: button
+    - action: click
+      selector: button (Click to select)
+    - action: hover
+      selector: "#root"
+    - action: hover
+      selector: textarea
+    - action: hover
+      selector: '[aria-label="Close"]'
+    - action: click
+      selector: svg
+    - action: hover
+      selector: input.flex.w-full.border-input
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: click
+      selector: button.inline-flex.items-center.justify-center (Details)
+    - action: hover
+      selector: "#radix-"
+    - action: hover
+      selector: button.inline-flex.items-center.justify-center
+    - action: hover
+      selector: "#radix-"
+    - action: click
+      selector: '[data-state="closed"]'
+    - action: hover
+      selector: textarea
+    - action: click
+      selector: textarea
+      description: focus
+    - action: click
+      selector: textarea
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: scroll
+      value: 0,0
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: scroll
+      value: 0,0
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: scroll
+      value: 0,0
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: scroll
+      value: 0,0
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: scroll
+      value: 0,0
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: scroll
+      value: 0,0
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: scroll
+      value: 0,0
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: scroll
+      value: 0,0
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: type
+      selector: textarea
+      value: "[redacted]"
+    - action: hover
+      selector: button
+    - action: click
+      selector: button (Submit)
+    - action: hover
+      selector: button
+    - action: hover
+      selector: '[data-bugReporterIgnore="true"]'
+    - action: scroll
+      value: 0,0
+    - action: hover
+      selector: "#radix-"
+  evidence: []
+replay:
+  headless: true
+  viewport: 1280x720
+  timeout: 30000

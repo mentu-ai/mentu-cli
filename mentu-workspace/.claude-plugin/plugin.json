@@ -1,0 +1,14 @@
+{
+  "name": "mentu-workspace",
+  "description": "Full workspace bootstrap, doc chain, multi-agent review, and Ralph autopilot for Mentu-tracked projects",
+  "version": "1.0.0",
+  "author": { "name": "Mentu AI" },
+  "homepage": "https://mentu.ai",
+  "repository": "https://github.com/mentu-ai/mentu-marketplace",
+  "license": "MIT",
+  "keywords": ["workspace", "scaffolding", "review", "autopilot", "mentu", "ralph"],
+  "commands": "./commands",
+  "agents": "./agents",
+  "skills": "./skills",
+  "hooks": "./hooks"
+}
