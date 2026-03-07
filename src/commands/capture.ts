@@ -13,6 +13,7 @@ interface CaptureOptions {
   refs?: string;
   sourceKey?: string;
   actor?: string;
+  meta?: string;
 }
 
 function outputResult(result: CaptureOutput, json: boolean): void {
@@ -39,11 +40,12 @@ export function registerCaptureCommand(program: Command): void {
   program
     .command('capture <body>')
     .description('Record an observation')
-    .option('-k, --kind <kind>', 'Type of observation (e.g., evidence, bug_report)')
+    .option('-k, --kind <kind>', 'Type of observation (evidence, bug_report, context, note, sequence, step_result)')
     .option('-p, --path <path>', 'Document path (for kind=document)')
     .option('-r, --refs <refs>', 'Related IDs, comma-separated (e.g., cmt_xxx,mem_yyy)')
     .option('--source-key <key>', 'Idempotency key from origin system')
     .option('--actor <id>', 'Override actor identity')
+    .option('-m, --meta <json>', 'JSON metadata object (e.g., \'{"domain":"architecture"}\')')
     .action((body: string, options: CaptureOptions) => {
       const json = program.opts().json || false;
 
@@ -131,6 +133,17 @@ export function registerCaptureCommand(program: Command): void {
 
         if (options.sourceKey) {
           operation.source_key = options.sourceKey;
+        }
+
+        if (options.meta) {
+          try {
+            operation.payload.meta = JSON.parse(options.meta);
+          } catch {
+            throw new MentuError('E_INVALID_OP', 'Meta must be valid JSON', {
+              field: 'meta',
+              value: options.meta,
+            });
+          }
         }
 
         appendOperation(workspacePath, operation);
