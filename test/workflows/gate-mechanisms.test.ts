@@ -10,7 +10,12 @@ describe('Gate Mechanisms', () => {
         timeout_hours: 24,
       });
 
-      const result = gate.evaluate({ status: 'waiting' });
+      const result = gate.evaluate({
+        state: 'waiting',
+        commitment_id: 'cmt_test0001',
+        commitment_state: 'open',
+        status: 'waiting',
+      });
 
       expect(result.should_proceed).toBe(false);
       expect(result.reason).toBe('waiting_for_approval');
@@ -24,8 +29,11 @@ describe('Gate Mechanisms', () => {
       });
 
       const result = gate.evaluate({
+        state: 'approved',
+        commitment_id: 'cmt_test0002',
+        commitment_state: 'closed',
         status: 'approved',
-        approved_by: 'user:rashid'
+        approved_by: 'user:rashid',
       });
 
       expect(result.should_proceed).toBe(true);
@@ -40,8 +48,11 @@ describe('Gate Mechanisms', () => {
       });
 
       const result = gate.evaluate({
+        state: 'rejected',
+        commitment_id: 'cmt_test0003',
+        commitment_state: 'reopened',
         status: 'rejected',
-        rejected_by: 'user:rashid'
+        rejected_by: 'user:rashid',
       });
 
       expect(result.should_proceed).toBe(true);
@@ -60,6 +71,9 @@ describe('Gate Mechanisms', () => {
       const timeout_at = now - (25 * 60 * 60 * 1000); // 25 hours ago
 
       const result = gate.evaluate({
+        state: 'waiting',
+        commitment_id: 'cmt_test0004',
+        commitment_state: 'open',
         status: 'waiting',
         started_at: timeout_at,
         current_time: now,
@@ -82,6 +96,9 @@ describe('Gate Mechanisms', () => {
       const started_at = now - (23 * 60 * 60 * 1000); // 23 hours ago
 
       const result = gate.evaluate({
+        state: 'waiting',
+        commitment_id: 'cmt_test0005',
+        commitment_state: 'open',
         status: 'waiting',
         started_at,
         current_time: now,
@@ -97,7 +114,12 @@ describe('Gate Mechanisms', () => {
         gate_type: 'approval',
       });
 
-      const result = gate.evaluate({ status: 'waiting' });
+      const result = gate.evaluate({
+        state: 'waiting',
+        commitment_id: 'cmt_test0006',
+        commitment_state: 'open',
+        status: 'waiting',
+      });
 
       expect(result.should_proceed).toBe(false);
       expect(result.reason).toBe('waiting_for_approval');
@@ -113,7 +135,10 @@ describe('Gate Mechanisms', () => {
       });
 
       const result = gate.evaluate({
-        status: 'success',
+        state: 'success',
+        commitment_id: 'cmt_test0007',
+        commitment_state: 'closed',
+        status: 'completed',
         tests_passed: 45,
         tests_failed: 0,
       });
@@ -130,7 +155,10 @@ describe('Gate Mechanisms', () => {
       });
 
       const result = gate.evaluate({
-        status: 'failure',
+        state: 'failure',
+        commitment_id: 'cmt_test0008',
+        commitment_state: 'reopened',
+        status: 'failed',
         tests_passed: 43,
         tests_failed: 2,
       });
@@ -148,6 +176,9 @@ describe('Gate Mechanisms', () => {
       });
 
       const result = gate.evaluate({
+        state: 'failed',
+        commitment_id: 'cmt_test0009',
+        commitment_state: 'reopened',
         status: 'failed',
         tests_passed: 40,
         tests_failed: 5,
@@ -166,6 +197,9 @@ describe('Gate Mechanisms', () => {
       });
 
       const result = gate.evaluate({
+        state: 'waiting',
+        commitment_id: 'cmt_test0010',
+        commitment_state: 'open',
         status: 'waiting',
       });
 
@@ -181,7 +215,12 @@ describe('Gate Mechanisms', () => {
         gate_type: 'unknown' as any,
       });
 
-      const result = gate.evaluate({ status: 'waiting' });
+      const result = gate.evaluate({
+        state: 'waiting',
+        commitment_id: 'cmt_test0011',
+        commitment_state: 'open',
+        status: 'waiting',
+      });
 
       expect(result.should_proceed).toBe(false);
       expect(result.reason).toBe('unknown_gate_type');
@@ -197,8 +236,11 @@ describe('Gate Mechanisms', () => {
       });
 
       const result = gate.evaluate({
+        state: 'approved',
+        commitment_id: 'cmt_test0012',
+        commitment_state: 'closed',
         status: 'approved',
-        approved_by: 'user:rashid'
+        approved_by: 'user:rashid',
       });
 
       expect(result.should_proceed).toBe(true);
@@ -214,7 +256,10 @@ describe('Gate Mechanisms', () => {
       });
 
       const result = gate.evaluate({
-        status: 'success',
+        state: 'success',
+        commitment_id: 'cmt_test0013',
+        commitment_state: 'closed',
+        status: 'completed',
       });
 
       expect(result.should_proceed).toBe(true);
